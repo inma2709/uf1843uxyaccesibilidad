@@ -1,633 +1,1409 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UF1843 - Accesibilidad Web</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.png" type="image/png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="Manual didáctico de accesibilidad web: barreras, WCAG, buenas prácticas, ejemplos HTML y CSS y actividades.">
+  <title>Accesibilidad web | Manual de UX y usabilidad</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="manual.js" defer></script>
+  <link rel="icon" href="favicon.png" type="image/x-icon">
 </head>
+
 <body>
-    <header>
-        <h1>UF1843: Usabilidad y Accesibilidad en Desarrollo Web</h1>
-      <nav>
-            <a href="index.html">Accesibilidad Web</a>
-            <a href="usabilidad.html">Usabilidad Web</a>
-            <a href="practico.html">Planificación</a>
-             <a href="diseñoweb.html">Diseño Web</a>
-            <a href="desarrollo.html">Referencias y Código</a>
-           
-        </nav>
-    </header>
+  <a class="skip-link" href="#contenido">
+    Saltar al contenido
+  </a>
 
-    <div class="container">
-        <h2>Unidad Didáctica 1: Accesibilidad Web</h2>
+  <header>
+    <p class="eyebrow">
+      Manual de UX, usabilidad y accesibilidad
+    </p>
+    <h1>Accesibilidad web: diseñar para todas las personas</h1>
+  </header>
 
-        <!-- Epígrafe 1: Definición de accesibilidad web [1] -->
-        <details>
-            <summary>1. Definición de accesibilidad web</summary>
-            <div class="contenido-leccion">
-                <p>La accesibilidad web es un principio fundamental que garantiza que toda persona, independientemente de sus capacidades o discapacidades, pueda acceder, comprender y utilizar los contenidos y funcionalidades de los sitios y aplicaciones web [1]. Esto abarca diversas discapacidades, como visuales, auditivas, motrices y cognitivas [1], e incluye también situaciones temporales o ambientales [1, 2].</p>
-                <p>La accesibilidad es un derecho básico y un componente esencial para crear experiencias digitales inclusivas y universales [3]. En términos formales, se define como: "La capacidad de las personas para acceder, entender, navegar, interactuar y contribuir a la web, sin impedimentos relacionados con su discapacidad o entorno, mediante tecnologías, diseño adecuado y contenidos apropiados" [4].</p>
-                
-                <h4>Principios básicos de la accesibilidad (WCAG) [2]:</h4>
-                <ul>
-                    <li>Perceptible: La información debe ser presentada de maneras que todos puedan percibir (ej. texto alternativo para imágenes) [5, 6].</li>
-                    <li>Operable: Todos los controles y navegación deben ser accesibles mediante teclado y tecnologías asistivas [5, 7].</li>
-                    <li>Comprensión: El contenido debe ser claro y predecible [7, 8].</li>
-                    <li>Robusto: El contenido debe funcionar con diversas tecnologías y navegadores [8, 9].</li>
-                </ul>
-                <p>La accesibilidad beneficia a personas con discapacidad visual, auditiva, motriz y cognitiva [10], así como a usuarios con discapacidad temporal o en situaciones ambientales adversas (como conexiones lentas) [2].</p>
+  <nav aria-label="Navegación principal">
+    <a href="index.html" aria-current="page">Accesibilidad</a>
+    <a href="usabilidad.html">Usabilidad</a>
+    <a href="practico.html">Planificación</a>
+    <a href="diseñoweb.html">Diseño web</a>
+    <a href="desarrollo.html">Código y evaluación</a>
+  </nav>
 
-                <h4>Ejemplo Práctico:</h4>
-                <p>Un usuario que solo usa el teclado para navegar no podrá interactuar si los botones solo se activan con el ratón. La accesibilidad requiere que todos los componentes sean operables desde el teclado [8, 11].</p>
+  <main id="contenido">
 
-                <!-- Cuadro Resumen [12, 13] -->
-                <div class="cuadro-resumen">
-                    <h4>Cuadro Resumen: Definición de Accesibilidad Web</h4>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Concepto</th>
-                                <th>Definición breve</th>
-                                <th>Ejemplo práctico</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Accesibilidad</td>
-                                <td>Diseño sin barreras para todos los usuarios [12].</td>
-                                <td>Texto alternativo para imágenes [13].</td>
-                            </tr>
-                            <tr>
-                                <td>WCAG</td>
-                                <td>Guía mundial con principios y criterios [13].</td>
-                                <td>Perceptible, operable, etc. [13].</td>
-                            </tr>
-                            <tr>
-                                <td>Barreras</td>
-                                <td>Obstáculos para discapacidad visual, auditiva... [13].</td>
-                                <td>Formularios inaccesibles [13].</td>
-                            </tr>
-                            <tr>
-                                <td>Tecnologías</td>
-                                <td>HTML semántico, ARIA, lectores de pantalla [13].</td>
-                                <td>Uso correcto de roles ARIA [13].</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </details>
+    <!-- INTRODUCCIÓN -->
 
-        <!-- Epígrafe 2: Ventajas y dificultades [14] -->
-        <details>
-            <summary>2. Ventajas y dificultades en la implantación de la accesibilidad web</summary>
-            <div class="contenido-leccion">
-                <p>La implantación de accesibilidad web ofrece múltiples beneficios, pero también enfrenta retos que requieren conocimiento técnico, compromiso y recursos [14].</p>
-                <h4>Ventajas:</h4>
-                <ul>
-                    <li>Inclusión social y cumplimiento legal: Garantiza igualdad de acceso (derecho humano reconocido por tratados internacionales) y evita sanciones legales [15].</li>
-                    <li>Ampliación del público objetivo: Mejora la experiencia para personas mayores, usuarios de dispositivos móviles y entornos adversos, incrementando el alcance [16].</li>
-                    <li>Mejora de la experiencia global (Usabilidad): Estructuras claras y menús navegables con teclado facilitan la navegación para todos [16, 17].</li>
-                    <li>Optimización de motores de búsqueda (SEO): El contenido estructurado y semántico (etiquetas, textos alternativos) es valorado por los motores de búsqueda [17, 18].</li>
-                    <li>Ventajas competitivas y de marca: Genera mejor reputación y acceso a nichos de mercado desatendidos [19].</li>
-                </ul>
-                <h4>Dificultades:</h4>
-                <ul>
-                    <li>Falta de conocimiento y formación: El desconocimiento técnico entre diseñadores y desarrolladores es un reto principal [19].</li>
-                    <li>Inversión en tiempo y recursos: Adaptar sitios existentes o diseñar con accesibilidad puede requerir tiempo y recursos especializados [20].</li>
-                    <li>Limitaciones tecnológicas: Algunos frameworks o librerías no soportan accesibilidad total o requieren configuración adicional [20].</li>
-                    <li>Dificultades en mantenimiento y actualización: Mantener la accesibilidad requiere integrar buenas prácticas en cada cambio para evitar regresiones [21].</li>
-                    <li>Conflicto con otros objetivos: El diseño visual o funcionalidades avanzadas pueden parecer incompatibles con los estándares de accesibilidad [21].</li>
-                </ul>
+    <section>
+      <p class="lead">
+        Una página web de calidad no es solamente una página
+        que funciona correctamente. También debe permitir que
+        las personas encuentren la información, comprendan
+        su contenido y puedan utilizarla, independientemente
+        de sus capacidades o de la forma en que naveguen.
+      </p>
 
-                <!-- Cuadro Resumen [22] -->
-                <div class="cuadro-resumen">
-                    <h4>Cuadro Resumen: Ventajas y dificultades en la accesibilidad web</h4>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Ventajas</th>
-                                <th>Dificultades</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Cumplimiento legal [22]</td>
-                                <td>Falta de formación y conocimiento [22].</td>
-                            </tr>
-                            <tr>
-                                <td>Inclusión de todos los usuarios [22]</td>
-                                <td>Inversión de tiempo y recursos [22].</td>
-                            </tr>
-                            <tr>
-                                <td>Mejora de SEO y usabilidad [22]</td>
-                                <td>Limitaciones tecnológicas [22].</td>
-                            </tr>
-                            <tr>
-                                <td>Mejor reputación y responsabilidad [22]</td>
-                                <td>Mantenimiento continuo [22].</td>
-                            </tr>
-                            <tr>
-                                <td>Acceso a nuevos nichos de mercado [22]</td>
-                                <td>Conflicto con diseño o funcionalidades [22].</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </details>
+      <p>
+        Imagina una biblioteca cuya entrada tiene únicamente
+        escaleras. El edificio puede ser moderno, estar bien
+        organizado y ofrecer muchos servicios, pero algunas
+        personas encontrarán una barrera para entrar.
+      </p>
 
-        <!-- Epígrafe 3: Normativa y estándares [23] -->
-        <details>
-            <summary>3. Normativa y estándares sobre accesibilidad web</summary>
-            <div class="contenido-leccion">
-                <p>La accesibilidad no es solo una buena práctica, sino un requisito legal en muchos países [23]. Conocer estas normativas es fundamental para implementar la accesibilidad efectiva y asegurar la conformidad legal [24].</p>
-                
-                <h4>WCAG (Pautas de Accesibilidad al Contenido Web) [24]:</h4>
-                <p>Es el estándar internacional más reconocido, publicado por el World Wide Web Consortium (W3C) a través de WAI [24]. Se organiza en torno a cuatro principios fundamentales (Perceptible, Operable, Comprensible, Robusto) [25, 26].</p>
-                
-                <p>La conformidad se mide en tres niveles [26]:</p>
-                <ul>
-                    <li>Nivel A: Requisitos mínimos [26].</li>
-                    <li>Nivel AA: Requisito recomendado para la mayoría de los sitios (incluye nivel A) [26].</li>
-                    <li>Nivel AAA: Máximo nivel de accesibilidad (difícil de alcanzar para todos los contenidos) [26].</li>
-                </ul>
+      <p>
+        En Internet sucede algo parecido. Una página puede
+        tener un diseño atractivo y un código aparentemente
+        correcto, pero resultar imposible de utilizar para
+        alguien que necesita navegar con teclado, utiliza
+        un lector de pantalla o tiene dificultades para
+        comprender determinadas instrucciones.
+      </p>
 
-                <h4>Normativas nacionales relacionadas [27]:</h4>
-                <ul>
-                    <li>España: UNE 139803 (adapta WCAG 2.1) y la Ley General de derechos de las personas con discapacidad, que exigen accesibilidad en servicios digitales [27].</li>
-                    <li>Estados Unidos: ADA (Ley de Estadounidenses con Discapacidades) y Sección 508 (para sitios federales) [27, 28].</li>
-                    <li>Unión Europea: Directiva europea de accesibilidad web (2016/2102) [28].</li>
-                </ul>
+      <div class="note">
+        <strong>Idea fundamental:</strong>
+        la accesibilidad no es una mejora que añadimos cuando
+        terminamos una página. Debe formar parte de su
+        planificación, diseño, desarrollo y evaluación.
+      </div>
 
-                <!-- Cuadro Resumen [29] -->
-                <div class="cuadro-resumen">
-                    <h4>Cuadro Resumen: Normativas y estándares clave de accesibilidad</h4>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Norma/Estándar</th>
-                                <th>Ámbito</th>
-                                <th>Descripción breve</th>
-                                <th>Aplicación</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>WCAG</td>
-                                <td>Internacional [29]</td>
-                                <td>Guía internacional con criterios y niveles de accesibilidad [29].</td>
-                                <td>Todos los sitios web [29].</td>
-                            </tr>
-                            <tr>
-                                <td>UNE 139803</td>
-                                <td>España [29]</td>
-                                <td>Adaptación española de WCAG 2.1 [29].</td>
-                                <td>Sitios públicos y privados en España [29].</td>
-                            </tr>
-                            <tr>
-                                <td>ADA</td>
-                                <td>EE.UU. [29]</td>
-                                <td>Ley para la accesibilidad en servicios públicos y privados [29].</td>
-                                <td>Sitios en EE.UU. [29].</td>
-                            </tr>
-                            <tr>
-                                <td>Sección 508</td>
-                                <td>EE.UU. [29]</td>
-                                <td>Accesibilidad en tecnología web para agencias federales [29].</td>
-                                <td>Web gubernamentales y contratistas [29].</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </details>
+      <h2>Qué aprenderás en este tema</h2>
 
-        <!-- Epígrafe 4: Guías para el cumplimiento [30] -->
-        <details>
-            <summary>4. Guías para el cumplimiento de normativas y estándares</summary>
-            <div class="contenido-leccion">
-                <p>Existen guías y técnicas que ayudan a traducir las normativas (basadas en los 4 principios de WCAG [31]) en acciones concretas en el desarrollo web [30].</p>
-                
-                <h4>Pautas clave:</h4>
-                <ul>
-                    <li>Perceptible: Texto alternativo en imágenes, subtítulos y transcripciones, contraste suficiente (4.5:1) [32], no depender solo del color [33].</li>
-                    <li>Operable: Navegación mediante teclado [33], control del tiempo, evitar contenido parpadeante [33], estructura de navegación clara [33].</li>
-                    <li>Comprensible: Lenguaje claro y simple, consistencia en el diseño, retroalimentación y ayuda clara en formularios [34].</li>
-                    <li>Robusto: Uso de etiquetas semánticas [34], atributos ARIA para contenido dinámico [35], compatibilidad con navegadores y lectores de pantalla [35].</li>
-                </ul>
+      <p>
+        Al finalizar esta lección podrás explicar qué es
+        la accesibilidad web, reconocer barreras frecuentes,
+        comprender los principios WCAG y aplicar soluciones
+        básicas con HTML y CSS.
+      </p>
 
-                <h4>Ejemplo práctico: Texto alternativo</h4>
-                <p>Identificar imágenes informativas y usar el atributo <code>alt</code> descriptivo. Ejemplo: <code>&lt;img src="mapa.png" alt="Mapa que indica la sede central en Madrid"&gt;</code> [36].</p>
+      <p>
+        También aprenderás a realizar una comprobación
+        sencilla del contraste de colores y a revisar
+        tu página utilizando únicamente el teclado.
+      </p>
+    </section>
 
-                <!-- Cuadro Resumen [37] -->
-                <div class="cuadro-resumen">
-                    <h4>Cuadro Resumen: Guías para el cumplimiento de accesibilidad</h4>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Principio</th>
-                                <th>Pautas clave</th>
-                                <th>Ejemplo práctico</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Perceptible</td>
-                                <td>Texto alternativo, subtítulos, contraste [37].</td>
-                                <td>Añadir alt a las imágenes [37].</td>
-                            </tr>
-                            <tr>
-                                <td>Operable</td>
-                                <td>Navegación teclado, control de tiempo [37].</td>
-                                <td>Evitar que un slider avance solo [37].</td>
-                            </tr>
-                            <tr>
-                                <td>Comprensible</td>
-                                <td>Lenguaje claro, consistencia, ayuda [37].</td>
-                                <td>Formularios con mensajes de error claros [37].</td>
-                            </tr>
-                            <tr>
-                                <td>Robusto</td>
-                                <td>Etiquetas semánticas, ARIA, compatibilidad [37].</td>
-                                <td>Uso correcto de aria-label en botones [37].</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </details>
+    <!-- CONCEPTO -->
 
-        <!-- Epígrafe 5: Proceso de conformidad [38] -->
-        <details>
-            <summary>5. Descripción del proceso de conformidad en accesibilidad web</summary>
-            <div class="contenido-leccion">
-                <p>La conformidad en accesibilidad es un proceso estructurado que requiere evaluación, planificación, implementación, validación y mantenimiento [38].</p>
+    <section>
+      <h2>1. ¿Qué es la accesibilidad web?</h2>
 
-                <h4>Pasos clave del proceso:</h4>
-                <ol>
-                    <li>Evaluación Inicial: Diagnóstico del estado actual usando herramientas automáticas (WAVE, AXE, Lighthouse) y pruebas con usuarios reales [39].</li>
-                    <li>Planificación: Definición de un plan de acción, priorización de errores, determinación de recursos y definición de objetivos (ej. alcanzar el nivel AA de WCAG) [40, 41].</li>
-                    <li>Implementación y Adaptación: Realización de cambios técnicos (HTML semántico, atributos ARIA, ajustes CSS) y pruebas continuas para evitar regresiones [41, 42].</li>
-                    <li>Validación y Verificación: Comprobar que el sitio cumple con las pautas mediante nuevas auditorías automáticas y test con usuarios [42, 43].</li>
-                    <li>Certificación y Documentación: Obtener certificación, elaborar un Informe final formal y publicar una Declaración de accesibilidad [43, 44].</li>
-                    <li>Mantenimiento Continuo: Integrar auditorías y pruebas en el ciclo de desarrollo ágil y capacitación continua del equipo [44, 45].</li>
-                </ol>
+      <p>
+        La <strong>accesibilidad web</strong> consiste en
+        diseñar y desarrollar sitios, aplicaciones y contenidos
+        digitales para que las personas puedan percibirlos,
+        comprenderlos y utilizarlos sin encontrarse con
+        barreras evitables.
+      </p>
 
-                <!-- Cuadro Resumen [46, 47] -->
-                <div class="cuadro-resumen">
-                    <h4>Cuadro Resumen: Proceso de conformidad en accesibilidad web</h4>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Paso</th>
-                                <th>Acción clave</th>
-                                <th>Herramientas / Ejemplos</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Evaluación inicial</td>
-                                <td>Auditorías automáticas, manual de revisión [46].</td>
-                                <td>WAVE, AXE, Lighthouse, usuarios reales [46].</td>
-                            </tr>
-                            <tr>
-                                <td>Planificación</td>
-                                <td>Definir recursos, prioridades y objetivos [46].</td>
-                                <td>Listas de verificación, cronogramas [46].</td>
-                            </tr>
-                            <tr>
-                                <td>Implementación</td>
-                                <td>Adaptar contenido, código y diseño [47].</td>
-                                <td>HTML semántico, ARIA, CSS accesible [47].</td>
-                            </tr>
-                            <tr>
-                                <td>Validación y verificación</td>
-                                <td>Nuevas auditorías, pruebas con usuarios [47].</td>
-                                <td>Manual de prueba y herramienta automática [47].</td>
-                            </tr>
-                            <tr>
-                                <td>Certificación</td>
-                                <td>Documentar conformidad y declaración pública [47].</td>
-                                <td>Informe oficial, sello de accesibilidad [47].</td>
-                            </tr>
-                            <tr>
-                                <td>Mantenimiento continuo</td>
-                                <td>Auditoría periódica y capacitación continua [47].</td>
-                                <td>Integración en metodologías ágiles, formación [47].</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </details>
-        
-        <!-- Epígrafe 6: Tecnologías aplicables [48] -->
-        <details>
-            <summary>6. Tecnologías donde la accesibilidad es aplicable</summary>
-            <div class="contenido-leccion">
-                <p>La accesibilidad es un concepto transversal aplicable a diversas tecnologías y plataformas que conforman el ecosistema digital [48].</p>
+      <p>
+        No todas las personas interactúan con una web
+        de la misma manera. Algunas utilizan el ratón,
+        otras prefieren el teclado y otras necesitan
+        tecnologías de apoyo.
+      </p>
 
-                <h4>Tecnologías y retos:</h4>
-                <ul>
-                    <li>Sitios web estáticos: Se centran en el uso correcto de HTML semántico, textos alternativos y navegación sencilla [49, 50].</li>
-                    <li>Sitios web dinámicos (JS): Requieren la implementación de ARIA para describir roles y estados dinámicos, controlar actualizaciones de contenido y gestionar el foco [50].</li>
-                    <li>Aplicaciones Web de Página Única (SPA): La actualización dinámica sin recarga completa puede dificultar la percepción de cambios, exigiendo el uso de regiones en vivo ARIA y una correcta gestión del foco [51].</li>
-                    <li>Aplicaciones móviles: Tienen particularidades como interfaces táctiles, exigiendo tamaño mínimo para botones, etiquetas accesibles en componentes nativos y contrastes legibles [52].</li>
-                    <li>Sistemas de gestión de contenidos (CMS): Se debe elegir temas y complementos certificados para accesibilidad y adaptar el contenido introducido por editores [53].</li>
-                    <li>Tecnologías asistidas: El uso correcto de roles ARIA y etiquetas semánticas garantiza que herramientas como lectores de pantalla (NVDA, JAWS) o ampliadores interpreten correctamente el contenido [54].</li>
-                </ul>
+      <p>
+        Por ejemplo, un lector de pantalla puede interpretar
+        los encabezados, enlaces y controles de un documento
+        y comunicarlos mediante voz o una línea braille.
+        Para que esto funcione correctamente, es fundamental
+        que el HTML tenga una estructura adecuada y que los
+        elementos importantes dispongan de nombres
+        comprensibles.
+      </p>
 
-                <!-- Cuadro Resumen [55, 56] -->
-                <div class="cuadro-resumen">
-                    <h4>Cuadro Resumen: Tecnologías y accesibilidad</h4>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Tecnología</th>
-                                <th>Desafíos clave</th>
-                                <th>Buenas prácticas</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Sitios estáticos</td>
-                                <td>Semántica y estructura [55].</td>
-                                <td>HTML semántico, textos alternativos [55].</td>
-                            </tr>
-                            <tr>
-                                <td>Sitios Dinámicos (JS)</td>
-                                <td>Actualización dinámica y gestión foco [56].</td>
-                                <td>Uso de ARIA, regiones en vivo, foco correcto [56].</td>
-                            </tr>
-                            <tr>
-                                <td>SPA (React, Angular, Vue)</td>
-                                <td>Todo lo anterior + rutas y estados [56].</td>
-                                <td>Manejo correcto del DOM, roles ARIA [56].</td>
-                            </tr>
-                            <tr>
-                                <td>Aplicaciones móviles</td>
-                                <td>Tamaño, interacción táctil, API nativas [56].</td>
-                                <td>Uso de API accesibles nativas [56].</td>
-                            </tr>
-                            <tr>
-                                <td>CMS (WordPress, etc.)</td>
-                                <td>Temas/plugins no accesibles [56].</td>
-                                <td>Selección cuidadosa, formación de usuarios [56].</td>
-                            </tr>
-                            <tr>
-                                <td>Tecnologías asistidas</td>
-                                <td>Compatibilidad e interpretabilidad [56].</td>
-                                <td>Etiquetas semánticas y ARIA correctamente usadas [56].</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </details>
-        
-        <!-- Epígrafe 7: Herramientas de validación [57] -->
-        <details>
-            <summary>7. Herramientas para la validación de la accesibilidad</summary>
-            <div class="contenido-leccion">
-                <p>La validación es un paso fundamental, utilizando herramientas automáticas y manuales para detectar errores y evaluar el cumplimiento normativo [57].</p>
+      <h3>¿A quién beneficia?</h3>
 
-                <h4>Tipos de herramientas:</h4>
-                <ol>
-                    <li>Herramientas automáticas: Analizan código y contenido rápidamente, pero no capturan todos los errores [58]. Destacan:
-                        <ul>
-                            <li>WAVE: Extensión que muestra errores visualmente en la página [58].</li>
-                            <li>AXE Accessibility Checker: Genera informes detallados con sugerencias específicas [58].</li>
-                            <li>Lighthouse: Integrada en Chrome DevTools, ofrece informes junto con rendimiento y SEO [58].</li>
-                        </ul>
-                    </li>
-                    <li>Manual de evaluación: Comprobaciones que requieren juicio humano, como navegar solo con teclado, usar lectores de pantalla (NVDA, VoiceOver) o analizar la claridad del contenido [59].</li>
-                    <li>Herramientas de soporte: Como comprobadores de contraste de color [59] y validadores HTML [60].</li>
-                </ol>
+      <p>
+        La accesibilidad es especialmente importante para
+        las personas con discapacidad, pero sus beneficios
+        se extienden a muchas situaciones cotidianas.
+      </p>
 
-                <!-- Cuadro Resumen [61, 62] -->
-                <div class="cuadro-resumen">
-                    <h4>Cuadro Resumen: Herramientas de validación</h4>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Herramienta</th>
-                                <th>Tipo</th>
-                                <th>Funcionalidad principal</th>
-                                <th>Uso recomendado</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>WAVE</td>
-                                <td>Automática [62]</td>
-                                <td>Análisis visual de accesibilidad sobre página web [62].</td>
-                                <td>Auditorías rápidas [62].</td>
-                            </tr>
-                            <tr>
-                                <td>AXE Accesibilidad</td>
-                                <td>Automática [62]</td>
-                                <td>Informe detallado con guía correctiva [62].</td>
-                                <td>Integración en desarrollo [62].</td>
-                            </tr>
-                            <tr>
-                                <td>Lighthouse (Faro)</td>
-                                <td>Automática [62]</td>
-                                <td>Informe accesibilidad + rendimiento + SEO [62].</td>
-                                <td>Revisión global [62].</td>
-                            </tr>
-                            <tr>
-                                <td>NVDA / VoiceOver</td>
-                                <td>Manual [62]</td>
-                                <td>Lectores de pantalla [62].</td>
-                                <td>Prueba de interacción real [62].</td>
-                            </tr>
-                            <tr>
-                                <td>Comprobador de contraste de color</td>
-                                <td>Complementaria [62]</td>
-                                <td>Validación de ratios de contraste de color [62].</td>
-                                <td>Verificación visual [63].</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </details>
+      <div class="grid">
+        <article class="card">
+          <h3>Necesidades permanentes</h3>
+          <p>
+            Una persona con baja visión puede necesitar
+            ampliar el texto. Otra que no utiliza ratón
+            puede depender del teclado o de un dispositivo
+            de entrada alternativo.
+          </p>
+        </article>
 
-        <!-- Test de Repaso: Accesibilidad (15 preguntas) -->
-        <div class="test-repaso">
-            <h3>Test de Repaso: Accesibilidad Web (15 Preguntas)</h3>
-            <p>Seleccione la opción correcta para cada pregunta. (Nota: La funcionalidad de autocorrección requiere JavaScript en un entorno real).</p>
-            <form id="test-accesibilidad">
-                
-                <!-- P1: Definición -->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>1. ¿Cuál es uno de los principios básicos de accesibilidad según WCAG? [2, 6]</p>
-                    <label class="opcion"><input type="radio" name="p1" value="a"> Estético</label><br>
-                    <label class="opcion"><input type="radio" name="p1" value="b"> Perceptible</label><br>
-                    <label class="opcion"><input type="radio" name="p1" value="c"> Dinámico</label>
-                    <div class="feedback"></div>
-                </div>
+        <article class="card">
+          <h3>Situaciones temporales</h3>
+          <p>
+            Una lesión en una mano puede dificultar
+            el uso del ratón. Una persona que está
+            recuperándose de una intervención puede
+            necesitar adaptar temporalmente su manera
+            de utilizar un dispositivo.
+          </p>
+        </article>
 
-                <!-- P2: Beneficiarios -->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>2. La accesibilidad beneficia, además de a personas con discapacidad, a usuarios en situaciones ambientales como: [2]</p>
-                    <label class="opcion"><input type="radio" name="p2" value="a"> Uso de ordenadores de escritorio.</label><br>
-                    <label class="opcion"><input type="radio" name="p2" value="b"> Navegación con conexiones rápidas.</label><br>
-                    <label class="opcion"><input type="radio" name="p2" value="c"> Conexiones lentas o dispositivos móviles bajo el sol.</label>
-                    <div class="feedback"></div>
-                </div>
-                
-                <!-- P3: Barrera común -->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>3. Una barrera motora común es la imposibilidad de usar el ratón, lo que exige que los componentes sean operables mediante: [8, 11]</p>
-                    <label class="opcion"><input type="radio" name="p3" value="a"> Teclado (tecla Tab).</label><br>
-                    <label class="opcion"><input type="radio" name="p3" value="b"> Voz artificial.</label><br>
-                    <label class="opcion"><input type="radio" name="p3" value="c"> Control manual de contraste.</label>
-                    <div class="feedback"></div>
-                </div>
+        <article class="card">
+          <h3>Limitaciones situacionales</h3>
+          <p>
+            Consultar una pantalla bajo el sol,
+            encontrarse en un lugar ruidoso o tener
+            una mano ocupada son circunstancias que
+            pueden dificultar la interacción.
+          </p>
+        </article>
 
-                <!-- P4: Cumplimiento legal -->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>4. ¿Qué ventaja ofrece la accesibilidad respecto al ámbito legal? [15]</p>
-                    <label class="opcion"><input type="radio" name="p4" value="a"> Evita sanciones legales y cumple tratados internacionales.</label><br>
-                    <label class="opcion"><input type="radio" name="p4" value="b"> Garantiza costos de desarrollo mínimos.</label><br>
-                    <label class="opcion"><input type="radio" name="p4" value="c"> Maximiza el uso de frameworks no accesibles.</label>
-                    <div class="feedback"></div>
-                </div>
+        <article class="card">
+          <h3>Diferentes formas de navegar</h3>
+          <p>
+            Algunas personas utilizan lectores de pantalla,
+            reconocimiento de voz, ampliadores, pulsadores,
+            teclados adaptados u otras tecnologías de apoyo.
+          </p>
+        </article>
+      </div>
 
-                <!-- P5: SEO -->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>5. ¿Cómo contribuye la accesibilidad a la optimización SEO? [17]</p>
-                    <label class="opcion"><input type="radio" name="p5" value="a"> Aumentando la inversión en publicidad pagada.</label><br>
-                    <label class="opcion"><input type="radio" name="p5" value="b"> Mediante contenido bien estructurado, claro y semántico (ej. textos alternativos).</label><br>
-                    <label class="opcion"><input type="radio" name="p5" value="c"> Usando etiquetas HTML obsoletas.</label>
-                    <div class="feedback"></div>
-                </div>
+      <div class="check">
+        <strong>Recuerda:</strong>
+        una web accesible no obliga a todo el mundo a navegar
+        de la misma manera. Permite diferentes formas de
+        acceder a la información y completar las tareas.
+      </div>
+    </section>
 
-                <!-- P6: Norma internacional -->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>6. ¿Cuál es el estándar internacional más reconocido para asegurar la accesibilidad en la web? [24]</p>
-                    <label class="opcion"><input type="radio" name="p6" value="a"> Sección 508.</label><br>
-                    <label class="opcion"><input type="radio" name="p6" value="b"> UNE 139803.</label><br>
-                    <label class="opcion"><input type="radio" name="p6" value="c"> WCAG.</label>
-                    <div class="feedback"></div>
-                </div>
+    <!-- BARRERAS -->
 
-                <!-- P7: Nivel de conformidad -->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>7. ¿Qué nivel de conformidad de WCAG es el requisito recomendado para la mayoría de los sitios? [26]</p>
-                    <label class="opcion"><input type="radio" name="p7" value="a"> Nivel AA.</label><br>
-                    <label class="opcion"><input type="radio" name="p7" value="b"> Nivel A.</label><br>
-                    <label class="opcion"><input type="radio" name="p7" value="c"> Nivel AAA.</label>
-                    <div class="feedback"></div>
-                </div>
+    <section>
+      <h2>2. Principales barreras de accesibilidad</h2>
 
-                <!-- P8: Guía de cumplimiento perceptible -->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>8. Para cumplir con el principio Perceptible, el contraste mínimo recomendado para texto normal es: [32, 64]</p>
-                    <label class="opcion"><input type="radio" name="p8" value="a"> 2.0:1.</label><br>
-                    <label class="opcion"><input type="radio" name="p8" value="b"> 4.5:1.</label><br>
-                    <label class="opcion"><input type="radio" name="p8" value="c"> 1.5:1.</label>
-                    <div class="feedback"></div>
-                </div>
+      <p>
+        Una barrera de accesibilidad aparece cuando alguna
+        característica de la página impide o dificulta
+        que una persona acceda a su contenido o interactúe
+        con sus funciones.
+      </p>
 
-                <!-- P9: Uso de alt -->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>9. Si una imagen es puramente decorativa y no tiene función informativa, el atributo <code>alt</code> debe ser: [11, 36]</p>
-                    <label class="opcion"><input type="radio" name="p9" value="a"> Suprimido.</label><br>
-                    <label class="opcion"><input type="radio" name="p9" value="b"> Llenado con la palabra "decoración".</label><br>
-                    <label class="opcion"><input type="radio" name="p9" value="c"> Vacío (alt="").</label>
-                    <div class="feedback"></div>
-                </div>
+      <p>
+        Para identificarlas, resulta útil conocer cuatro
+        grandes grupos de necesidades. No son categorías
+        cerradas: una misma persona puede encontrar
+        diferentes barreras y una misma solución puede
+        beneficiar a muchas personas.
+      </p>
 
-                <!-- P10: Guía de cumplimiento robusto -->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>10. ¿Qué técnica es fundamental para garantizar el principio Robusto en contenido dinámico? [35]</p>
-                    <label class="opcion"><input type="radio" name="p10" value="a"> Evitar el uso de CSS.</label><br>
-                    <label class="opcion"><input type="radio" name="p10" value="b"> Uso exclusivo de tablas para layout.</label><br>
-                    <label class="opcion"><input type="radio" name="p10" value="c"> Implementación adecuada de atributos ARIA.</label>
-                    <div class="feedback"></div>
-                </div>
+      <div class="grid">
+        <article class="card">
+          <h3>Barreras visuales</h3>
+          <p>
+            Pueden aparecer cuando una imagen importante
+            no tiene texto alternativo, el contraste
+            entre texto y fondo es insuficiente o
+            la página no permite ampliar el contenido.
+          </p>
+          <p>
+            <strong>Soluciones:</strong> alternativas textuales,
+            contraste suficiente, estructura semántica
+            y diseño adaptable.
+          </p>
+        </article>
 
-                <!-- P11: Proceso de conformidad - Inicio -->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>11. ¿Cuál es el primer paso en el proceso de conformidad en accesibilidad web? [39]</p>
-                    <label class="opcion"><input type="radio" name="p11" value="a"> Evaluación Inicial (diagnóstico).</label><br>
-                    <label class="opcion"><input type="radio" name="p11" value="b"> Certificación y Documentación.</label><br>
-                    <label class="opcion"><input type="radio" name="p11" value="c"> Mantenimiento Continuo.</label>
-                    <div class="feedback"></div>
-                </div>
+        <article class="card">
+          <h3>Barreras auditivas</h3>
+          <p>
+            Un vídeo que transmite información mediante
+            la voz puede resultar inaccesible para una
+            persona que no puede escucharla si no
+            dispone de subtítulos.
+          </p>
+          <p>
+            <strong>Soluciones:</strong> subtítulos,
+            transcripciones y alternativas visuales
+            para los avisos sonoros.
+          </p>
+        </article>
 
-                <!-- P12: Implementación -->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>12. Una de las buenas prácticas en la fase de Implementación es: [42]</p>
-                    <label class="opcion"><input type="radio" name="p12" value="a"> Uso de ventanas emergentes sin aviso.</label><br>
-                    <label class="opcion"><input type="radio" name="p12" value="b"> Uso de HTML semántico (encabezados, listas apropiadas).</label><br>
-                    <label class="opcion"><input type="radio" name="p12" value="c"> Excluir la navegabilidad por teclado.</label>
-                    <div class="feedback"></div>
-                </div>
+        <article class="card">
+          <h3>Barreras motoras</h3>
+          <p>
+            Una persona puede encontrar dificultades
+            cuando una función depende exclusivamente
+            del ratón, los botones son demasiado pequeños
+            o no es posible utilizar el teclado.
+          </p>
+          <p>
+            <strong>Soluciones:</strong> controles nativos,
+            navegación por teclado, foco visible
+            y elementos fáciles de activar.
+          </p>
+        </article>
 
-                <!-- P13: Tecnología dinámica -->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>13. Para las Aplicaciones de Página Única (SPA), una buena práctica de accesibilidad es: [51]</p>
-                    <label class="opcion"><input type="radio" name="p13" value="a"> Desactivar el control de foco.</label><br>
-                    <label class="opcion"><input type="radio" name="p13" value="b"> Evitar el uso de roles ARIA.</label><br>
-                    <label class="opcion"><input type="radio" name="p13" value="c"> Utilizar regiones en vivo ARIA para notificar cambios importantes.</label>
-                    <div class="feedback"></div>
-                </div>
+        <article class="card">
+          <h3>Barreras cognitivas</h3>
+          <p>
+            Los textos excesivamente complejos,
+            las instrucciones ambiguas, los menús
+            impredecibles o los errores sin explicación
+            pueden dificultar la comprensión.
+          </p>
+          <p>
+            <strong>Soluciones:</strong> lenguaje claro,
+            organización coherente, instrucciones
+            y mensajes útiles.
+          </p>
+        </article>
+      </div>
 
-                <!-- P14: Herramienta automática -->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>14. ¿Cuál de estas herramientas automáticas se utiliza para auditar accesibilidad y está integrada en Chrome DevTools? [58]</p>
-                    <label class="opcion"><input type="radio" name="p14" value="a"> Lighthouse.</label><br>
-                    <label class="opcion"><input type="radio" name="p14" value="b"> NVDA.</label><br>
-                    <label class="opcion"><input type="radio" name="p14" value="c"> Photoshop.</label>
-                    <div class="feedback"></div>
-                </div>
+      <h3>De la barrera a la solución</h3>
 
-                <!-- P15: Evaluación manual -->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>15. Un método clave en la evaluación manual de accesibilidad es: [59]</p>
-                    <label class="opcion"><input type="radio" name="p15" value="a"> Generar un informe de contraste automatizado.</label><br>
-                    <label class="opcion"><input type="radio" name="p15" value="b"> Navegar solo con teclado o usar lectores de pantalla.</label><br>
-                    <label class="opcion"><input type="radio" name="p15" value="c"> Revisar la velocidad de carga del servidor.</label>
-                    <div class="feedback"></div>
-                </div>
-                
-                <button type="button" class="btn-corregir" onclick="corregirTest('test-accesibilidad', 15)">Corregir Test de Accesibilidad</button>
-            </form>
-        </div>
-    </div>
-    <!-- Script simulado (requeriría JS real para funcionar) -->
-    <script>
-        function corregirTest(testId, totalQuestions) {
-            const form = document.getElementById(testId);
-            const questions = form.querySelectorAll('.pregunta');
-            let correctCount = 0;
+      <table>
+        <caption>
+          Ejemplos de problemas de accesibilidad y sus soluciones
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Problema</th>
+            <th scope="col">Consecuencia</th>
+            <th scope="col">Solución</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Imagen sin descripción</th>
+            <td>
+              Una persona puede perder información
+              si no puede ver la imagen.
+            </td>
+            <td>
+              Proporcionar una alternativa textual adecuada.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Botón que solo funciona con ratón</th>
+            <td>
+              Impide completar la acción mediante teclado.
+            </td>
+            <td>
+              Utilizar controles HTML nativos
+              y comprobar su funcionamiento.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Texto con poco contraste</th>
+            <td>
+              Dificulta la lectura del contenido.
+            </td>
+            <td>
+              Elegir una combinación de colores
+              con contraste suficiente.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Formulario sin etiquetas</th>
+            <td>
+              Puede resultar difícil identificar
+              qué información solicita cada campo.
+            </td>
+            <td>
+              Asociar correctamente las etiquetas
+              <code>label</code> a los controles.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Vídeo sin subtítulos</th>
+            <td>
+              Se puede perder información transmitida
+              por el audio.
+            </td>
+            <td>
+              Incorporar subtítulos adecuados.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-            questions.forEach((q, index) => {
-                const feedback = q.querySelector('.feedback');
-                const selected = q.querySelector('input:checked');
-                const correctAnswer = q.getAttribute('data-correct-answer');
+    <!-- ESTÁNDARES -->
 
-                feedback.style.display = 'block';
-                feedback.classList.remove('correcto', 'incorrecto');
-                
-                if (selected && selected.value === correctAnswer) {
-                    feedback.classList.add('correcto');
-                    feedback.innerHTML = '¡Correcto! Respuesta: ' + correctAnswer;
-                    correctCount++;
-                } else {
-                    feedback.classList.add('incorrecto');
-                    feedback.innerHTML = 'Incorrecto. La respuesta correcta es: ' + correctAnswer;
-                }
-            });
+    <section>
+      <h2>3. W3C, WAI y WCAG: comprender las normas</h2>
 
-            alert(`Test completado. Puntuación: ${correctCount} de ${totalQuestions}.`);
-        }
-    </script>
+      <p>
+        Cuando estudiamos accesibilidad web aparecen
+        con frecuencia tres siglas: W3C, WAI y WCAG.
+        Están relacionadas, pero no significan lo mismo.
+      </p>
+
+      <table>
+        <caption>
+          Organizaciones, iniciativas y pautas de accesibilidad
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Qué es</th>
+            <th scope="col">Para qué sirve</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">W3C</th>
+            <td>World Wide Web Consortium</td>
+            <td>
+              Desarrolla estándares y recomendaciones
+              para la web.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">WAI</th>
+            <td>Web Accessibility Initiative</td>
+            <td>
+              Es la iniciativa del W3C que promueve
+              la accesibilidad web y desarrolla recursos
+              y pautas especializadas.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">WCAG</th>
+            <td>Web Content Accessibility Guidelines</td>
+            <td>
+              Establecen criterios para que
+              el contenido web resulte accesible.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Podemos entenderlo de esta manera:
+        <strong>W3C es la organización, WAI es la iniciativa
+        especializada y WCAG son las pautas que utilizamos
+        como referencia técnica.</strong>
+      </p>
+
+      <p>
+        Las WCAG permiten pasar de una recomendación general,
+        como "el texto debe leerse bien", a criterios
+        que pueden comprobarse de manera objetiva.
+      </p>
+
+      <p>
+        Puedes consultar la documentación oficial en
+        <a href="https://www.w3.org/WAI/standards-guidelines/wcag/"
+           target="_blank" rel="noopener noreferrer">
+          W3C/WAI: pautas de accesibilidad WCAG
+        </a>.
+      </p>
+
+      <h3>Los niveles A, AA y AAA</h3>
+
+      <p>
+        Las WCAG establecen tres niveles de conformidad:
+        <strong>A, AA y AAA</strong>. Son acumulativos:
+        para alcanzar AA deben cumplirse también los
+        criterios aplicables del nivel A; para alcanzar
+        AAA se incluyen además los criterios de ese nivel.
+      </p>
+
+      <table>
+        <caption>Niveles de conformidad WCAG</caption>
+        <thead>
+          <tr>
+            <th scope="col">Nivel</th>
+            <th scope="col">Significado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">A</th>
+            <td>
+              Nivel básico de conformidad,
+              con requisitos fundamentales.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">AA</th>
+            <td>
+              Añade requisitos importantes de accesibilidad.
+              Es una referencia habitual en proyectos
+              y obligaciones normativas.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">AAA</th>
+            <td>
+              Incorpora criterios adicionales y más exigentes.
+              No siempre es posible alcanzar este nivel
+              para todo tipo de contenido.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        <strong>Importante:</strong>
+        que una herramienta no encuentre errores
+        no demuestra que una página cumpla las WCAG.
+        La conformidad exige comprobar los criterios
+        aplicables y no puede determinarse únicamente
+        mediante una puntuación automática.
+      </div>
+
+      <h3>¿Es obligatorio cumplir las WCAG?</h3>
+
+      <p>
+        En España y la Unión Europea existen obligaciones
+        específicas de accesibilidad digital para
+        determinados organismos, productos y servicios.
+        La normativa aplicable depende del tipo de entidad,
+        servicio y contexto.
+      </p>
+
+      <p>
+        Independientemente de las obligaciones legales,
+        incorporar accesibilidad desde el principio
+        constituye una buena práctica profesional.
+        Para estudiar un caso normativo concreto
+        siempre debe consultarse la legislación vigente.
+      </p>
+    </section>
+
+    <!-- PRINCIPIOS WCAG -->
+
+    <section>
+      <h2>4. Los cuatro principios de accesibilidad WCAG</h2>
+
+      <p>
+        Las WCAG organizan sus pautas alrededor de cuatro
+        principios: <strong>perceptible, operable,
+        comprensible y robusto</strong>.
+      </p>
+
+      <p>
+        Estos principios nos ayudan a revisar una web
+        desde diferentes perspectivas. Una página
+        necesita cumplir los cuatro: no basta con
+        que su contenido sea visible si después
+        no podemos interactuar con él.
+      </p>
+
+      <h3>4.1. Perceptible: poder recibir la información</h3>
+
+      <p>
+        El contenido debe presentarse de manera que
+        las personas puedan percibirlo. Si la información
+        depende exclusivamente de un sentido, como
+        la vista o el oído, algunas personas
+        pueden quedar excluidas.
+      </p>
+
+      <p>
+        Por ejemplo, una imagen que contiene
+        el horario de una biblioteca puede parecer
+        completamente comprensible para alguien
+        que la ve. Pero una persona que utiliza
+        un lector de pantalla necesita acceder
+        a esa información de otra manera.
+      </p>
+
+      <h4>Imágenes informativas</h4>
+
+      <p>
+        En HTML utilizamos el atributo
+        <code>alt</code> para proporcionar
+        una alternativa textual cuando corresponde.
+      </p>
+
+      <p><strong>Ejemplo:</strong></p>
+
+      <pre><code>&lt;img
+  src="horario.png"
+  alt="Biblioteca: lunes a viernes,
+       de 9:00 a 20:00 horas"
+&gt;</code></pre>
+
+      <p>
+        El texto alternativo comunica la información
+        fundamental de la imagen. No se trata
+        de escribir simplemente "imagen de horario".
+      </p>
+
+      <p>
+        Cuando una imagen es exclusivamente decorativa,
+        podemos utilizar <code>alt=""</code>
+        para evitar que el lector de pantalla
+        anuncie una descripción innecesaria.
+      </p>
+
+      <h4>Otros ejemplos del principio perceptible</h4>
+
+      <ul>
+        <li>
+          Incorporar subtítulos cuando el audio de un
+          vídeo transmite información.
+        </li>
+        <li>
+          Ofrecer transcripciones cuando corresponda.
+        </li>
+        <li>
+          Utilizar contraste suficiente entre
+          el texto y su fondo.
+        </li>
+        <li>
+          Permitir ampliar el contenido
+          sin perder información.
+        </li>
+        <li>
+          No indicar errores únicamente
+          mediante el color rojo.
+        </li>
+      </ul>
+
+      <div class="check">
+        <strong>Cómo comprobarlo:</strong>
+        revisa qué información perdería una persona
+        si no pudiera ver una imagen, escuchar un vídeo
+        o distinguir correctamente los colores.
+      </div>
+
+      <h3>4.2. Operable: poder utilizar la interfaz</h3>
+
+      <p>
+        Una página es operable cuando las personas
+        pueden utilizar sus controles y completar
+        las acciones necesarias.
+      </p>
+
+      <p>
+        No debemos dar por hecho que todo el mundo
+        utiliza un ratón o una pantalla táctil.
+        Algunas personas navegan mediante teclado,
+        reconocimiento de voz o dispositivos adaptados.
+      </p>
+
+      <h4>Navegación mediante teclado</h4>
+
+      <p>
+        En una página web, las siguientes teclas
+        permiten realizar muchas interacciones:
+      </p>
+
+      <table>
+        <caption>Teclas habituales de navegación</caption>
+        <thead>
+          <tr>
+            <th scope="col">Tecla</th>
+            <th scope="col">Función habitual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Tab</th>
+            <td>
+              Avanza al siguiente elemento
+              que puede recibir el foco.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Shift + Tab</th>
+            <td>
+              Retrocede al elemento anterior.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Enter</th>
+            <td>
+              Activa enlaces y otros controles
+              según su comportamiento.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Espacio</th>
+            <td>
+              Activa botones y determinados controles,
+              como casillas de verificación.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        El comportamiento exacto depende del tipo
+        de control. Por eso conviene utilizar
+        elementos HTML nativos, que ya incorporan
+        muchas interacciones de teclado.
+      </p>
+
+      <h4>El foco visible</h4>
+
+      <p>
+        El <strong>foco</strong> indica qué elemento
+        está preparado para recibir la interacción
+        mediante teclado.
+      </p>
+
+      <p>
+        Si pulsamos Tab y no sabemos qué enlace
+        o botón está seleccionado, podemos perder
+        la orientación.
+      </p>
+
+      <p>
+        Podemos mejorar la visibilidad del foco
+        mediante CSS:
+      </p>
+
+      <pre><code>button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #174ea6;
+  outline-offset: 3px;
+}</code></pre>
+
+      <p>
+        <code>outline</code> dibuja un contorno
+        alrededor del elemento y
+        <code>outline-offset</code> separa ese contorno
+        del borde. El color debe contrastar suficientemente
+        con los fondos sobre los que se presenta.
+      </p>
+
+      <p>
+        También debemos evitar que un menú o componente
+        atrape el foco y comprobar que las personas
+        disponen de tiempo suficiente para realizar
+        las tareas cuando existen límites temporales.
+      </p>
+
+      <div class="activity">
+        <h4>Actividad: navega sin ratón</h4>
+
+        <p>
+          <strong>Objetivo:</strong> comprobar
+          si una página puede utilizarse con teclado.
+        </p>
+
+        <ol>
+          <li>Abre una página web en el navegador.</li>
+          <li>Deja de utilizar el ratón.</li>
+          <li>Pulsa Tab y observa el foco.</li>
+          <li>Recorre los enlaces y botones.</li>
+          <li>
+            Activa un enlace con Enter
+            y un botón con la tecla correspondiente.
+          </li>
+          <li>
+            Regresa utilizando Shift + Tab
+            cuando sea necesario.
+          </li>
+          <li>
+            Comprueba si existe algún control
+            que no puedas alcanzar o utilizar.
+          </li>
+        </ol>
+
+        <p>
+          <strong>Resultado esperado:</strong>
+          puedes identificar el foco, recorrer
+          los controles en un orden lógico
+          y completar una tarea sin ratón.
+        </p>
+      </div>
+
+      <h3>4.3. Comprensible: entender el contenido y las acciones</h3>
+
+      <p>
+        Una página accesible debe utilizar un lenguaje
+        claro y mostrar un comportamiento predecible.
+        El usuario necesita comprender dónde se encuentra,
+        qué puede hacer y qué ocurrirá cuando realice
+        una acción.
+      </p>
+
+      <p>
+        Este principio es especialmente importante
+        en formularios, procesos de compra,
+        solicitudes y gestiones administrativas.
+      </p>
+
+      <h4>Formularios con etiquetas</h4>
+
+      <p>
+        Un campo que únicamente muestra el texto
+        "Introduce tu correo" como
+        <code>placeholder</code> puede resultar
+        confuso cuando la persona comienza a escribir
+        y desaparece esa indicación.
+      </p>
+
+      <p>
+        Es preferible utilizar una etiqueta visible
+        asociada al campo:
+      </p>
+
+      <pre><code>&lt;label for="correo"&gt;
+  Correo electrónico
+&lt;/label&gt;
+
+&lt;input
+  type="email"
+  id="correo"
+  name="correo"
+  autocomplete="email"
+  required
+&gt;</code></pre>
+
+      <p>
+        El atributo <code>for</code> de
+        <code>label</code> coincide con el
+        <code>id</code> del campo. De esta manera,
+        ambos elementos quedan asociados.
+      </p>
+
+      <h4>Mensajes de error comprensibles</h4>
+
+      <p>
+        Un aviso que dice únicamente "Error"
+        no indica cómo continuar.
+      </p>
+
+      <p>
+        Es más útil mostrar un mensaje como:
+      </p>
+
+      <div class="note">
+        <strong>Ejemplo:</strong>
+        "Revisa el correo electrónico.
+        Debe tener un formato como nombre@dominio.es".
+      </div>
+
+      <p>
+        El mensaje debe relacionarse con el campo
+        correspondiente y ayudar a corregirlo.
+        También conviene conservar los datos válidos
+        que la persona ya había introducido.
+      </p>
+
+      <p>
+        Otras buenas prácticas son mantener una
+        navegación coherente, identificar el idioma
+        de la página mediante
+        <code>&lt;html lang="es"&gt;</code>
+        y utilizar títulos descriptivos.
+      </p>
+
+      <div class="check">
+        <strong>Cómo comprobarlo:</strong>
+        pide a otra persona que complete un formulario
+        sin recibir instrucciones. Observa si entiende
+        qué debe introducir y cómo corregir los errores.
+      </div>
+
+      <h3>4.4. Robusto: crear contenido compatible</h3>
+
+      <p>
+        El contenido debe estar construido de manera
+        que diferentes navegadores y tecnologías de apoyo
+        puedan interpretar su estructura, significado
+        y funcionamiento.
+      </p>
+
+      <p>
+        Para conseguirlo, una de las decisiones
+        más importantes es utilizar
+        <strong>HTML semántico</strong>.
+      </p>
+
+      <p>
+        Una etiqueta semántica comunica qué representa
+        un elemento. Por ejemplo:
+      </p>
+
+      <ul>
+        <li><code>nav</code>: zona de navegación.</li>
+        <li><code>main</code>: contenido principal.</li>
+        <li><code>button</code>: botón interactivo.</li>
+        <li><code>form</code>: formulario.</li>
+        <li>
+          <code>h1</code> a <code>h6</code>:
+          encabezados que organizan el documento.
+        </li>
+      </ul>
+
+      <h4>Elegir la etiqueta correcta</h4>
+
+      <p>
+        No es recomendable crear un botón utilizando
+        un <code>div</code> que solamente responde
+        a un clic del ratón.
+      </p>
+
+      <p><strong>Ejemplo problemático:</strong></p>
+
+      <pre><code>&lt;div onclick="guardar()"&gt;
+  Guardar
+&lt;/div&gt;</code></pre>
+
+      <p>
+        Este elemento no incorpora por defecto
+        el comportamiento de teclado ni la semántica
+        de un botón.
+      </p>
+
+      <p><strong>Alternativa adecuada:</strong></p>
+
+      <pre><code>&lt;button type="button"
+        onclick="guardar()"&gt;
+  Guardar
+&lt;/button&gt;</code></pre>
+
+      <p>
+        El elemento <code>button</code> ya tiene
+        semántica propia y admite interacción
+        mediante teclado. El ejemplo supone que
+        existe una función JavaScript llamada
+        <code>guardar()</code>.
+      </p>
+
+      <h4>¿Qué ocurre con ARIA?</h4>
+
+      <p>
+        ARIA es un conjunto de atributos que permite
+        comunicar información adicional sobre ciertos
+        componentes a las tecnologías de apoyo.
+      </p>
+
+      <p>
+        No sustituye al HTML semántico. Siempre que
+        exista un elemento HTML nativo adecuado,
+        normalmente será la primera opción.
+      </p>
+
+      <div class="note">
+        <strong>Importante:</strong>
+        una página puede tener HTML válido y seguir
+        siendo inaccesible. La validación detecta
+        problemas de marcado, pero no determina
+        si toda la experiencia puede utilizarse
+        correctamente.
+      </div>
+    </section>
+
+    <!-- CONTRASTE -->
+
+    <section>
+      <h2>5. Contraste de colores: comprobar la legibilidad</h2>
+
+      <p>
+        El contraste expresa la diferencia de luminosidad
+        entre dos colores. En diseño web resulta especialmente
+        importante cuando necesitamos distinguir
+        el texto de su fondo.
+      </p>
+
+      <p>
+        Un texto gris muy claro sobre fondo blanco
+        puede parecer elegante, pero resultar difícil
+        de leer.
+      </p>
+
+      <p>
+        Las WCAG establecen relaciones mínimas
+        para determinadas categorías de texto.
+        La relación se expresa con valores
+        como <strong>4,5:1</strong>.
+      </p>
+
+      <table>
+        <caption>
+          Referencias de contraste de texto según WCAG
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Tipo de texto</th>
+            <th scope="col">Nivel AA</th>
+            <th scope="col">Nivel AAA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Texto normal</th>
+            <td>4,5:1</td>
+            <td>7:1</td>
+          </tr>
+          <tr>
+            <th scope="row">Texto grande</th>
+            <td>3:1</td>
+            <td>4,5:1</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        A efectos de estos criterios, el texto grande
+        es, aproximadamente, el de 24 píxeles normales
+        o 18,5 píxeles en negrita, tomando como
+        referencia las equivalencias habituales
+        establecidas por WCAG.
+      </p>
+
+      <p>
+        Existen criterios específicos para determinados
+        componentes de interfaz y elementos gráficos.
+        Por eso no debemos aplicar automáticamente
+        el mismo umbral a todos los elementos.
+      </p>
+
+      <h3>Herramienta: WebAIM Contrast Checker</h3>
+
+      <p>
+        Podemos utilizar una herramienta online
+        para calcular el contraste entre dos colores
+        sin tener que realizar operaciones matemáticas.
+      </p>
+
+      <p>
+        <a href="https://webaim.org/resources/contrastchecker/"
+           target="_blank" rel="noopener noreferrer">
+          <strong>
+            Abrir WebAIM Contrast Checker
+            y comprobar mis colores
+          </strong>
+        </a>
+      </p>
+
+      <div class="activity">
+        <h3>Actividad: elige una combinación accesible</h3>
+
+        <p>
+          <strong>Objetivo:</strong>
+          comprobar si los colores de un texto
+          cumplen el contraste necesario.
+        </p>
+
+        <p>
+          <strong>Material:</strong>
+          navegador y WebAIM Contrast Checker.
+        </p>
+
+        <ol>
+          <li>Abre la herramienta desde el enlace anterior.</li>
+          <li>
+            Introduce el color del texto
+            <code>#777777</code>.
+          </li>
+          <li>
+            Introduce el fondo
+            <code>#FFFFFF</code>.
+          </li>
+          <li>
+            Observa la relación de contraste
+            y el resultado para texto normal AA.
+          </li>
+          <li>
+            Cambia el texto a
+            <code>#333333</code>.
+          </li>
+          <li>
+            Comprueba cómo cambia el resultado.
+          </li>
+          <li>
+            Elige una combinación válida
+            y anota los códigos de ambos colores.
+          </li>
+        </ol>
+
+        <p>
+          <strong>Resultado esperado:</strong>
+          identificar qué combinación permite
+          una lectura más accesible y explicar
+          cómo lo has comprobado.
+        </p>
+      </div>
+
+      <div class="check">
+        <strong>Recuerda:</strong>
+        el color tampoco debe ser el único medio
+        para comunicar un estado. Si un campo
+        contiene un error, utiliza además
+        un mensaje de texto comprensible.
+      </div>
+    </section>
+
+    <!-- ACCESIBILIDAD Y USABILIDAD -->
+
+    <section>
+      <h2>6. Accesibilidad y usabilidad: conceptos relacionados</h2>
+
+      <p>
+        La accesibilidad y la usabilidad están
+        estrechamente relacionadas, pero no son
+        exactamente lo mismo.
+      </p>
+
+      <p>
+        La <strong>accesibilidad</strong> busca
+        que las personas puedan acceder y utilizar
+        los contenidos y funciones sin barreras.
+      </p>
+
+      <p>
+        La <strong>usabilidad</strong> estudia
+        si las personas pueden completar sus tareas
+        con eficacia, eficiencia y satisfacción
+        en un contexto determinado.
+      </p>
+
+      <p>
+        Imagina una tienda online cuyo proceso
+        de compra funciona perfectamente
+        con ratón, pero no permite seleccionar
+        un producto mediante teclado.
+      </p>
+
+      <p>
+        Puede resultar cómoda para determinadas
+        personas y, sin embargo, presentar
+        una barrera importante de accesibilidad.
+      </p>
+
+      <p>
+        Por el contrario, un formulario puede
+        tener etiquetas y controles técnicamente
+        accesibles, pero exigir demasiados pasos
+        o utilizar instrucciones confusas.
+        En ese caso también existe un problema
+        de usabilidad.
+      </p>
+
+      <div class="note">
+        <strong>Conclusión:</strong>
+        una web profesional debe ser accesible
+        y usable. No basta con permitir el acceso:
+        también debemos facilitar que las personas
+        puedan alcanzar sus objetivos.
+      </div>
+
+      <p>
+        En el siguiente tema estudiarás con mayor
+        profundidad los principios de usabilidad
+        y las heurísticas de Jakob Nielsen.
+      </p>
+    </section>
+
+    <!-- VÍDEO -->
+
+    <section>
+      <h2>7. Recurso audiovisual: accesibilidad web</h2>
+
+      <p>
+        El siguiente vídeo del W3C/WAI introduce
+        la importancia de los estándares
+        de accesibilidad y sus beneficios.
+      </p>
+
+      <p>
+        Utilízalo como complemento de las explicaciones
+        anteriores. Observa cómo la accesibilidad
+        permite que diferentes personas participen
+        en la experiencia digital.
+      </p>
+
+      <div class="video">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/20SHvU2PKsM"
+          title="W3C WAI: estándares y beneficios de la accesibilidad"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p>
+        Puedes consultar el recurso y sus opciones
+        de idioma desde la
+        <a href="https://www.w3.org/WAI/videos/standards-and-benefits/"
+           target="_blank" rel="noopener noreferrer">
+          página oficial del vídeo en W3C/WAI
+        </a>.
+      </p>
+    </section>
+
+    <!-- RESUMEN Y CHECKLIST -->
+
+    <section>
+      <h2>8. Las diez prácticas esenciales de accesibilidad</h2>
+
+      <p>
+        Antes de publicar una página web,
+        conviene revisar una serie de prácticas
+        que ayudan a prevenir barreras habituales.
+      </p>
+
+      <p>
+        Esta tabla resume los conocimientos
+        que hemos trabajado a lo largo de la lección.
+        Puedes utilizarla como referencia
+        mientras desarrollas tus proyectos.
+      </p>
+
+      <table>
+        <caption>
+          Diez buenas prácticas de accesibilidad web
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">N.º</th>
+            <th scope="col">Práctica</th>
+            <th scope="col">Qué debes comprobar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>HTML semántico</td>
+            <td>
+              Utiliza encabezados, navegación
+              y elementos según su significado.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Textos alternativos</td>
+            <td>
+              Las imágenes informativas tienen
+              alternativas útiles y las decorativas
+              utilizan alt vacío.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Navegación por teclado</td>
+            <td>
+              Todos los controles necesarios
+              pueden utilizarse sin ratón.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>Foco visible</td>
+            <td>
+              Puedes identificar el elemento activo
+              mientras navegas con teclado.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>Contraste suficiente</td>
+            <td>
+              Textos y elementos relevantes
+              cumplen los criterios correspondientes.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td>Formularios comprensibles</td>
+            <td>
+              Los campos tienen etiquetas
+              y los errores se explican.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">7</th>
+            <td>Diseño adaptable</td>
+            <td>
+              La página mantiene contenido
+              y funcionalidad con zoom
+              y diferentes anchuras.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">8</th>
+            <td>Multimedia accesible</td>
+            <td>
+              Los contenidos audiovisuales
+              disponen de las alternativas
+              que necesitan.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">9</th>
+            <td>No depender solo del color</td>
+            <td>
+              Los estados y avisos se comunican
+              también mediante texto
+              u otras señales.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">10</th>
+            <td>Evaluación y mejora</td>
+            <td>
+              Combinas herramientas automáticas
+              y comprobaciones manuales.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Checklist personal de accesibilidad</h3>
+
+      <p>
+        Marca las comprobaciones que hayas realizado
+        en tu propio proyecto.
+        Si el almacenamiento del navegador está
+        disponible, la selección quedará guardada
+        para futuras consultas.
+      </p>
+
+      <fieldset data-checklist="accesibilidad">
+        <legend>Revisión de buenas prácticas</legend>
+
+        <label>
+          <input type="checkbox">
+          He utilizado HTML semántico.
+        </label>
+
+        <label>
+          <input type="checkbox">
+          He revisado las alternativas de las imágenes.
+        </label>
+
+        <label>
+          <input type="checkbox">
+          He probado la navegación con teclado.
+        </label>
+
+        <label>
+          <input type="checkbox">
+          He comprobado que el foco es visible.
+        </label>
+
+        <label>
+          <input type="checkbox">
+          He comprobado el contraste.
+        </label>
+
+        <label>
+          <input type="checkbox">
+          He revisado las etiquetas de los formularios.
+        </label>
+
+        <label>
+          <input type="checkbox">
+          He comprobado la adaptación al zoom
+          y a pantallas estrechas.
+        </label>
+
+        <label>
+          <input type="checkbox">
+          He revisado las alternativas multimedia.
+        </label>
+
+        <label>
+          <input type="checkbox">
+          No transmito información únicamente mediante colores.
+        </label>
+
+        <label>
+          <input type="checkbox">
+          He realizado comprobaciones automáticas y manuales.
+        </label>
+
+        <p class="checklist-status" aria-live="polite">
+          Marca las prácticas revisadas.
+        </p>
+      </fieldset>
+
+      <div class="check">
+        <strong>Idea para recordar:</strong>
+        no diseñamos para obligar a las personas
+        a adaptarse a nuestra web.
+        Diseñamos para que la web pueda utilizarse
+        de diferentes maneras.
+      </div>
+    </section>
+
+    <!-- AUTOEVALUACIÓN -->
+
+    <section>
+      <h2>9. Autoevaluación</h2>
+
+      <p>
+        Comprueba si has comprendido los conceptos
+        esenciales de esta lección.
+      </p>
+
+      <p>
+        Lee cada pregunta, selecciona una respuesta
+        y pulsa Corregir para recibir
+        una explicación.
+      </p>
+
+      <form class="quiz" data-quiz>
+
+        <fieldset
+          data-answer="b"
+          data-explain="El foco visible permite identificar qué elemento está activo al navegar mediante teclado.">
+
+          <legend>
+            Al pulsar Tabulador no se ve qué
+            elemento está activo. ¿Qué barrera hay?
+          </legend>
+
+          <label>
+            <input type="radio" name="q1" value="a">
+            Un problema de idioma.
+          </label>
+
+          <label>
+            <input type="radio" name="q1" value="b">
+            Falta un indicador de foco visible.
+          </label>
+
+          <p class="feedback"></p>
+        </fieldset>
+
+        <fieldset
+          data-answer="a"
+          data-explain="Las herramientas automáticas ayudan a detectar determinados problemas, pero es necesario realizar también comprobaciones manuales.">
+
+          <legend>
+            ¿Una auditoría automática certifica
+            por sí sola el cumplimiento de todas las WCAG?
+          </legend>
+
+          <label>
+            <input type="radio" name="q2" value="a">
+            No; debe complementarse con
+            una evaluación más amplia.
+          </label>
+
+          <label>
+            <input type="radio" name="q2" value="b">
+            Sí, siempre que no encuentre errores.
+          </label>
+
+          <p class="feedback"></p>
+        </fieldset>
+
+        <button type="button">Corregir</button>
+
+        <p class="result"
+           role="status"
+           aria-live="polite"
+           tabindex="-1"></p>
+
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    Manual didáctico · Accesibilidad desde
+    el diseño hasta la mejora continua.
+  </footer>
 </body>
 </html>

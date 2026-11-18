@@ -1,642 +1,1068 @@
-El archivo HTML a continuación está estructurado según el estilo solicitado (utilizando el `styles.css` proporcionado anteriormente) e incluye la lección extensa y didáctica sobre la importancia de la planificación de un sitio web usable, con cuadros resumen y un test de repaso de 30 preguntas.
 
-## Archivo `planificacion_usable.html`
-
-```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lección: Planificación de Usabilidad</title>
-    <!-- Asegúrese de que este archivo styles.css esté en la misma carpeta que este HTML -->
-    <link rel="stylesheet" href="styles.css"> 
-    <link rel="icon" href="favicon.png">
-    <style>
-        /* Estilos específicos para esta lección si fuera necesario, aunque se usa styles.css */
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="Aprende a planificar una página web: objetivos, usuarios, arquitectura de información, wireframes y prototipos con Penpot o Figma.">
+  <title>Planificación web | Manual de UX y accesibilidad</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="manual.js" defer></script>
+  <link rel="icon" href="favicon.png" type="image/x-icon">
 </head>
+
 <body>
-    <header>
-        <h1>UF1843: Planificación Usable y Diseño Centrado en el Usuario</h1>
-      <nav>
-            <a href="index.html">Accesibilidad Web</a>
-            <a href="usabilidad.html">Usabilidad Web</a>
-            <a href="practico.html">Planificación</a>
-             <a href="diseñoweb.html">Diseño Web</a>
-            <a href="desarrollo.html">Referencias y Código</a>
-           
-        </nav>
-    </header>
+  <a class="skip-link" href="#contenido">
+    Saltar al contenido
+  </a>
 
-    <div class="container">
-        <h2>Lección: La Importancia Vital de Planificar un Sitio Web Usable</h2>
-        <p>¡Bienvenidos! La construcción de una experiencia digital de calidad no se improvisa. Si no planificamos la usabilidad y la accesibilidad desde el inicio, estamos construyendo barreras invisibles que frustrarán a nuestros usuarios y condenarán nuestro proyecto al fracaso.</p>
+  <header>
+    <p class="eyebrow">
+      Manual de UX, usabilidad y accesibilidad
+    </p>
+    <h1>Antes de programar: entender, planificar y prototipar</h1>
+  </header>
 
-        <!-- Epígrafe 1: Fundamentos -->
-        <details open>
-            <summary>1. Definiendo las Bases: Usabilidad, Eficacia y Satisfacción</summary>
-            <div class="contenido-leccion">
-                <p>La usabilidad es la capacidad de un sitio web para ser entendido, aprendido y utilizado de manera sencilla y eficiente. Mide qué tan fácil e intuitivo es manejar una plataforma digital para cumplir un objetivo.</p>
-                <p>La usabilidad se define por tres pilares que deben guiar nuestra planificación:</p>
-                <ul>
-                    <li>Eficacia: El usuario logra completar las tareas con éxito.</li>
-                    <li>Eficiencia: Las tareas se completan sin desperdiciar recursos ni tiempo.</li>
-                    <li>Satisfacción: El usuario experimenta agrado y comodidad durante y después del uso.</li>
-                </ul>
-                
-                <h4>La Experiencia de Usuario (UX) como marco global</h4>
-                <p>La Experiencia de Usuario (UX) es más amplia que la usabilidad. Abarca no solo la facilidad de uso, sino también las emociones, percepciones, expectativas y el contexto completo de interacción. Una planificación adecuada, basada en la UX, busca crear experiencias globales agradables, funcionales y valiosas.</p>
-                
-                <!-- Cuadro Resumen -->
-                <div class="cuadro-resumen">
-                    <h4>Cuadro Resumen: Pilares de la Usabilidad y UX</h4>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Concepto</th>
-                                <th>Definición clave</th>
-                                <th>Impacto en la Planificación</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Usabilidad</td>
-                                <td>Facilidad para usar y aprender una plataforma.</td>
-                                <td>Diseño de flujos y procesos eficientes.</td>
-                            </tr>
-                            <tr>
-                                <td>Eficacia</td>
-                                <td>Capacidad para lograr objetivos correctamente.</td>
-                                <td>Validar la tasa de éxito de tareas clave.</td>
-                            </tr>
-                            <tr>
-                                <td>Satisfacción</td>
-                                <td>Percepción positiva y agrado del usuario.</td>
-                                <td>Evaluar con encuestas y NPS.</td>
-                            </tr>
-                            <tr>
-                                <td>UX</td>
-                                <td>Experiencia total vivida (emociones, percepciones).</td>
-                                <td>Diseñar con enfoque centrado en el usuario.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </details>
+  <nav aria-label="Navegación principal">
+    <a href="index.html">Accesibilidad</a>
+    <a href="usabilidad.html">Usabilidad</a>
+    <a href="practico.html" aria-current="page">Planificación</a>
+    <a href="diseñoweb.html">Diseño web</a>
+    <a href="desarrollo.html">Código y evaluación</a>
+  </nav>
 
-        <!-- Epígrafe 2: Metodología: Diseño Centrado en el Usuario (UCD) y Requerimientos -->
-        <details>
-            <summary>2. El Corazón de la Planificación: Diseño Centrado en el Usuario y Casos de Uso</summary>
-            <div class="contenido-leccion">
-                <p>Planificar un sitio usable significa adoptar el Diseño Centrado en el Usuario (UCD). Esta metodología pone a las personas reales en el foco del desarrollo, asegurando correspondencia con sus necesidades.</p>
-                
-                <h4>Técnicas clave de planificación:</h4>
-                <p>El análisis de requerimientos identifica qué necesitan y quieren los usuarios mediante técnicas estructuradas.</p>
-                <ul>
-                    <li>Personas (Buyer Personas): Perfiles semificticios creados a partir de investigación, que representan segmentos concretos de clientes ideales.</li>
-                    <li>Casos de Uso: Describen escenarios reales de interacción entre el usuario y el sistema. Permiten diseñar el sitio para responder a necesidades concretas, prevenir problemas y construir flujos efectivos.</li>
-                </ul>
+  <main id="contenido">
 
-                <h4>¿Qué logramos con casos de uso claros?</h4>
-                <p>Diseñar con casos de uso claros ayuda a:</p>
-                <ul>
-                    <li>Centrarse en lo que el usuario realmente necesita.</li>
-                    <li>Crear interfaces coherentes y orientadas a tareas.</li>
-                    <li>Evitar funciones innecesarias o confusas.</li>
-                    <li>Validar diseños mediante pruebas con escenarios reales.</li>
-                </ul>
+    <!-- INTRODUCCIÓN -->
 
-                <p><strong>Ejemplo (Tienda Online):</strong> El Caso de Uso de "Laura, que quiere comprar zapatillas deportivas" define un flujo principal claro: acceder al sitio, usar el buscador, filtrar por talla y marca, agregar al carrito, revisar el carrito, introducir datos de envío y pago, y confirmar la compra.</p>
+    <section>
+      <p class="lead">
+        Antes de escribir la primera línea de HTML,
+        necesitamos tomar una serie de decisiones:
+        qué problema queremos resolver, para quién
+        estamos creando la página y qué tareas
+        deberán poder realizar las personas que
+        la utilicen.
+      </p>
 
-                <!-- Cuadro Resumen -->
-                <div class="cuadro-resumen">
-                    <h4>Cuadro Resumen: UCD y Herramientas de Planificación</h4>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Concepto</th>
-                                <th>Propósito</th>
-                                <th>Resultado de Planificación</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>UCD</td>
-                                <td>Poner al usuario en el foco del desarrollo.</td>
-                                <td>Diseño que corresponde a necesidades reales.</td>
-                            </tr>
-                            <tr>
-                                <td>Personas</td>
-                                <td>Representar segmentos de clientes.</td>
-                                <td>Mensajes y diseño ajustados a los hábitos del cliente.</td>
-                            </tr>
-                            <tr>
-                                <td>Casos de Uso</td>
-                                <td>Describir escenarios de interacción reales.</td>
-                                <td>Flujos de tareas eficientes y predecibles.</td>
-                            </tr>
-                            <tr>
-                                <td>Prototipado</td>
-                                <td>Crear modelos para validar estructura y funciones.</td>
-                                <td>Validación iterativa centrada en el usuario.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </details>
+      <p>
+        Programar directamente sin planificar puede
+        parecer más rápido, pero a menudo provoca
+        problemas: menús difíciles de entender,
+        contenidos mal organizados, funciones
+        innecesarias y cambios importantes cuando
+        el proyecto ya está desarrollado.
+      </p>
 
-        <!-- Epígrafe 3: La Visión Global: Accesibilidad y Usabilidad -->
-        <details>
-            <summary>3. Planificación Inclusiva: La Integración de Accesibilidad y Usabilidad</summary>
-            <div class="contenido-leccion">
-                <p>Es fundamental recordar que la accesibilidad y la usabilidad son complementarias, pero no equivalentes. La accesibilidad garantiza que cualquier persona pueda acceder sin barreras, mientras que la usabilidad se enfoca en que esa experiencia sea eficiente y satisfactoria.</p>
-                
-                <h4>Planificación de la accesibilidad (WCAG):</h4>
-                <p>La accesibilidad se basa en los cuatro principios WCAG (Pautas de accesibilidad al contenido web), los cuales deben integrarse desde la planificación inicial:</p>
-                <ol>
-                    <li>Perceptible: La información debe poder ser percibida (ej. texto alternativo).</li>
-                    <li>Operable: Los controles deben ser accesibles (ej. navegación con teclado).</li>
-                    <li>Comprensible: El contenido y la interfaz deben ser fáciles de entender.</li>
-                    <li>Robusto: El contenido debe ser compatible con diversas tecnologías.</li>
-                </ol>
-                
-                <p><strong>Ventajas de la combinación:</strong> La planificación conjunta genera una experiencia inclusiva para todos, mejora la calidad, facilita el cumplimiento legal y optimiza el SEO.</p>
-                <p><strong>El Desafío en España:</strong> Los datos recientes muestran que solo alrededor del 27% de las webs españolas alcanzan el nivel AA exigido en accesibilidad. Más de la mitad presentan fallos graves que dificultan el acceso a personas con discapacidad. Esto subraya la urgencia de planificar ambos aspectos desde el inicio para evitar riesgos legales ante la normativa europea de 2025.</p>
-                
-                <!-- Cuadro Resumen -->
-                <div class="cuadro-resumen">
-                    <h4>Cuadro Resumen: Diferencias y Cumplimiento</h4>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Ámbito</th>
-                                <th>Foco Principal</th>
-                                <th>Estándar</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Accesibilidad</td>
-                                <td>Eliminar barreras para diversidad funcional.</td>
-                                <td>WCAG (Niveles A, AA, AAA).</td>
-                            </tr>
-                            <tr>
-                                <td>Usabilidad</td>
-                                <td>Optimizar eficacia, eficiencia y satisfacción.</td>
-                                <td>Diseño Centrado en el Usuario (UCD).</td>
-                            </tr>
-                            <tr>
-                                <td>Cumplimiento en España</td>
-                                <td>Deficiente; solo el 27% alcanza Nivel AA.</td>
-                                <td>La nueva normativa europea exige cambios urgentes.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </details>
+      <p>
+        Imagina que necesitas crear la página web de
+        una biblioteca. Antes de elegir los colores
+        o diseñar los botones, deberías saber
+        qué necesitan hacer sus visitantes.
+      </p>
 
-        <!-- Epígrafe 4: Consecuencias de una Planificación Deficiente -->
-        <details>
-            <summary>4. Fallos Comunes y Consecuencias de la Mala Usabilidad</summary>
-            <div class="contenido-leccion">
-                <p>La ausencia de una planificación rigurosa conduce a la pérdida de usuario por frustración y el abandono del carrito. Una web con mala usabilidad se caracteriza por:</p>
-                <ul>
-                    <li>Menús confusos y ocultos, navegación poco intuitiva.</li>
-                    <li>Falta de jerarquía visual y organización.</li>
-                    <li>Proceso de pago extenso y sin posibilidad de corrección fácil de errores.</li>
-                    <li>Sobrecarga de información o gráficos sin sentido.</li>
-                    <li>Ausencia de retroalimentación clara o mensajes amigables.</li>
-                    <li>Colores y contrastes inapropiados (problema de accesibilidad que impacta la usabilidad).</li>
-                </ul>
+      <p>
+        Algunas personas querrán consultar los horarios,
+        otras buscar un libro y otras renovar
+        un préstamo. Estas necesidades deben orientar
+        la estructura y el funcionamiento de la web.
+      </p>
 
-                <h4>Ejemplos españoles de baja usabilidad:</h4>
-                <p>Incluso grandes plataformas en España presentan problemas de usabilidad por mala planificación:</p>
-                <ul>
-                    <li>Renfe: Problemas de navegación con teclado y formularios complejos con validaciones poco claras.</li>
-                    <li>Mercadona: Dificultad para encontrar métodos de pago alternativos y problemas en la estructura del carrito de compra.</li>
-                    <li>Páginas de PYMES: Interfaces complejas, menús poco legibles y procesos de contacto confusos.</li>
-                </ul>
-                <p>Por contraste, sitios como Mango o El Corte Inglés demuestran alta usabilidad gracias a menús accesibles, navegación intuitiva y retroalimentación efectiva.</p>
+      <div class="note">
+        <strong>Idea fundamental:</strong>
+        planificar no significa complicar el trabajo.
+        Significa resolver primero los problemas
+        de organización y funcionamiento para
+        programar después con mayor claridad.
+      </div>
 
-                <!-- Cuadro Resumen -->
-                <div class="cuadro-resumen">
-                    <h4>Cuadro Resumen: Problemas y Consecuencias</h4>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Problema de Planificación</th>
-                                <th>Ejemplo Práctico</th>
-                                <th>Consecuencia</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Ausencia de UCD</td>
-                                <td>Menús ocultos o difíciles de encontrar.</td>
-                                <td>Frustración del usuario.</td>
-                            </tr>
-                            <tr>
-                                <td>Flujo de tarea deficiente</td>
-                                <td>Proceso de pago extenso.</td>
-                                <td>Abandono del carrito (Tasa > 75%).</td>
-                            </tr>
-                            <tr>
-                                <td>Falta de accesibilidad</td>
-                                <td>Contraste inadecuado o sin alt en imágenes.</td>
-                                <td>Barreras legales y exclusión de usuarios.</td>
-                            </tr>
-                            <tr>
-                                <td>Mala estética/coherencia</td>
-                                <td>Diseño obsoleto, colores incoherentes.</td>
-                                <td>Pérdida de confianza y percepción no profesional.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </details>
-        
-        <!-- Epígrafe 5: Evaluación y Métricas de Usabilidad para la Planificación -->
-        <details>
-            <summary>5. Métricas de Usabilidad y Umbrales Clave</summary>
-            <div class="contenido-leccion">
-                <p>Una planificación exitosa requiere establecer qué vamos a medir para validar el diseño. Las métricas clave incluyen:</p>
-                <ul>
-                    <li>Tasa de éxito: Porcentaje de tareas completadas satisfactoriamente (Indica eficacia).</li>
-                    <li>Tiempo de la tarea: Cuánto se tarda el usuario (Indica eficiencia).</li>
-                    <li>Número de errores: Cantidad de errores cometidos durante la tarea.</li>
-                    <li>Satisfacción del usuario: Feedback directo (ej. escalas SUS).</li>
-                    <li>Tasa de abandono: Usuarios que abandonan antes de completar la acción.</li>
-                </ul>
-                
-                <h4>Umbrales Recomendados (Guías de Planificación):</h4>
-                <p>Nuestra planificación debe establecer umbrales específicos:</p>
-                <ol>
-                    <li>Tiempo de Tarea: Para acciones comunes (ej. llenar un formulario sencillo), el tiempo ideal es inferior a 1 o 2 minutos.</li>
-                    <li>Tasa de Abandono en Carrito (E-commerce): El promedio global es alto (60%-80%), pero una planificación debe buscar bajar del 70-75%.</li>
-                    <li>Tasa de Abandono en Formularios: Tasas superiores al 30% indican problemas graves de usabilidad o confusión.</li>
-                </ol>
+      <h2>Qué aprenderás en este tema</h2>
 
-                <h4>Umbrales según el Embudo de Conversión:</h4>
-                <p>La rigurosidad de los umbrales se ajusta a la fase del embudo de conversión:</p>
-                <ul>
-                    <li>TOFU (Atracción): Los umbrales de abandono son más flexibles (hasta 50-60%) porque el usuario solo explora.</li>
-                    <li>BOFU (Decisión): Aquí se exigen umbrales estrictos. El tiempo de tarea debe ser corto (menos de 2 minutos) y la tasa de abandono debe ser mínima (idealmente menos del 20%) en pasos críticos como el pago.</li>
-                </ul>
+      <p>
+        Aprenderás a definir los objetivos de una web,
+        identificar las necesidades de sus usuarios,
+        organizar la información y representar
+        las pantallas antes de programarlas.
+      </p>
 
-                <!-- Cuadro Resumen -->
-                <div class="cuadro-resumen">
-                    <h4>Cuadro Resumen: Métricas y Umbrales de Usabilidad</h4>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Métrica</th>
-                                <th>Definición</th>
-                                <th>Umbral de Planificación (BOFU)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Tasa de Éxito</td>
-                                <td>Porcentaje de tareas completadas.</td>
-                                <td>Objetivo alto (90%+).</td>
-                            </tr>
-                            <tr>
-                                <td>Tiempo de Tarea</td>
-                                <td>Duración para completar la tarea.</td>
-                                <td>Menos de 2 minutos (tareas sencillas).</td>
-                            </tr>
-                            <tr>
-                                <td>Tasa de Abandono (Carrito)</td>
-                                <td>Usuarios que abandonan el proceso de compra.</td>
-                                <td>Idealmente menos del 20%.</td>
-                            </tr>
-                            <tr>
-                                <td>Satisfacción (SUS/NPS)</td>
-                                <td>Percepción y agrado.</td>
-                                <td>Puntuación superior al 70%.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </details>
-        
-        
-        <!-- Test de Repaso: Planificación y Usabilidad (30 preguntas) -->
-        <div class="test-repaso">
-            <h3>Test de Repaso: Planificación y Usabilidad Web (30 Preguntas)</h3>
-            <p>Seleccione la opción correcta para cada pregunta. (La funcionalidad de autocorrección requiere JavaScript en un entorno real).</p>
-            <form id="test-planificacion">
-                
-                <!-- P16: Definición usabilidad (REPETIDA)-->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>1. Según la norma ISO 9241-11, la usabilidad se define por eficacia, eficiencia y:</p>
-                    <label class="opcion"><input type="radio" name="p16" value="a"> Diseño visual.</label><br>
-                    <label class="opcion"><input type="radio" name="p16" value="b"> Satisfacción.</label><br>
-                    <label class="opcion"><input type="radio" name="p16" value="c"> Velocidad de carga.</label>
-                    <div class="feedback"></div>
-                </div>
+      <p>
+        También conocerás las diferencias entre
+        bocetos, wireframes, maquetas y prototipos,
+        y realizarás una actividad guiada utilizando
+        papel, Penpot o Figma.
+      </p>
+    </section>
 
-                <!-- P17: Eficacia (REPETIDA)-->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>2. Dentro de la usabilidad, la Eficacia se refiere a:</p>
-                    <label class="opcion"><input type="radio" name="p17" value="a"> Capacidad para cumplir tareas con éxito.</label><br>
-                    <label class="opcion"><input type="radio" name="p17" value="b"> Rapidez con la que se completa una tarea.</label><br>
-                    <label class="opcion"><input type="radio" name="p17" value="c"> Grado de agrado después del uso.</label>
-                    <div class="feedback"></div>
-                </div>
-                
-                <!-- P18: UCD (REPETIDA)-->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>3. ¿Cuál es el proceso clave de la metodología de Diseño Centrado en el Usuario (UCD)?</p>
-                    <label class="opcion"><input type="radio" name="p18" value="a"> Diseño secuencial y lineal.</label><br>
-                    <label class="opcion"><input type="radio" name="p18" value="b"> Desarrollo basado únicamente en supuestos técnicos.</label><br>
-                    <label class="opcion"><input type="radio" name="p18" value="c"> Diseño iterativo (crear, probar y ajustar continuamente).</label>
-                    <div class="feedback"></div>
-                </div>
+    <!-- PROCESO DE PLANIFICACIÓN -->
 
-                <!-- P19: Relación Accesibilidad/Usabilidad (REPETIDA)-->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>4. ¿Cómo se relaciona la accesibilidad con la usabilidad?</p>
-                    <label class="opcion"><input type="radio" name="p20" value="a"> La accesibilidad es un requisito para la usabilidad inclusiva.</label><br>
-                    <label class="opcion"><input type="radio" name="p20" value="b"> Son conceptos totalmente independientes.</label><br>
-                    <label class="opcion"><input type="radio" name="p20" value="c"> La usabilidad solo se aplica a usuarios con discapacidad.</label>
-                    <div class="feedback"></div>
-                </div>
+    <section>
+      <h2>1. Las fases de planificación de una página web</h2>
 
-                <!-- P20: Enfoque Accesibilidad/Usabilidad (REPETIDA)-->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>5. Mientras la accesibilidad se enfoca en eliminar barreras técnicas y cognitivas, la usabilidad se enfoca en:</p>
-                    <label class="opcion"><input type="radio" name="p21" value="a"> El cumplimiento estricto de WCAG Nivel AAA.</label><br>
-                    <label class="opcion"><input type="radio" name="p21" value="b"> Facilitar tareas, navegación y comprensión para todos los usuarios.</label><br>
-                    <label class="opcion"><input type="radio" name="p21" value="c"> Priorizar el diseño estético sobre la funcionalidad.</label>
-                    <div class="feedback"></div>
-                </div>
+      <p>
+        Aunque cada proyecto puede utilizar una
+        metodología diferente, podemos organizar
+        la planificación en seis fases.
+      </p>
 
-                <!-- P21: Método cualitativo (REPETIDA)-->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>6. ¿Qué método de usabilidad implica que expertos revisen el sitio comparándolo con principios universales?</p>
-                    <label class="opcion"><input type="radio" name="p24" value="a"> Pruebas A/B.</label><br>
-                    <label class="opcion"><input type="radio" name="p24" value="b"> Evaluación heurística.</label><br>
-                    <label class="opcion"><input type="radio" name="p24" value="c"> Análisis de métricas web.</label>
-                    <div class="feedback"></div>
-                </div>
+      <h3>1.1. Definir el problema y los objetivos</h3>
 
-                <!-- P22: Requerimiento usuario (REPETIDA)-->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>7. ¿Qué tipo de requerimiento se refiere a criterios de calidad, rendimiento o usabilidad?</p>
-                    <label class="opcion"><input type="radio" name="p25" value="a"> Requerimiento funcional.</label><br>
-                    <label class="opcion"><input type="radio" name="p25" value="b"> Historia de usuario.</label><br>
-                    <label class="opcion"><input type="radio" name="p25" value="c"> Requerimiento no funcional.</label>
-                    <div class="feedback"></div>
-                </div>
+      <p>
+        Lo primero es comprender por qué necesitamos
+        crear la página y qué esperamos conseguir
+        con ella.
+      </p>
 
-                <!-- P23: Estructurar requerimientos (REPETIDA)-->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>8. Los perfiles semificticios que representan grupos de usuarios se denominan:</p>
-                    <label class="opcion"><input type="radio" name="p26" value="a"> Casos de uso.</label><br>
-                    <label class="opcion"><input type="radio" name="p26" value="b"> Personas.</label><br>
-                    <label class="opcion"><input type="radio" name="p26" value="c"> Historias de vida.</label>
-                    <div class="feedback"></div>
-                </div>
+      <p>
+        Por ejemplo, el objetivo de la web de una
+        biblioteca podría ser facilitar la consulta
+        de información y permitir realizar determinadas
+        gestiones sin desplazarse al edificio.
+      </p>
 
-                <!-- P24: Principio Diseño Conceptual (REPETIDA)-->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>9. El principio de diseño conceptual que exige que las opciones y acciones disponibles siempre estén claras y visibles es:</p>
-                    <label class="opcion"><input type="radio" name="p27" value="a"> Visibilidad.</label><br>
-                    <label class="opcion"><input type="radio" name="p27" value="b"> Sencillez.</label><br>
-                    <label class="opcion"><input type="radio" name="p27" value="c"> Flexibilidad.</label>
-                    <div class="feedback"></div>
-                </div>
+      <p>
+        Este objetivo es más útil que una instrucción
+        genérica como "crear una web moderna",
+        porque nos ayuda a decidir qué funciones
+        son realmente necesarias.
+      </p>
 
-                <!-- P25: Tipo de prototipo (REPETIDA)-->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>10. Los prototipos de baja fidelidad son comúnmente:</p>
-                    <label class="opcion"><input type="radio" name="p28" value="a"> Simulaciones digitales idénticas al producto final.</label><br>
-                    <label class="opcion"><input type="radio" name="p28" value="b"> Pruebas A/B con usuarios reales.</label><br>
-                    <label class="opcion"><input type="radio" name="p28" value="c"> Bocetos, wireframes o diagramas simples.</label>
-                    <div class="feedback"></div>
-                </div>
-                
-                <!-- P26: Pauta Usabilidad (REPETIDA)-->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>11. Para mejorar la usabilidad, en los formularios se recomienda:</p>
-                    <label class="opcion"><input type="radio" name="p29" value="a"> Evitar la retroalimentación inmediata.</label><br>
-                    <label class="opcion"><input type="radio" name="p29" value="b"> Usar ayudas contextuales (ejemplos, pistas).</label><br>
-                    <label class="opcion"><input type="radio" name="p29" value="c"> Depender solo de colores para indicar errores.</label>
-                    <div class="feedback"></div>
-                </div>
+      <div class="check">
+        <strong>Preguntas clave:</strong>
+        ¿Qué problema queremos resolver?
+        ¿Qué debe conseguir la persona que utiliza
+        la web? ¿Cómo sabremos si el proyecto
+        ha cumplido su objetivo?
+      </div>
 
-                <!-- P27: Métrica de usabilidad (REPETIDA)-->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>12. ¿Cuál de estas es una métrica clave en la evaluación de usabilidad?</p>
-                    <label class="opcion"><input type="radio" name="p30" value="a"> Tasa de éxito (porcentaje de tareas completadas correctamente).</label><br>
-                    <label class="opcion"><input type="radio" name="p30" value="b"> Densidad de código.</label><br>
-                    <label class="opcion"><input type="radio" name="p30" value="c"> Inversión publicitaria.</label>
-                    <div class="feedback"></div>
-                </div>
+      <h3>1.2. Conocer a las personas usuarias</h3>
 
-                <!-- P28: WCAG (NUEVA)-->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>13. ¿Cuál de los siguientes no es uno de los cuatro principios clave de la WCAG (Accesibilidad)?</p>
-                    <label class="opcion"><input type="radio" name="p31" value="a"> Operable.</label><br>
-                    <label class="opcion"><input type="radio" name="p31" value="b"> Robusto.</label><br>
-                    <label class="opcion"><input type="radio" name="p31" value="c"> Estético.</label>
-                    <div class="feedback"></div>
-                </div>
+      <p>
+        No todas las personas tienen los mismos
+        conocimientos, necesidades o formas
+        de utilizar la tecnología.
+      </p>
 
-                <!-- P29: Umbral tiempo (NUEVA)-->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>14. Para tareas comunes en sitios web, el tiempo de tarea ideal en usabilidad es generalmente inferior a:</p>
-                    <label class="opcion"><input type="radio" name="p32" value="a"> 5 minutos.</label><br>
-                    <label class="opcion"><input type="radio" name="p32" value="b"> 2 minutos.</label><br>
-                    <label class="opcion"><input type="radio" name="p32" value="c"> 30 minutos.</label>
-                    <div class="feedback"></div>
-                </div>
-                
-                <!-- P30: Umbral abandono (NUEVA)-->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>15. Una tasa de abandono en formularios de más del 30% típicamente indica:</p>
-                    <label class="opcion"><input type="radio" name="p33" value="a"> Problemas graves de usabilidad o confusión.</label><br>
-                    <label class="opcion"><input type="radio" name="p33" value="b"> Alta satisfacción del usuario.</label><br>
-                    <label class="opcion"><input type="radio" name="p33" value="c"> Un diseño robusto y accesible.</label>
-                    <div class="feedback"></div>
-                </div>
+      <p>
+        Para diseñar una web útil, conviene investigar
+        quiénes van a utilizarla y qué tareas
+        necesitan completar.
+      </p>
 
-                <!-- P31: Mala usabilidad (NUEVA)-->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>16. ¿Cuál es un fallo común de usabilidad citado en el caso del "Gates 'N Fences"?</p>
-                    <label class="opcion"><input type="radio" name="p34" value="a"> Alto cumplimiento WCAG AA.</label><br>
-                    <label class="opcion"><input type="radio" name="p34" value="b"> Usabilidad perfecta con móviles.</label><br>
-                    <label class="opcion"><input type="radio" name="p34" value="c"> Diseño obsoleto y sin jerarquía visual.</label>
-                    <div class="feedback"></div>
-                </div>
+      <p>
+        Podemos obtener información mediante
+        entrevistas, observación, cuestionarios
+        o conversaciones con personas relacionadas
+        con el servicio.
+      </p>
 
-                <!-- P32: Usabilidad española (NUEVA)-->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>17. ¿Qué porcentaje aproximado de webs españolas alcanzan el nivel AA exigido en accesibilidad?</p>
-                    <label class="opcion"><input type="radio" name="p35" value="a"> 75%.</label><br>
-                    <label class="opcion"><input type="radio" name="p35" value="b"> 27%.</label><br>
-                    <label class="opcion"><input type="radio" name="p35" value="c"> 90%.</label>
-                    <div class="feedback"></div>
-                </div>
+      <p>
+        En nuestra biblioteca podríamos identificar,
+        entre otras, estas necesidades:
+      </p>
 
-                <!-- P33: Flujo de Laura (NUEVA)-->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>18. En el caso de uso de "Laura" comprando zapatillas, un elemento clave del flujo es:</p>
-                    <label class="opcion"><input type="radio" name="p36" value="a"> Filtrar resultados por talla y marca.</label><br>
-                    <label class="opcion"><input type="radio" name="p36" value="b"> Leer el código fuente de la página.</label><br>
-                    <label class="opcion"><input type="radio" name="p36" value="c"> Ignorar el carrito y pagar directamente.</label>
-                    <div class="feedback"></div>
-                </div>
+      <ul>
+        <li>
+          Consultar los horarios y los datos
+          de contacto.
+        </li>
+        <li>
+          Buscar libros por título o autor.
+        </li>
+        <li>
+          Comprobar la disponibilidad de un libro.
+        </li>
+        <li>
+          Renovar un préstamo.
+        </li>
+        <li>
+          Utilizar la página desde un teléfono móvil.
+        </li>
+        <li>
+          Navegar con teclado o tecnologías de apoyo.
+        </li>
+      </ul>
 
-                <!-- P34: UX (NUEVA)-->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>19. La Experiencia de Usuario (UX) se diferencia de la usabilidad porque también abarca:</p>
-                    <label class="opcion"><input type="radio" name="p37" value="a"> La validación de HTML/CSS.</label><br>
-                    <label class="opcion"><input type="radio" name="p37" value="b"> La velocidad del servidor únicamente.</label><br>
-                    <label class="opcion"><input type="radio" name="p37" value="c"> Las emociones, percepciones y el contexto completo de interacción.</label>
-                    <div class="feedback"></div>
-                </div>
+      <div class="note">
+        <strong>Importante:</strong>
+        no debemos suponer que todas las personas
+        utilizan una web igual que nosotros.
+        Cuando sea posible, las decisiones deben
+        apoyarse en necesidades observadas
+        y no solamente en nuestras preferencias.
+      </div>
 
-                <!-- P35: Usabilidad e-commerce (NUEVA)-->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>20. ¿Qué sitio español es citado como ejemplo de buena usabilidad gracias a su navegación intuitiva y filtros claros?</p>
-                    <label class="opcion"><input type="radio" name="p38" value="a"> Spagnolo.</label><br>
-                    <label class="opcion"><input type="radio" name="p38" value="b"> Silbon.</label><br>
-                    <label class="opcion"><input type="radio" name="p38" value="c"> El Corte Inglés.</label>
-                    <div class="feedback"></div>
-                </div>
+      <h3>1.3. Recopilar y priorizar requisitos</h3>
 
-                <!-- P36: Métrica de satisfacción (NUEVA)-->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>21. ¿Qué herramienta se utiliza para medir la satisfacción y el agrado del usuario?</p>
-                    <label class="opcion"><input type="radio" name="p39" value="a"> System Usability Scale (SUS) o NPS.</label><br>
-                    <label class="opcion"><input type="radio" name="p39" value="b"> Tasa de éxito.</label><br>
-                    <label class="opcion"><input type="radio" name="p39" value="c"> Dificultad de aprendizaje.</label>
-                    <div class="feedback"></div>
-                </div>
+      <p>
+        Los requisitos describen qué debe permitir
+        hacer la web y qué condiciones debe cumplir.
+      </p>
 
-                <!-- P37: Abandono BOFU (NUEVA)-->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>22. En la etapa BOFU (Decisión) del embudo de conversión, el umbral de abandono ideal en pasos críticos debe ser:</p>
-                    <label class="opcion"><input type="radio" name="p40" value="a"> Superior al 50%.</label><br>
-                    <label class="opcion"><input type="radio" name="p40" value="b"> Mínimo (idealmente menos del 20%).</label><br>
-                    <label class="opcion"><input type="radio" name="p40" value="c"> Igual que en la etapa TOFU.</label>
-                    <div class="feedback"></div>
-                </div>
+      <p>
+        Podemos distinguir dos grandes tipos:
+      </p>
 
-                <!-- P38: Objetivo UCD (NUEVA)-->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>23. ¿Qué es uno de los objetivos principales de diseñar con casos de uso claros?</p>
-                    <label class="opcion"><input type="radio" name="p41" value="a"> Ignorar la retroalimentación del usuario.</label><br>
-                    <label class="opcion"><input type="radio" name="p41" value="b"> Añadir tantas funciones como sea posible.</label><br>
-                    <label class="opcion"><input type="radio" name="p41" value="c"> Prevenir problemas y construir flujos efectivos para tareas reales.</label>
-                    <div class="feedback"></div>
-                </div>
+      <div class="grid">
+        <article class="card">
+          <h3>Requisitos funcionales</h3>
+          <p>
+            Describen las funciones que necesita
+            el sistema.
+          </p>
+          <p>
+            Por ejemplo: buscar libros, mostrar
+            su disponibilidad o permitir
+            enviar una solicitud.
+          </p>
+        </article>
 
-                <!-- P39: Mala Usabilidad Española (NUEVA)-->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>24. Un problema de usabilidad común detectado en el sitio web de Renfe es:</p>
-                    <label class="opcion"><input type="radio" name="p42" value="a"> Formularios complejos y navegación por teclado deficiente.</label><br>
-                    <label class="opcion"><input type="radio" name="p42" value="b"> Uso de alto contraste y etiquetas ARIA impecables.</label><br>
-                    <label class="opcion"><input type="radio" name="p42" value="c"> Navegación con menú visible y estructurado.</label>
-                    <div class="feedback"></div>
-                </div>
+        <article class="card">
+          <h3>Requisitos no funcionales</h3>
+          <p>
+            Describen características de calidad
+            o condiciones de funcionamiento.
+          </p>
+          <p>
+            Por ejemplo: accesibilidad,
+            adaptación a móviles, rendimiento,
+            seguridad y facilidad de uso.
+          </p>
+        </article>
+      </div>
 
-                <!-- P40: Puntos críticos planificación (NUEVA)-->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>25. La planificación de la usabilidad debe poner énfasis en establecer umbrales más estrictos en:</p>
-                    <label class="opcion"><input type="radio" name="p43" value="a"> Páginas de blog (TOFU).</label><br>
-                    <label class="opcion"><input type="radio" name="p43" value="b"> Formularios de registro y procesos de pago (BOFU).</label><br>
-                    <label class="opcion"><input type="radio" name="p43" value="c"> Páginas de "Acerca de nosotros".</label>
-                    <div class="feedback"></div>
-                </div>
+      <p>
+        No todos los requisitos tienen la misma
+        prioridad. Debemos distinguir las funciones
+        imprescindibles para la primera versión
+        de aquellas que podrían incorporarse
+        más adelante.
+      </p>
 
-                <!-- P41: Diseño conceptual (NUEVA)-->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>26. ¿Qué implica el principio de "Retroalimentación" en el diseño conceptual?</p>
-                    <label class="opcion"><input type="radio" name="p44" value="a"> Usar solo texto estático.</label><br>
-                    <label class="opcion"><input type="radio" name="p44" value="b"> Evitar mensajes de error.</label><br>
-                    <label class="opcion"><input type="radio" name="p44" value="c"> Proporcionar una respuesta perceptible al usuario tras una acción.</label>
-                    <div class="feedback"></div>
-                </div>
+      <h3>1.4. Organizar el contenido y la navegación</h3>
 
-                <!-- P42: Consecuencia de no planificar (NUEVA)-->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>27. ¿Cuál es la principal consecuencia en el negocio de un proceso de pago con mala usabilidad?</p>
-                    <label class="opcion"><input type="radio" name="p45" value="a"> Disminución de la confianza y de las conversiones.</label><br>
-                    <label class="opcion"><input type="radio" name="p45" value="b"> Aumento de la fidelidad sin necesidad de soporte.</label><br>
-                    <label class="opcion"><input type="radio" name="p45" value="c"> Reducción de la tasa de abandono.</label>
-                    <div class="feedback"></div>
-                </div>
+      <p>
+        Una vez conocidas las necesidades,
+        debemos decidir cómo se organizarán
+        las páginas, los contenidos y las opciones
+        de navegación.
+      </p>
 
-                <!-- P43: Accesibilidad WCAG (NUEVA)-->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>28. Si un sitio web utiliza colores monótonos y sin contraste, está fallando en el principio WCAG de:</p>
-                    <label class="opcion"><input type="radio" name="p46" value="a"> Operable.</label><br>
-                    <label class="opcion"><input type="radio" name="p46" value="b"> Perceptible.</label><br>
-                    <label class="opcion"><input type="radio" name="p46" value="c"> Robusto.</label>
-                    <div class="feedback"></div>
-                </div>
+      <p>
+        Esta tarea se relaciona con la
+        <strong>arquitectura de la información</strong>,
+        que estudia cómo estructurar y conectar
+        la información para que resulte fácil
+        de encontrar.
+      </p>
 
-                <!-- P44: Rol de Personas (NUEVA)-->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>29. ¿Para qué se utiliza principalmente el perfil de "Persona" en la planificación UCD?</p>
-                    <label class="opcion"><input type="radio" name="p47" value="a"> Para generar código automáticamente.</label><br>
-                    <label class="opcion"><input type="radio" name="p47" value="b"> Para documentar errores técnicos de código.</label><br>
-                    <label class="opcion"><input type="radio" name="p47" value="c"> Para orientar la estrategia, el diseño y los mensajes hacia las necesidades del cliente ideal.</label>
-                    <div class="feedback"></div>
-                </div>
+      <h3>1.5. Representar las pantallas</h3>
 
-                <!-- P45: Propósito de métricas (NUEVA)-->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>30. El uso de múltiples métricas de usabilidad (eficacia, eficiencia, satisfacción) permite:</p>
-                    <label class="opcion"><input type="radio" name="p48" value="a"> Evaluar la usabilidad de forma holística, identificando fallas y validando soluciones.</label><br>
-                    <label class="opcion"><input type="radio" name="p48" value="b"> Determinar únicamente la velocidad de carga.</label><br>
-                    <label class="opcion"><input type="radio" name="p48" value="c"> Sustituir completamente las pruebas con usuarios reales.</label>
-                    <div class="feedback"></div>
-                </div>
-                
-                <button type="button" class="btn-corregir" onclick="corregirTest('test-planificacion', 30)">Corregir Test de Planificación</button>
-            </form>
-        </div>
-    </div>
-    
-    <!-- Script necesario para la autocorrección y retroalimentación -->
-    <script>
-        function corregirTest(testId, totalQuestions) {
-            const form = document.getElementById(testId);
-            const questions = form.querySelectorAll('.pregunta');
-            let correctCount = 0;
+      <p>
+        Antes de programar podemos dibujar
+        cómo se distribuirán los elementos
+        principales de cada pantalla.
+      </p>
 
-            questions.forEach((q, index) => {
-                const feedback = q.querySelector('.feedback');
-                const selected = q.querySelector('input:checked');
-                const correctAnswer = q.getAttribute('data-correct-answer');
-                const questionNumber = index + 1;
+      <p>
+        No necesitamos empezar por una interfaz
+        visual perfecta. Es preferible comprobar
+        primero si la estructura y el recorrido
+        tienen sentido.
+      </p>
 
-                feedback.style.display = 'block';
-                feedback.classList.remove('correcto', 'incorrecto');
-                
-                if (selected && selected.value === correctAnswer) {
-                    feedback.classList.add('correcto');
-                    feedback.innerHTML = `¡Correcto! Pregunta ${questionNumber}.`;
-                    correctCount++;
-                } else {
-                    feedback.classList.add('incorrecto');
-                    feedback.innerHTML = `Incorrecto. Pregunta ${questionNumber}. La respuesta correcta es: ${correctAnswer}.`;
-                }
-            });
+      <h3>1.6. Probar, corregir y preparar el desarrollo</h3>
 
-            alert(`Test completado. Puntuación: ${correctCount} de ${totalQuestions}.`);
-        }
-    </script>
+      <p>
+        Con las pantallas representadas,
+        podemos simular tareas y observar
+        si la navegación resulta comprensible.
+      </p>
+
+      <p>
+        Si descubrimos que una persona no sabe
+        dónde buscar un libro, podemos cambiar
+        el menú o la organización del contenido
+        antes de escribir el código definitivo.
+      </p>
+
+      <div class="check">
+        <strong>Secuencia de trabajo:</strong>
+        definir objetivos → conocer usuarios →
+        recopilar requisitos → organizar contenidos →
+        representar pantallas → probar y mejorar.
+      </div>
+    </section>
+
+    <!-- ARQUITECTURA DE INFORMACIÓN -->
+
+    <section>
+      <h2>2. Arquitectura de la información: organizar antes de diseñar</h2>
+
+      <p>
+        La arquitectura de la información permite
+        decidir qué contenidos tendrá un sitio web,
+        cómo se agruparán y de qué manera podrán
+        encontrarlos las personas.
+      </p>
+
+      <p>
+        Un error habitual consiste en diseñar
+        el menú pensando únicamente en la organización
+        interna de una empresa, sin tener en cuenta
+        qué buscan sus visitantes.
+      </p>
+
+      <p>
+        Por ejemplo, una biblioteca podría organizar
+        sus apartados según departamentos internos.
+        Sin embargo, para muchas personas sería
+        más sencillo encontrar opciones como
+        "Catálogo", "Horarios" o "Mi cuenta".
+      </p>
+
+      <h3>Ejemplo de estructura de una biblioteca</h3>
+
+      <table>
+        <caption>
+          Propuesta inicial de arquitectura de información
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Sección</th>
+            <th scope="col">Contenido o función</th>
+            <th scope="col">Necesidad que resuelve</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Inicio</th>
+            <td>
+              Presentación, información destacada
+              y acceso a tareas frecuentes.
+            </td>
+            <td>
+              Orientarse y comenzar una tarea.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Catálogo</th>
+            <td>
+              Buscador y listado de libros.
+            </td>
+            <td>
+              Encontrar una publicación.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Mi cuenta</th>
+            <td>
+              Préstamos y renovaciones.
+            </td>
+            <td>
+              Consultar y gestionar préstamos.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Horarios</th>
+            <td>
+              Horarios de apertura y servicios.
+            </td>
+            <td>
+              Planificar una visita.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Contacto</th>
+            <td>
+              Dirección, teléfono
+              y formulario de consulta.
+            </td>
+            <td>
+              Comunicarse con la biblioteca.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Arquitectura de información y jerarquía visual</h3>
+
+      <p>
+        Aunque están relacionadas, no debemos
+        confundirlas.
+      </p>
+
+      <p>
+        La <strong>arquitectura de información</strong>
+        decide qué contenidos existen, cómo se agrupan
+        y cómo se conectan.
+      </p>
+
+      <p>
+        La <strong>jerarquía visual</strong> ayuda
+        a mostrar qué elementos son más importantes
+        dentro de una pantalla mediante su posición,
+        tamaño, espaciado y presentación.
+      </p>
+
+      <p>
+        Por ejemplo, podemos situar el buscador
+        del catálogo en una posición destacada
+        porque es una de las tareas principales
+        de los visitantes.
+      </p>
+
+      <div class="check">
+        <strong>Comprueba:</strong>
+        ¿una persona puede identificar dónde está,
+        qué puede hacer y dónde encontrará
+        la información que necesita?
+      </div>
+    </section>
+
+    <!-- BOCETOS Y PROTOTIPOS -->
+
+    <section>
+      <h2>3. Del boceto al prototipo: representar una web</h2>
+
+      <p>
+        Durante la planificación utilizamos
+        diferentes representaciones para
+        mostrar cómo será la web.
+      </p>
+
+      <p>
+        No todas tienen el mismo grado de detalle
+        ni cumplen la misma función.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Boceto</h3>
+          <p>
+            Es un dibujo rápido y sencillo
+            de una idea. Puede realizarse
+            en papel y no necesita medidas
+            exactas ni un acabado visual.
+          </p>
+          <p>
+            Sirve para explorar distintas
+            maneras de organizar la página.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Wireframe</h3>
+          <p>
+            Es un esquema que representa
+            la estructura de una pantalla,
+            la ubicación de sus elementos
+            y la prioridad del contenido.
+          </p>
+          <p>
+            Normalmente utiliza formas simples,
+            textos de ejemplo y pocos detalles
+            decorativos.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Maqueta visual</h3>
+          <p>
+            Representa el aspecto previsto
+            de la interfaz, incorporando
+            decisiones sobre colores,
+            tipografía, imágenes y espaciado.
+          </p>
+          <p>
+            Ayuda a valorar la coherencia
+            visual antes de desarrollar.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Prototipo interactivo</h3>
+          <p>
+            Permite simular cómo se pasa
+            de una pantalla a otra o qué
+            sucede al activar determinados
+            elementos.
+          </p>
+          <p>
+            Sirve para probar recorridos
+            y descubrir dificultades
+            antes de programar.
+          </p>
+        </article>
+      </div>
+
+      <h3>Ejemplo: diseñar la búsqueda de libros</h3>
+
+      <p>
+        Supongamos que queremos crear una página
+        donde los visitantes puedan buscar libros.
+      </p>
+
+      <p>
+        Primero podemos dibujar un boceto
+        con un título, un campo de búsqueda
+        y una zona de resultados.
+      </p>
+
+      <p>
+        Después construiremos un wireframe
+        para decidir el orden y la distribución
+        de esos elementos.
+      </p>
+
+      <p>
+        Más adelante podemos crear una maqueta
+        visual con tipografía, colores y estilos
+        coherentes con el resto de la biblioteca.
+      </p>
+
+      <p>
+        Por último, conectaremos las pantallas
+        para simular qué ocurre cuando una persona
+        realiza una búsqueda y selecciona un libro.
+      </p>
+
+      <div class="note">
+        <strong>Importante:</strong>
+        un prototipo interactivo no es necesariamente
+        una página web funcional. Puede simular
+        el recorrido sin disponer todavía
+        de HTML, CSS, JavaScript ni conexión
+        con una base de datos.
+      </div>
+    </section>
+
+    <!-- HERRAMIENTAS -->
+
+    <section>
+      <h2>4. Herramientas de diseño: Penpot y Figma</h2>
+
+      <p>
+        Para crear wireframes, maquetas y prototipos
+        podemos utilizar herramientas especializadas.
+        Dos opciones conocidas son Penpot y Figma.
+      </p>
+
+      <p>
+        No es imprescindible dominar ambas.
+        Para comenzar, basta con elegir una
+        y aprender sus funciones básicas.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Penpot</h3>
+
+          <p>
+            Penpot es una herramienta de diseño
+            de interfaces y prototipado
+            basada en tecnologías abiertas.
+          </p>
+
+          <p>
+            Permite crear pantallas, colocar
+            textos y formas, reutilizar
+            componentes y conectar vistas
+            para simular recorridos.
+          </p>
+
+          <p>
+            <a href="https://penpot.app/"
+               target="_blank"
+               rel="noopener noreferrer">
+              Acceder a Penpot
+            </a>
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Figma</h3>
+
+          <p>
+            Figma es una plataforma de diseño
+            de interfaces que permite crear
+            pantallas, utilizar componentes,
+            colaborar y desarrollar
+            prototipos interactivos.
+          </p>
+
+          <p>
+            También puede utilizarse para
+            compartir propuestas y revisar
+            los recorridos antes del desarrollo.
+          </p>
+
+          <p>
+            <a href="https://www.figma.com/"
+               target="_blank"
+               rel="noopener noreferrer">
+              Acceder a Figma
+            </a>
+          </p>
+        </article>
+      </div>
+
+      <h3>¿Qué funciones necesitas aprender primero?</h3>
+
+      <p>
+        Aunque los nombres de las opciones
+        pueden variar entre herramientas
+        y versiones, las operaciones esenciales
+        son similares.
+      </p>
+
+      <ol>
+        <li>
+          <strong>Crear un archivo o proyecto:</strong>
+          será el espacio donde guardarás
+          las pantallas de la web.
+        </li>
+        <li>
+          <strong>Crear una pantalla:</strong>
+          utiliza un marco o mesa de trabajo
+          con el tamaño aproximado
+          del dispositivo elegido.
+        </li>
+        <li>
+          <strong>Insertar formas:</strong>
+          representa cabeceras, menús,
+          tarjetas y botones.
+        </li>
+        <li>
+          <strong>Añadir textos:</strong>
+          utiliza nombres reales y comprensibles,
+          como "Buscar libro" o "Ver detalles".
+        </li>
+        <li>
+          <strong>Organizar elementos:</strong>
+          alinea los bloques y mantén
+          espacios coherentes.
+        </li>
+        <li>
+          <strong>Conectar pantallas:</strong>
+          utiliza las funciones de prototipado
+          para simular una navegación.
+        </li>
+        <li>
+          <strong>Probar el recorrido:</strong>
+          ejecuta la vista de presentación
+          o prototipo y comprueba
+          que la secuencia tiene sentido.
+        </li>
+      </ol>
+
+      <div class="check">
+        <strong>Consejo:</strong>
+        empieza con un wireframe sencillo.
+        No pierdas tiempo escogiendo colores
+        o efectos visuales antes de comprobar
+        que el contenido y las tareas
+        están bien organizados.
+      </div>
+    </section>
+
+    <!-- ACTIVIDAD GUIADA -->
+
+    <section class="activity">
+      <h2>5. Actividad guiada: planifica una web de biblioteca</h2>
+
+      <p>
+        Vamos a aplicar los conocimientos
+        anteriores mediante un proyecto sencillo.
+        No necesitas saber programar para
+        realizar esta actividad.
+      </p>
+
+      <h3>Objetivo</h3>
+
+      <p>
+        Diseñar la estructura inicial de una
+        biblioteca digital y crear un prototipo
+        que permita simular la búsqueda
+        de un libro.
+      </p>
+
+      <h3>Material necesario</h3>
+
+      <ul>
+        <li>Papel y lápiz para el boceto inicial.</li>
+        <li>Un navegador web.</li>
+        <li>Penpot o Figma, a tu elección.</li>
+      </ul>
+
+      <h3>Paso 1. Define el objetivo</h3>
+
+      <p>
+        Escribe una frase que explique
+        para qué servirá la página.
+      </p>
+
+      <p>
+        <strong>Ejemplo:</strong>
+        "Crear una web que permita consultar
+        el catálogo de una biblioteca
+        y encontrar información sobre libros".
+      </p>
+
+      <h3>Paso 2. Identifica las tareas</h3>
+
+      <p>
+        Piensa qué necesitan hacer
+        sus visitantes.
+      </p>
+
+      <p>
+        Para esta práctica trabajaremos
+        con tres tareas:
+      </p>
+
+      <ul>
+        <li>Acceder al catálogo.</li>
+        <li>Buscar un libro por título.</li>
+        <li>Consultar sus detalles.</li>
+      </ul>
+
+      <h3>Paso 3. Diseña la navegación</h3>
+
+      <p>
+        Propón un menú sencillo:
+      </p>
+
+      <p>
+        <strong>Inicio · Catálogo · Horarios · Contacto</strong>
+      </p>
+
+      <p>
+        Comprueba si los nombres resultan
+        comprensibles y si las tareas principales
+        tienen una ubicación lógica.
+      </p>
+
+      <h3>Paso 4. Dibuja un boceto en papel</h3>
+
+      <p>
+        Representa la portada utilizando
+        únicamente rectángulos y textos.
+      </p>
+
+      <p>
+        Debe incluir:
+      </p>
+
+      <ol>
+        <li>Nombre de la biblioteca.</li>
+        <li>Menú principal.</li>
+        <li>Título de la página.</li>
+        <li>Buscador de libros.</li>
+        <li>Acceso a información destacada.</li>
+      </ol>
+
+      <p>
+        No es necesario que el dibujo
+        resulte atractivo. Lo importante
+        es la organización.
+      </p>
+
+      <h3>Paso 5. Crea el wireframe digital</h3>
+
+      <p>
+        Abre Penpot o Figma y crea
+        un nuevo archivo.
+      </p>
+
+      <ol>
+        <li>
+          Crea una pantalla de tamaño móvil,
+          por ejemplo, de 390 píxeles de ancho.
+        </li>
+        <li>
+          Añade un bloque para la cabecera.
+        </li>
+        <li>
+          Escribe el nombre de la biblioteca.
+        </li>
+        <li>
+          Representa el menú.
+        </li>
+        <li>
+          Añade el título "Buscar libros".
+        </li>
+        <li>
+          Dibuja un campo de búsqueda
+          y un botón "Buscar".
+        </li>
+        <li>
+          Añade una zona para mostrar resultados.
+        </li>
+      </ol>
+
+      <p>
+        Utiliza formas sencillas.
+        Todavía no necesitas fotografías,
+        ilustraciones ni colores definitivos.
+      </p>
+
+      <h3>Paso 6. Crea una segunda pantalla</h3>
+
+      <p>
+        Diseña una pantalla para mostrar
+        los resultados de una búsqueda.
+      </p>
+
+      <p>
+        Puedes incluir dos libros de ejemplo,
+        con título, autor y una opción
+        "Ver detalles".
+      </p>
+
+      <p>
+        Después crea una tercera pantalla
+        con la ficha de uno de esos libros:
+        título, autor, descripción breve
+        y un enlace para volver al catálogo.
+      </p>
+
+      <h3>Paso 7. Conecta las pantallas</h3>
+
+      <p>
+        Utiliza las funciones de prototipado
+        de la herramienta elegida.
+      </p>
+
+      <p>
+        Crea al menos estas conexiones:
+      </p>
+
+      <ol>
+        <li>
+          El botón "Buscar" conduce
+          a la pantalla de resultados.
+        </li>
+        <li>
+          La opción "Ver detalles"
+          conduce a la ficha del libro.
+        </li>
+        <li>
+          La opción "Volver al catálogo"
+          permite regresar.
+        </li>
+      </ol>
+
+      <p>
+        No necesitas implementar una búsqueda
+        real: estamos simulando
+        el recorrido de una persona.
+      </p>
+
+      <h3>Paso 8. Prueba tu prototipo</h3>
+
+      <p>
+        Abre la vista de presentación
+        y recorre las tres pantallas.
+      </p>
+
+      <p>
+        Si es posible, pide a otra persona
+        que intente encontrar un libro
+        sin darle instrucciones adicionales.
+      </p>
+
+      <p>
+        Observa si entiende dónde comenzar,
+        qué debe seleccionar y cómo regresar.
+      </p>
+
+      <p>
+        Esta prueba permite revisar la claridad
+        del recorrido. No demuestra todavía
+        que la futura implementación HTML
+        cumpla los requisitos de accesibilidad.
+      </p>
+
+      <h3>Paso 9. Revisa y mejora</h3>
+
+      <p>
+        Si una opción resulta difícil
+        de encontrar, modifica su ubicación,
+        su nombre o la organización
+        de la pantalla.
+      </p>
+
+      <p>
+        Al incorporar colores y estilos
+        en una fase posterior, revisa también
+        su legibilidad y contraste.
+      </p>
+
+      <h3>Resultado esperado</h3>
+
+      <p>
+        Al finalizar debes disponer de:
+      </p>
+
+      <ul>
+        <li>
+          Una descripción breve del objetivo.
+        </li>
+        <li>
+          Un boceto inicial.
+        </li>
+        <li>
+          Tres pantallas digitales:
+          búsqueda, resultados y ficha.
+        </li>
+        <li>
+          Un recorrido interactivo
+          entre las pantallas.
+        </li>
+        <li>
+          Una mejora realizada después
+          de revisar el prototipo.
+        </li>
+      </ul>
+
+      <div class="note">
+        <strong>Qué debes comprobar:</strong>
+        el prototipo permite comenzar
+        una búsqueda, consultar la ficha
+        de un libro y regresar
+        sin perder la orientación.
+      </div>
+    </section>
+
+    <!-- PASO AL DESARROLLO -->
+
+    <section>
+      <h2>6. Del prototipo al desarrollo web</h2>
+
+      <p>
+        Cuando hemos comprobado que la estructura
+        y los recorridos tienen sentido,
+        podemos comenzar a implementar
+        la página mediante HTML, CSS
+        y, cuando sea necesario, JavaScript.
+      </p>
+
+      <p>
+        El prototipo es una referencia
+        de cómo queremos organizar la interfaz,
+        pero no sustituye al desarrollo.
+      </p>
+
+      <p>
+        Durante la implementación debemos
+        comprobar aspectos que un prototipo
+        visual puede no representar correctamente:
+      </p>
+
+      <ul>
+        <li>
+          Uso adecuado de etiquetas HTML semánticas.
+        </li>
+        <li>
+          Navegación mediante teclado.
+        </li>
+        <li>
+          Foco visible.
+        </li>
+        <li>
+          Etiquetas y mensajes de formularios.
+        </li>
+        <li>
+          Adaptación a distintos tamaños de pantalla.
+        </li>
+        <li>
+          Compatibilidad con tecnologías de apoyo.
+        </li>
+      </ul>
+
+      <p>
+        Por ejemplo, un rectángulo que representa
+        un botón en el prototipo deberá
+        convertirse en un elemento HTML
+        adecuado cuando programemos
+        la interfaz.
+      </p>
+
+      <p>
+        También puede ser necesario ajustar
+        el diseño inicial si las pruebas reales
+        muestran dificultades que no habíamos
+        detectado durante el prototipado.
+      </p>
+
+      <div class="check">
+        <strong>Conclusión:</strong>
+        el proceso no termina al comenzar
+        a programar. Diseñamos, probamos,
+        desarrollamos, evaluamos y mejoramos.
+        Cada fase aporta información útil
+        para la siguiente.
+      </div>
+
+      <p>
+        En el próximo tema trabajaremos
+        las decisiones de diseño visual,
+        la jerarquía, la tipografía
+        y la adaptación de interfaces
+        a diferentes dispositivos.
+      </p>
+    </section>
+
+    <!-- AUTOEVALUACIÓN -->
+
+    <section>
+      <h2>7. Autoevaluación</h2>
+
+      <p>
+        Comprueba si has comprendido
+        para qué sirve planificar
+        y prototipar antes de programar.
+      </p>
+
+      <form class="quiz" data-quiz>
+        <fieldset
+          data-answer="a"
+          data-explain="Un prototipo permite simular recorridos, revisar la organización y detectar posibles problemas de uso antes de desarrollar la interfaz.">
+
+          <legend>
+            ¿Para qué sirve principalmente
+            un prototipo inicial?
+          </legend>
+
+          <label>
+            <input type="radio" name="q1" value="a">
+            Para probar estructura y navegación
+            antes de programar.
+          </label>
+
+          <label>
+            <input type="radio" name="q1" value="b">
+            Para certificar WCAG automáticamente.
+          </label>
+
+          <p class="feedback"></p>
+        </fieldset>
+
+        <button type="button">Corregir</button>
+
+        <p class="result"
+           role="status"
+           aria-live="polite"
+           tabindex="-1"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    Planificar es una forma de eliminar
+    barreras antes de crearlas.
+  </footer>
 </body>
 </html>
-```

@@ -1,544 +1,1558 @@
+
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lección — Modelos de diseño web + inspiración + checklist previa (UF1841)</title>
-  <meta name="description" content="Modelos de diseño web con ejemplos, patrones visuales, principios de desarrollo y 10 preguntas clave antes de empezar a programar." />
-  <style>
-    :root{
-      --color-brand:#0d47a1;        /* azul principal */
-      --color-brand-2:#1976d2;      /* azul claro */
-      --color-ink:#1a1a1a;          /* textos */
-      --color-muted:#555;
-      --color-bg:#f9f9f9;
-      --color-surface:#ffffff;
-      --color-accent:#90caf9;       /* azul suave */
-      --radius:16px;
-      --shadow:0 6px 18px rgba(0,0,0,.08);
-      --max:1100px;
-    }
-    html{scroll-behavior:smooth}
-    body{
-      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Helvetica,Arial,sans-serif;
-      color:var(--color-ink); background:var(--color-bg); line-height:1.6;
-    }
-    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;background:#000;color:#fff;padding:.5rem 1rem;border-radius:.5rem;z-index:1000}
-    a{color:var(--color-brand)}
-    a:focus, button:focus, [href]:focus{outline:3px solid var(--color-brand-2); outline-offset:2px}
-    @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
-
-    header{
-      background:linear-gradient(90deg,var(--color-brand),var(--color-brand-2));
-      color:#fff; padding:2.5rem 1rem 1.5rem; position:relative
-    }
-    .wrap{max-width:var(--max); margin-inline:auto; padding-inline:1rem}
-    nav{display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1rem}
-    nav a{display:inline-block; padding:.5rem .8rem; border-radius:999px; background:rgba(255,255,255,.15); color:#fff; text-decoration:none}
-    nav a:hover{background:rgba(255,255,255,.25)}
-
-    h1{font-size:clamp(1.6rem, 2.5vw + 1rem, 2.6rem); margin:.25rem 0}
-    .subtitle{opacity:.9; max-width:65ch}
-
-    main{padding-block:2rem}
-    section{margin:2rem 0; background:var(--color-surface); border-radius:var(--radius); box-shadow:var(--shadow)}
-    section > header{background:transparent; color:inherit; padding:1.25rem 1.25rem .5rem; box-shadow:none}
-    section .content{padding:1rem 1.25rem 1.25rem}
-
-    .grid{display:grid; gap:1rem}
-    .grid.cards{grid-template-columns:repeat(auto-fit, minmax(260px, 1fr))}
-    .card{background:#fff; border:1px solid #ddd; border-radius:12px; padding:1rem; box-shadow:var(--shadow); display:flex; flex-direction:column}
-    .card h3{margin:.25rem 0 .5rem}
-    .eyebrow{font-size:.8rem; letter-spacing:.04em; color:var(--color-muted); text-transform:uppercase}
-
-    ol.check{counter-reset: step}
-    ol.check > li{list-style:none; position:relative; padding-left:2.5rem; margin:.9rem 0}
-    ol.check > li::before{counter-increment: step; content:counter(step); position:absolute; left:0; top:.15rem; width:2rem; height:2rem; display:grid; place-items:center; background:var(--color-brand); color:#fff; border-radius:50%; font-weight:700}
-
-    footer{padding:2rem 1rem; text-align:center; color:var(--color-muted)}
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Manual didáctico de diseño web: jerarquía visual, tipografía, colores, diseño responsive, mobile-first, Flexbox, CSS Grid y componentes reutilizables."
+  >
+  <title>Diseño web | Manual de UX y accesibilidad</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="manual.js" defer></script>
+  <link rel="icon" href="favicon.png" type="image/x-icon">
 </head>
+
 <body>
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
-  <header>
-    <div class="wrap">
-      <h1>Modelos y principios del diseño web</h1>
-      <p class="subtitle">UF1841 — Estilos de diseño, patrones visuales, principios de desarrollo web y preguntas clave antes de programar.</p>
-      <nav>
-            <a href="index.html">Accesibilidad Web</a>
-            <a href="usabilidad.html">Usabilidad Web</a>
-            <a href="practico.html">Planificación</a>
-             <a href="diseñoweb.html">Diseño Web</a>
-            <a href="desarrollo.html">Referencias y Código</a>
-           
-        </nav>
-    </div>
-  </header>
+  <a class="skip-link" href="#contenido">
+    Saltar al contenido
+  </a>
 
-  <main id="contenido" class="wrap">
-
-    <section id="modelos">
   <header>
-    <h2>Modelos de diseño web</h2>
-  </header>
-  <div class="content">
-    <p>
-      Los <strong>modelos de diseño</strong> son enfoques estéticos y funcionales que orientan la experiencia del usuario.
-      Cada uno transmite un estilo, una intención y una forma diferente de jerarquizar la información.
+    <p class="eyebrow">
+      Manual de UX, usabilidad y accesibilidad
     </p>
-
-    <div class="grid cards">
-      <!-- Minimalista -->
-      <article class="card">
-        <h3>Minimalista</h3>
-        <p>
-          Usa espacios amplios, tipografía limpia y pocos colores. Ideal para transmitir orden y elegancia.
-        </p>
-        <ul>
-          <li><a href="https://www.apple.com" target="_blank">Apple</a> — claridad, balance y uso magistral del blanco.</li>
-          <li><a href="https://www.superlist.com/" target="_blank">Superlist</a> — simplicidad con microanimaciones.</li>
-        </ul>
-      </article>
-
-      <!-- Material Design -->
-      <article class="card">
-        <h3>Material Design</h3>
-        <p>
-          Propone profundidad y movimiento a través de capas, sombras y transiciones coherentes. Desarrollado por Google.
-        </p>
-        <ul>
-          <li><a href="https://material.io/" target="_blank">Material.io</a> — guía oficial.</li>
-          <li><a href="https://store.google.com/" target="_blank">Google Store</a> — ejemplo aplicado al e-commerce.</li>
-        </ul>
-      </article>
-
-      <!-- Brutalista -->
-      <article class="card">
-        <h3>Brutalista</h3>
-        <p>
-          Contrastes extremos, tipografía grande, estética deliberadamente cruda. Muy usado en diseño experimental y portafolios artísticos.
-        </p>
-        <ul>
-          <li><a href="https://brutalistwebsites.com/" target="_blank">Brutalist Websites</a> — galería dedicada al estilo.</li>
-          <li><a href="https://theoutline.com/" target="_blank">The Outline</a> — ejemplo de brutalismo editorial.</li>
-        </ul>
-      </article>
-
-      <!-- Editorial -->
-      <article class="card">
-        <h3>Editorial</h3>
-        <p>
-          Basado en maquetaciones de revistas: ritmo vertical, rejillas tipográficas, fotografías grandes y jerarquía textual.
-        </p>
-        <ul>
-          <li><a href="https://www.nationalgeographic.com/" target="_blank">National Geographic</a> — narrativa visual fuerte.</li>
-          <li><a href="https://www.smashingmagazine.com/" target="_blank">Smashing Magazine</a> — estructura editorial moderna.</li>
-        </ul>
-      </article>
-
-      <!-- Neumorfismo -->
-      <article class="card">
-        <h3>Neumorfismo</h3>
-        <p>
-          Emplea sombras suaves y relieves para simular botones físicos. Aporta textura, pero exige cuidado con el contraste.
-        </p>
-        <ul>
-          <li><a href="https://dribbble.com/tags/neumorphism" target="_blank">Dribbble — inspiración neumórfica</a></li>
-          <li><a href="https://uimovement.com/ui/neumorphism/" target="_blank">UI Movement — ejemplos reales</a></li>
-        </ul>
-      </article>
-
-      <!-- Extra: Glassmorfismo -->
-      <article class="card">
-        <h3>Glassmorfismo</h3>
-        <p>
-          Derivado del neumorfismo, utiliza efectos de transparencia y desenfoque tipo vidrio esmerilado.
-          Muy usado en dashboards y portafolios.
-        </p>
-        <ul>
-          <li><a href="https://dribbble.com/tags/glassmorphism" target="_blank">Dribbble — glassmorphism</a></li>
-          <li><a href="https://uxdesign.cc/glassmorphism-in-user-interfaces-1f39bb1308c9" target="_blank">Artículo UX Design</a></li>
-        </ul>
-      </article>
-    </div>
-  </div>
-  
-<!-- Responsive / Mobile-first -->
-<article class="card" aria-labelledby="responsive">
-<h3 id="responsive">Mobile‑first / Responsive</h3>
-<p>Prioriza móvil, escala a escritorio con breakpoints y rejillas fluidas.</p>
-<ul>
-<li><a href="https://www.spotify.com" target="_blank" rel="noopener">Spotify</a> — Navegación y tipografía adaptadas.</li>
-<li><a href="https://slack.com" target="_blank" rel="noopener">Slack</a> — Jerarquía consistente entre dispositivos.</li>
-<li><a href="https://www.figma.com" target="_blank" rel="noopener">Figma</a> — Coherencia web ↔ móvil.</li>
-</ul>
-</article>
-
-
-<!-- Asimétrico / Experimental -->
-<article class="card" aria-labelledby="asimetrico">
-<h3 id="asimetrico">Asimétrico / Experimental</h3>
-<p>Rompe la rejilla tradicional con propósito (marca, narrativa, emoción).</p>
-<ul>
-<li><a href="https://brutalistwebsites.com/" target="_blank" rel="noopener">Brutalist Websites</a> — Colección cruda y provocadora.</li>
-<li><a href="https://activetheory.net/" target="_blank" rel="noopener">Active Theory</a> — 3D y movimiento inmersivo.</li>
-<li><a href="https://resn.co.nz/" target="_blank" rel="noopener">Resn</a> — Narrativa + contraste extremo.</li>
-</ul>
-</article>
-
-
-<!-- Editorial / Magazine -->
-<article class="card" aria-labelledby="editorial">
-<h3 id="editorial">Editorial / Magazine</h3>
-<p>Rejillas tipográficas, ritmo vertical, bloques de lectura y fotografía fuerte.</p>
-<ul>
-<li><a href="https://www.nationalgeographic.com" target="_blank" rel="noopener">National Geographic</a> — Fotografía y storytelling.</li>
-<li><a href="https://blog.adobe.com" target="_blank" rel="noopener">Adobe Blog</a> — Claridad y respiración visual.</li>
-<li><a href="https://www.smashingmagazine.com" target="_blank" rel="noopener">Smashing Magazine</a> — Maquetación editorial moderna.</li>
-</ul>
-</article>
-</div>
-</section>
-
-
-   <section id="patrones">
-  <header>
-    <h2>Patrones visuales: Z, F y diseño por capas</h2>
+    <h1>Diseño web: crear interfaces claras y adaptables</h1>
   </header>
 
-  <div class="content">
-    <p>
-      Los <strong>patrones visuales</strong> definen cómo el ojo humano recorre la interfaz. Comprenderlos permite 
-      organizar la información de manera que el usuario encuentre fácilmente lo importante. 
-      A continuación se muestran los tres patrones más frecuentes y algunos ejemplos reales.
-    </p>
+  <nav aria-label="Navegación principal">
+    <a href="index.html">Accesibilidad</a>
+    <a href="usabilidad.html">Usabilidad</a>
+    <a href="practico.html">Planificación</a>
+    <a href="diseñoweb.html" aria-current="page">Diseño web</a>
+    <a href="desarrollo.html">Código y evaluación</a>
+  </nav>
 
-    <div class="grid cards">
-      <!-- Patrón Z -->
-      <article class="card">
-        <h3>Patrón Z</h3>
-        <p>
-          Ideal para <strong>landing pages o páginas de inicio simples</strong>. 
-          La vista del usuario sigue una trayectoria en “Z”: 
-          logo y menú en la parte superior → diagonal hacia la imagen o mensaje principal → llamada a la acción final abajo a la derecha.
-        </p>
-        <p><strong>Ventaja:</strong> guía la mirada de forma natural y favorece el enfoque en el CTA.</p>
-        <ul>
-          <li><a href="https://stripe.com" target="_blank">Stripe</a> — estructura diagonal clara con botón destacado.</li>
-          <li><a href="https://www.dropbox.com" target="_blank">Dropbox</a> — cabecera simple, ilustración central y CTA final.</li>
-          <li><a href="https://www.mailchimp.com" target="_blank">Mailchimp</a> — equilibrio entre texto, imagen y llamada a la acción.</li>
-        </ul>
-      </article>
+  <main id="contenido">
 
-      <!-- Patrón F -->
-      <article class="card">
-        <h3>Patrón F</h3>
-        <p>
-          Común en <strong>páginas con mucho texto o listados</strong>, como blogs o periódicos. 
-          El ojo recorre la pantalla en forma de “F”: primero líneas horizontales en la parte superior, luego un descenso vertical por la izquierda. 
-          Este patrón refleja cómo escaneamos información escrita.
-        </p>
-        <p><strong>Ventaja:</strong> facilita la lectura secuencial y la comparación entre elementos repetidos.</p>
-        <ul>
-          <li><a href="https://www.bbc.com/news" target="_blank">BBC News</a> — titulares principales seguidos de bloques verticales.</li>
-          <li><a href="https://medium.com" target="_blank">Medium</a> — estructura editorial limpia con ritmo F marcado.</li>
-          <li><a href="https://www.theguardian.com" target="_blank">The Guardian</a> — maquetación clásica de noticias.</li>
-        </ul>
-      </article>
+    <!-- INTRODUCCIÓN -->
 
-      <!-- Diseño por capas -->
-      <article class="card">
-        <h3>Diseño por capas</h3>
-        <p>
-          Organiza la información en <strong>niveles visuales</strong>: fondo, contenido principal y elementos destacados. 
-          Se logra mediante color, sombra y profundidad. Aporta jerarquía y guía la atención sin sobrecargar.
-        </p>
-        <p><strong>Ventaja:</strong> mejora la comprensión y crea sensación de orden y fluidez visual.</p>
-        <ul>
-          <li><a href="https://m3.material.io/" target="_blank">Material Design 3 Showcase</a> — ejemplo didáctico de elevación y sombra.</li>
-          <li><a href="https://www.notion.so" target="_blank">Notion</a> — fondo neutro, tarjetas y menús flotantes.</li>
-          <li><a href="https://www.apple.com" target="_blank">Apple</a> — jerarquía clara entre fondo, contenido y llamadas a la acción.</li>
-        </ul>
-      </article>
-    </div>
+    <section>
+      <p class="lead">
+        Diseñar una página web no consiste únicamente en
+        elegir colores, fotografías o tipografías atractivas.
+        Consiste en organizar la información y presentar
+        los elementos de manera que las personas puedan
+        comprender el contenido y utilizar la interfaz
+        con facilidad.
+      </p>
 
-   
-  </div>
-</section>
+      <p>
+        Imagina dos páginas de una biblioteca.
+        Ambas contienen exactamente la misma información:
+        horarios, catálogo, préstamos y contacto.
+      </p>
 
-    <section id="tendencias">
-  <header>
-    <h2>Tendencias de Diseño Web Modernas y Obsoletas</h2>
-  </header>
+      <p>
+        En la primera, todos los textos tienen un tamaño
+        parecido, los botones están dispersos y no existe
+        una separación clara entre las secciones.
+      </p>
 
-  <div class="content">
-    <p>
-      El diseño web evoluciona constantemente. A continuación se presentan las
-      <strong>tendencias actuales más destacadas</strong> y aquellas que
-      <strong>han quedado obsoletas</strong>, para que puedas orientar tus proyectos
-      hacia una estética moderna, funcional y sostenible.
-    </p>
+      <p>
+        En la segunda, encontramos un título reconocible,
+        un menú coherente, un buscador destacado y bloques
+        de información bien organizados.
+      </p>
 
-    <!-- Espacio para la imagen -->
-    <figure style="text-align:center; margin:1.5rem 0;">
-        <img src="diseño.png" alt="Mapa visual de tendencias modernas y antiguas del diseño web" style="max-width:240px; width:100%; height:auto; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.1);" loading="lazy" />
-        <figcaption style="font-size:0.85rem; color:#555; margin-top:.5rem;">
-            Comparativa visual entre tendencias actuales y prácticas obsoletas en diseño web.
-        </figcaption>
-    </figure>
+      <p>
+        Aunque el contenido sea idéntico, la segunda
+        página puede resultar mucho más sencilla
+        de comprender y utilizar.
+      </p>
 
-    <div class="grid cards">
-      <!-- Tendencias Modernas -->
-      <article class="card">
-        <h3>✅ Tendencias Modernas</h3>
-        <ul>
-          <li><strong>Micro-interacciones sutiles:</strong> efectos al pasar el ratón y animaciones ligeras que refuerzan acciones. <em>(Elementor, TheeDigital)</em></li>
-          <li><strong>Experiencias inmersivas / 3D:</strong> los elementos planos tradicionales ganan profundidad y movimiento. <em>(Behance)</em></li>
-          <li><strong>Diseño sostenible:</strong> optimización del rendimiento y menor consumo de datos. <em>(TheeDigital)</em></li>
-          <li><strong>Tipografías expresivas y “bold minimalism”:</strong> protagonismo del texto y el espacio en blanco. <em>(Adobe)</em></li>
-          <li><strong>Anti-diseño o estilo humano:</strong> layouts más “crudos”, imperfección intencionada, estética artesanal. <em>(TheeDigital)</em></li>
-          <li><strong>Rejillas que evolucionan:</strong> estructuras flexibles y creativas que adaptan la información a cada dispositivo. <em>(TheeDigital)</em></li>
-        </ul>
-      </article>
+      <div class="note">
+        <strong>Idea fundamental:</strong>
+        el diseño visual debe ayudar a comprender
+        la información y completar tareas.
+        La estética es importante, pero nunca
+        debería dificultar la usabilidad
+        ni la accesibilidad.
+      </div>
 
-      <!-- Tendencias Obsoletas -->
-      <article class="card">
-        <h3>❌ Tendencias Obsoletas</h3>
-        <ul>
-          <li><strong>Uso excesivo de pop-ups o animaciones sin propósito:</strong> interrumpen la experiencia del usuario. <em>(Lounge Lizard)</em></li>
-          <li><strong>Diseños tipo Flash o maquetados con tablas:</strong> lentos, poco accesibles y difíciles de mantener. <em>(Medium)</em></li>
-          <li><strong>Layouts rígidos y poco responsivos:</strong> no se adaptan correctamente a pantallas móviles. <em>(Lounge Lizard)</em></li>
-          <li><strong>Tendencias visuales agotadas:</strong> como el neumorfismo puro, que causa problemas de contraste. <em>(Design Shack)</em></li>
-        </ul>
-      </article>
-    </div>
+      <h2>Qué aprenderás en este tema</h2>
 
-    
-  </div>
-</section>
+      <p>
+        Aprenderás a utilizar la jerarquía visual,
+        la tipografía, el color y el espaciado
+        para organizar una interfaz.
+      </p>
 
+      <p>
+        También comprenderás qué significa diseñar
+        de forma responsive, cómo funciona el enfoque
+        mobile-first y cuándo utilizar Flexbox
+        o CSS Grid.
+      </p>
 
+      <p>
+        Finalmente, realizarás una actividad práctica
+        para construir un diseño que se adapte
+        a diferentes anchuras de pantalla.
+      </p>
+    </section>
 
-    <section id="principios">
-      <header>
-        <h2>Principios para un buen desarrollo web</h2>
-      </header>
-      <div class="content">
-        <p>Más allá del estilo, todo sitio web debe construirse sobre <strong>principios sólidos de diseño y desarrollo</strong> que aseguren claridad, coherencia y accesibilidad.</p>
-        <h3>1. Jerarquía visual</h3>
-        <p>El usuario debe identificar de inmediato lo más importante. Se consigue usando contraste de tamaño, color y posición. El título principal y los botones clave deben destacar sobre el resto.</p>
+    <!-- PRINCIPIOS -->
 
-        <h3>2. Consistencia</h3>
-        <p>Los elementos similares deben comportarse igual. Un botón siempre con el mismo color y estado hover crea confianza. Los menús, tipografía y márgenes deben seguir reglas comunes.</p>
+    <section>
+      <h2>1. Los principios fundamentales del diseño web</h2>
 
-        <h3>3. Contraste y legibilidad</h3>
-        <p>El texto debe tener suficiente contraste (nivel AA o superior). No uses fondos saturados o textos muy finos. Prueba la accesibilidad con herramientas como <a href="https://contrast-ratio.com/">contrast-ratio.com</a>.</p>
+      <p>
+        Un buen diseño no depende de una tendencia
+        visual concreta. Existen principios que
+        mantienen su utilidad porque responden
+        a necesidades reales de las personas.
+      </p>
 
-        <h3>4. Feedback visual</h3>
-        <p>Todo clic, carga o error debe generar respuesta visual (color, animación, mensaje). Los usuarios necesitan saber que algo ha ocurrido tras su acción.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Jerarquía visual</h3>
+          <p>
+            Permite distinguir qué información
+            es más importante mediante tamaños,
+            espacios, orden y presentación.
+          </p>
+        </article>
 
-        <h3>5. Ritmo y espaciado</h3>
-        <p>Usar márgenes y paddings regulares da sensación de orden. El espacio vacío también comunica y ayuda a respirar visualmente.</p>
+        <article class="card">
+          <h3>Legibilidad</h3>
+          <p>
+            Facilita la lectura mediante
+            tipografía adecuada, contraste
+            suficiente y una distribución
+            cómoda del texto.
+          </p>
+        </article>
 
-        <h3>6. Accesibilidad</h3>
-        <p>El sitio debe poder usarse con teclado, lector de pantalla o visión reducida. Incluye etiquetas alt, foco visible y orden lógico de tabulación.</p>
+        <article class="card">
+          <h3>Coherencia</h3>
+          <p>
+            Mantiene criterios comunes
+            en botones, enlaces, títulos,
+            colores y componentes.
+          </p>
+        </article>
 
-        <h3>7. Rendimiento</h3>
-        <p>Un diseño optimizado carga rápido. Comprime imágenes, usa formatos modernos (WebP, AVIF) y evita scripts innecesarios. El rendimiento también es experiencia de usuario.</p>
+        <article class="card">
+          <h3>Adaptabilidad</h3>
+          <p>
+            Permite que el contenido
+            se reorganice en diferentes
+            tamaños de pantalla sin perder
+            información ni funcionalidad.
+          </p>
+        </article>
+      </div>
 
-        <h3>8. Adaptabilidad (Responsive)</h3>
-        <p>El diseño debe responder a distintos tamaños de pantalla. Trabaja con rejillas fluidas y prueba en móvil, tablet y escritorio.</p>
+      <p>
+        Estos principios están relacionados
+        entre sí. Por ejemplo, una jerarquía
+        bien construida puede facilitar
+        la lectura y ayudar a encontrar
+        las acciones principales.
+      </p>
+    </section>
 
-        <h3>9. Coherencia de marca</h3>
-        <p>Color, tono de voz y tipografía deben reflejar la identidad del proyecto. La coherencia crea reconocimiento.</p>
+    <!-- JERARQUÍA VISUAL -->
 
-        <h3>10. Iteración continua</h3>
-        <p>El diseño no termina al publicar. Analiza métricas, testea con usuarios y mejora. Un buen diseñador web siempre mide, aprende y ajusta.</p>
+    <section>
+      <h2>2. Jerarquía visual: mostrar qué es importante</h2>
+
+      <p>
+        La <strong>jerarquía visual</strong>
+        es la forma de organizar y presentar
+        los elementos de una página para
+        que las personas puedan identificar
+        su importancia y sus relaciones.
+      </p>
+
+      <p>
+        No toda la información debe llamar
+        la atención con la misma intensidad.
+      </p>
+
+      <p>
+        En una página de biblioteca,
+        el nombre de la sección y el buscador
+        de libros probablemente necesitarán
+        más protagonismo que un aviso secundario
+        situado al final de la pantalla.
+      </p>
+
+      <h3>¿Cómo se crea una jerarquía visual?</h3>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Tamaño</h3>
+          <p>
+            Los títulos suelen tener
+            mayor tamaño que los párrafos
+            para señalar la estructura
+            del contenido.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Espaciado</h3>
+          <p>
+            Los espacios permiten separar
+            secciones y agrupar elementos
+            que están relacionados.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Posición y orden</h3>
+          <p>
+            Los elementos importantes
+            deben aparecer en lugares
+            donde resulten fáciles
+            de encontrar.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Énfasis</h3>
+          <p>
+            El peso tipográfico y el contraste
+            pueden destacar información
+            sin necesidad de utilizar
+            muchos colores diferentes.
+          </p>
+        </article>
+      </div>
+
+      <h3>Ejemplo con HTML</h3>
+
+      <p>
+        Imagina una página con un buscador
+        de libros. Primero debemos organizar
+        su contenido de forma lógica:
+      </p>
+
+      <pre><code>&lt;main&gt;
+  &lt;h1&gt;Catálogo de la biblioteca&lt;/h1&gt;
+
+  &lt;p&gt;
+    Encuentra libros por título o autor.
+  &lt;/p&gt;
+
+  &lt;form action="/buscar" method="get"&gt;
+    &lt;label for="busqueda"&gt;
+      Buscar libros
+    &lt;/label&gt;
+
+    &lt;input
+      type="search"
+      id="busqueda"
+      name="q"
+    &gt;
+
+    &lt;button type="submit"&gt;
+      Buscar
+    &lt;/button&gt;
+  &lt;/form&gt;
+&lt;/main&gt;</code></pre>
+
+      <p>
+        En este ejemplo, <code>h1</code>
+        identifica el título principal,
+        el párrafo introduce la función
+        y el formulario permite realizar
+        la búsqueda.
+      </p>
+
+      <p>
+        El atributo <code>action="/buscar"</code>
+        representa una ruta de ejemplo:
+        el formulario necesitaría un servicio
+        que procesara esa búsqueda para funcionar.
+      </p>
+
+      <p>
+        Después podemos utilizar CSS
+        para mejorar la presentación:
+      </p>
+
+      <pre><code>h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+form {
+  margin-top: 1.5rem;
+}
+
+button {
+  padding: 0.75rem 1rem;
+}</code></pre>
+
+      <p>
+        El tamaño y el espacio contribuyen
+        a destacar el título y separar
+        el formulario del texto introductorio.
+      </p>
+
+      <div class="check">
+        <strong>Importante:</strong>
+        la jerarquía visual debe acompañar
+        a la estructura semántica del HTML.
+        Un texto no se convierte en un encabezado
+        accesible simplemente porque
+        lo mostremos con una letra grande.
       </div>
     </section>
 
-    <section id="inspiracion">
-      <header>
-        <h2>Inspiración y ejemplos reales</h2>
-      </header>
-      <div class="content grid cards">
-        <article class="card">
-          <h3>Awwwards</h3>
-          <p>Premios internacionales que destacan la creatividad, usabilidad y contenido de los mejores sitios web.</p>
-          <p><a href="https://www.awwwards.com/websites/" target="_blank">Ver ganadores</a></p>
-        </article>
-        <article class="card">
-          <h3>siteInspire</h3>
-          <p>Galería organizada por estilos, colores y sectores. Ideal para inspirarte antes de empezar un nuevo proyecto.</p>
-          <p><a href="https://www.siteinspire.com/websites" target="_blank">Explorar sitios</a></p>
-        </article>
-        <article class="card">
-          <h3>Behance / Dribbble</h3>
-          <p>Comunidades de diseñadores donde se comparten interfaces, branding y tendencias UI/UX.</p>
-          <p><a href="https://www.behance.net/" target="_blank">Behance</a> · <a href="https://dribbble.com/" target="_blank">Dribbble</a></p>
-        </article>
-      </div>
-    </section>
+    <!-- TIPOGRAFÍA -->
 
+    <section>
+      <h2>3. Tipografía y legibilidad</h2>
 
+      <p>
+        La tipografía influye directamente
+        en la facilidad con la que podemos
+        leer y comprender una página web.
+      </p>
 
+      <p>
+        No se trata únicamente de escoger
+        una fuente atractiva. También debemos
+        prestar atención al tamaño, la separación
+        entre líneas, el ancho de los párrafos
+        y el contraste.
+      </p>
 
+      <h3>Tamaño del texto</h3>
 
-<section id="plantillas">
-<header><h2>Inspiración para uso de plantillas</h2></header>
-<div class="content grid cards">
-<article class="card"><h3>ThemeForest</h3><p>Plataforma con miles de plantillas HTML, WordPress y React.</p><p><a href="https://themeforest.net/" target="_blank">Ver plantillas</a></p></article>
-<article class="card"><h3>TemplateMo</h3><p>Plantillas HTML gratuitas y modernas, ideales para proyectos educativos.</p><p><a href="https://templatemo.com/" target="_blank">Explorar TemplateMo</a></p></article>
-<article class="card"><h3>Colorlib</h3><p>Plantillas adaptables y ligeras. Ofrecen ideas para layouts responsive.</p><p><a href="https://colorlib.com/" target="_blank">Colorlib</a></p></article>
-<article class="card"><h3>BootstrapMade</h3><p>Plantillas HTML gratuitas con Bootstrap, listas para personalizar.</p><p><a href="https://bootstrapmade.com/" target="_blank">BootstrapMade</a></p></article>
-</div>
-</section>
+      <p>
+        Es recomendable utilizar unidades
+        relativas como <code>rem</code>
+        para facilitar la adaptación
+        a las preferencias de lectura.
+      </p>
 
-<section id="referencias">
-<header><h2>Referencias visuales y bancos de ideas</h2></header>
-<div class="content grid cards">
-<article class="card"><h3>One Page Love</h3><p>Inspiración en landing pages y portfolios de una sola página.</p><p><a href="https://onepagelove.com/" target="_blank">Ver sitios</a></p></article>
-<article class="card"><h3>CSS Design Awards</h3><p>Premios internacionales a la innovación y creatividad digital.</p><p><a href="https://www.cssdesignawards.com/" target="_blank">CSSDA</a></p></article>
-<article class="card"><h3>Mobbin</h3><p>Base de datos de diseño móvil y apps reales, con patrones de interfaz.</p><p><a href="https://mobbin.com/" target="_blank">Mobbin</a></p></article>
-<article class="card"><h3>Land-book</h3><p>Selección curada de landing pages modernas, limpias y funcionales.</p><p><a href="https://land-book.com/" target="_blank">Land-book</a></p></article>
-<article class="card"><h3>UI Movement</h3><p>Recopila tendencias semanales en interfaces y animaciones.</p><p><a href="https://uimovement.com/" target="_blank">UI Movement</a></p></article>
-</div>
-</section>
-<section id="wp-inspiracion">
-  <header>
-    <h2>Inspiración con plantillas WordPress</h2>
-  </header>
+      <p>
+        Por ejemplo:
+      </p>
 
-  <div class="content">
-    <p>
-      Explora temas y patrones de WordPress para estudiar <strong>rejillas, jerarquía, tipografía,
-      componentes y responsive</strong>. Después, traslada las ideas a tu propia maqueta HTML/CSS.
-    </p>
+      <pre><code>body {
+  font-size: 1rem;
+}
 
-    <div class="grid cards">
-      <!-- Directorios oficiales -->
-      <article class="card">
-        <h3>WordPress.org — Themes</h3>
-        <p>El directorio oficial con miles de temas gratuitos (filtra por “Block Themes”).</p>
-        <p><a href="https://wordpress.org/themes/" target="_blank" rel="noopener">Explorar temas</a></p>
-      </article>
+h1 {
+  font-size: 2rem;
+}
 
-      <article class="card">
-        <h3>WordPress.org — Block Patterns</h3>
-        <p>Patrones de bloques listos para reutilizar (hero, grids, FAQs, testimonios…).</p>
-        <p><a href="https://wordpress.org/patterns/" target="_blank" rel="noopener">Ver patrones</a></p>
-      </article>
+h2 {
+  font-size: 1.5rem;
+}</code></pre>
 
-      <article class="card">
-        <h3>WordPress.org — Showcase</h3>
-        <p>Selección de sitios reales hechos con WordPress para inspirarte por sectores.</p>
-        <p><a href="https://wordpress.org/showcase/" target="_blank" rel="noopener">Visitar Showcase</a></p>
-      </article>
+      <p>
+        La unidad <code>rem</code>
+        toma como referencia el tamaño de fuente
+        del elemento raíz del documento.
+        Si este tamaño es de 16 píxeles,
+        <code>2rem</code> equivale a 32 píxeles.
+      </p>
 
-      <!-- Marketplaces y colecciones -->
-      <article class="card">
-        <h3>ThemeForest</h3>
-        <p>Catálogo enorme de temas premium (útil para ver tendencias y demos).</p>
-        <p>
-          <a href="https://themeforest.net/category/wordpress" target="_blank" rel="noopener">Catálogo general</a> ·
-          <a href="https://themeforest.net/popular_item/by_category?category=wordpress" target="_blank" rel="noopener">Más vendidos (2025)</a>
-        </p>
-      </article>
+      <p>
+        Sin embargo, su valor final depende
+        de la configuración y de los estilos
+        del documento.
+      </p>
 
-      <article class="card">
-        <h3>WordPress.com — Themes</h3>
-        <p>Galería de temas (free/premium) con previsualización rápida.</p>
-        <p><a href="https://wordpress.com/themes/" target="_blank" rel="noopener">Ver WordPress.com Themes</a></p>
-      </article>
-    </div>
+      <h3>Espaciado entre líneas</h3>
 
-    <h3 style="margin-top:1.5rem;">Temas modernos para estudiar (rendimiento y bloques)</h3>
-    <div class="grid cards">
-      <article class="card">
-        <h4>Kadence</h4>
-        <p>Ligero, muy flexible, buen rendimiento y biblioteca de starters.</p>
-        <p><a href="https://wordpress.org/themes/kadence/" target="_blank" rel="noopener">Ficha en WP.org</a></p>
-      </article>
+      <p>
+        Un texto con líneas demasiado juntas
+        puede resultar incómodo, especialmente
+        cuando contiene párrafos largos.
+      </p>
 
-      <article class="card">
-        <h4>Blocksy</h4>
-        <p>Optimizado para editor de bloques y WooCommerce; rápido y personalizable.</p>
-        <p><a href="https://wordpress.org/themes/blocksy/" target="_blank" rel="noopener">Ficha en WP.org</a></p>
-      </article>
+      <pre><code>p {
+  line-height: 1.6;
+}</code></pre>
 
-      <article class="card">
-        <h4>Astra</h4>
-        <p>Muy popular por su velocidad, compatibilidad con constructores y variedad de demos.</p>
-        <p><a href="https://wordpress.org/themes/astra/" target="_blank" rel="noopener">Ficha en WP.org</a></p>
-      </article>
+      <p>
+        La propiedad <code>line-height</code>
+        controla la altura de cada línea.
+        Un valor sin unidad se calcula
+        a partir del tamaño de la fuente.
+      </p>
 
-      <article class="card">
-        <h4>GeneratePress</h4>
-        <p>Base minimal enfocada en accesibilidad y peso ultraligero (&lt;10KB gz).</p>
-        <p><a href="https://wordpress.org/themes/generatepress/" target="_blank" rel="noopener">Ficha en WP.org</a></p>
-      </article>
-    </div>
+      <h3>Longitud de las líneas</h3>
 
-    <aside style="margin-top:1.5rem; background:#f0f4ff; padding:1rem 1.25rem; border-radius:12px;">
-      <h4 style="margin-top:0;">Cómo “traducir” una plantilla WP a tu HTML/CSS</h4>
+      <p>
+        En pantallas grandes, los párrafos
+        que ocupan toda la anchura disponible
+        pueden resultar difíciles de seguir.
+      </p>
+
+      <p>
+        Podemos limitar la longitud
+        aproximada de las líneas
+        utilizando la unidad <code>ch</code>.
+      </p>
+
+      <pre><code>article p {
+  max-width: 70ch;
+}</code></pre>
+
+      <p>
+        La unidad <code>ch</code>
+        está relacionada con el ancho
+        del carácter cero de la fuente.
+        Es una referencia útil para limitar
+        la longitud de lectura, aunque
+        no equivale exactamente a contar
+        caracteres por línea.
+      </p>
+
+      <h3>Buenas decisiones tipográficas</h3>
+
       <ul>
-        <li><strong>Rejilla:</strong> identifica columnas del layout (p. ej., 12 cols en desktop, 6 en tablet, 2–3 en móvil) y reprodúcelo con <code>CSS Grid</code>/<code>Flexbox</code>.</li>
-        <li><strong>Jerarquía:</strong> anota tamaños/espaciados de H1–H6, subtítulos y botones; respeta su contraste.</li>
-        <li><strong>Componentes:</strong> copia patrones (hero, tarjetas, testimonios) como <em>secciones reutilizables</em>.</li>
-        <li><strong>Responsive:</strong> observa <em>breakpoints</em> de la demo y replica con <code>@media</code>.</li>
-        <li><strong>Rendimiento:</strong> analiza el peso de imágenes y fuentes; en tu HTML usa WebP/AVIF y <code>font-display: swap</code>.</li>
+        <li>
+          Utilizar un tamaño de texto
+          cómodo para la lectura.
+        </li>
+        <li>
+          Mantener una separación suficiente
+          entre líneas y párrafos.
+        </li>
+        <li>
+          Evitar bloques extensos escritos
+          completamente en mayúsculas.
+        </li>
+        <li>
+          No justificar textos si produce
+          espacios irregulares que dificultan
+          la lectura.
+        </li>
+        <li>
+          Mantener un número reducido
+          y coherente de estilos tipográficos.
+        </li>
       </ul>
-    </aside>
 
-    <p style="font-size:.9rem; color:#555; margin-top:1rem;">
-      Nota: revisa siempre la <strong>licencia</strong> de cada tema antes de reutilizar código o activos. Para clase, úsalo como
-      <em>referencia visual y estructural</em>, no como copia literal.
-    </p>
-  </div>
-</section>
-
-
-<section id="malasideas">
-<header><h2>Errores y malas ideas de diseño web</h2></header>
-<div class="content">
-<ul>
-<li><strong>Exceso de texto o animaciones:</strong> saturan la vista y ralentizan la carga.</li>
-<li><strong>Falta de jerarquía visual:</strong> todo parece igual de importante, el usuario se pierde.</li>
-<li><strong>Colores sin contraste:</strong> fondo y texto poco diferenciados hacen ilegible el contenido.</li>
-<li><strong>Navegación confusa:</strong> menús escondidos o desordenados frustran al usuario.</li>
-<li><strong>No pensar en móvil:</strong> el diseño no se adapta y rompe la experiencia responsive.</li>
-<li><strong>Imágenes pesadas:</strong> hacen lenta la web y penalizan el SEO.</li>
-<li><strong>Fuentes poco legibles:</strong> tipografías decorativas o demasiado pequeñas dificultan la lectura.</li>
-<li><strong>Falta de accesibilidad:</strong> sin texto alternativo o foco visible, parte de los usuarios queda fuera.</li>
-</ul>
-<p>El objetivo no es solo que la web sea bonita, sino que sea <em>usable, rápida y accesible</em>.</p>
-</div>
-</section>
-
-    <section id="preguntas">
-      <header>
-        <h2>Diez preguntas clave antes de escribir código</h2>
-      </header>
-      <div class="content">
-        <ol class="check">
-          <li>¿Cuál es el objetivo principal del sitio web?</li>
-          <li>¿Quiénes son los usuarios y qué problema vienen a resolver?</li>
-          <li>¿Qué contenido debe aparecer primero y qué jerarquía tendrá?</li>
-          <li>¿Qué estructura o mapa de navegación es más lógico?</li>
-          <li>¿Qué modelo de diseño se adapta mejor al propósito?</li>
-          <li>¿Cómo garantizo accesibilidad y legibilidad?</li>
-          <li>¿Qué componentes reutilizables necesitaré?</li>
-          <li>¿Cómo voy a medir el éxito del diseño?</li>
-          <li>¿Qué limitaciones técnicas o de rendimiento debo prever?</li>
-          <li>¿Qué tareas priorizaré para la primera versión?</li>
-        </ol>
+      <div class="note">
+        <strong>Recuerda:</strong>
+        una página no es más profesional
+        porque utilice letras pequeñas.
+        La legibilidad debe tener prioridad
+        sobre las preferencias estéticas.
       </div>
+    </section>
+
+    <!-- COLOR -->
+
+    <section>
+      <h2>4. Color y contraste: diseñar para comprender</h2>
+
+      <p>
+        El color puede ayudarnos a diferenciar
+        secciones, destacar acciones y mantener
+        una identidad visual coherente.
+      </p>
+
+      <p>
+        Sin embargo, utilizar muchos colores
+        no garantiza que la página resulte
+        más clara o más atractiva.
+      </p>
+
+      <h3>Una paleta sencilla</h3>
+
+      <p>
+        Para comenzar podemos trabajar
+        con una selección limitada:
+      </p>
+
+      <ul>
+        <li>
+          Un color principal para elementos
+          destacados y acciones importantes.
+        </li>
+        <li>
+          Colores neutros para fondos,
+          bordes y superficies.
+        </li>
+        <li>
+          Un color de texto que permita
+          una lectura cómoda.
+        </li>
+        <li>
+          Colores de estado para errores,
+          advertencias o confirmaciones,
+          acompañados de mensajes claros.
+        </li>
+      </ul>
+
+      <h3>El contraste no es opcional</h3>
+
+      <p>
+        El contraste indica la diferencia
+        de luminosidad entre dos colores.
+        Si el texto tiene poco contraste
+        respecto al fondo, algunas personas
+        encontrarán dificultades para leerlo.
+      </p>
+
+      <p>
+        Como estudiamos en el tema
+        de accesibilidad, las WCAG establecen
+        criterios de contraste para el texto
+        y para determinados elementos
+        de la interfaz.
+      </p>
+
+      <p>
+        Para comprobar una combinación puedes utilizar:
+      </p>
+
+      <p>
+        <a
+          href="https://webaim.org/resources/contrastchecker/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <strong>
+            WebAIM Contrast Checker
+          </strong>
+        </a>
+      </p>
+
+      <p>
+        Introduce los colores de primer plano
+        y fondo, comprueba el resultado
+        correspondiente al texto que estás utilizando
+        y ajusta la combinación si es necesario.
+      </p>
+
+      <h3>El color no debe ser la única señal</h3>
+
+      <p>
+        Imagina un formulario en el que los campos
+        incorrectos aparecen únicamente
+        con un borde rojo.
+      </p>
+
+      <p>
+        Una persona que no distingue ese color
+        podría no identificar el problema.
+      </p>
+
+      <p>
+        Es mejor incorporar también
+        un mensaje como:
+      </p>
+
+      <div class="warning">
+        <strong>Revisa el correo electrónico.</strong>
+        Introduce una dirección con un formato válido,
+        como nombre@dominio.es.
+      </div>
+
+      <div class="check">
+        <strong>Cómo comprobarlo:</strong>
+        revisa si las acciones, errores
+        y estados siguen siendo comprensibles
+        cuando no puedes distinguir
+        sus colores.
+      </div>
+    </section>
+
+    <!-- RESPONSIVE -->
+
+    <section>
+      <h2>5. Diseño responsive: una web para diferentes pantallas</h2>
+
+      <p>
+        Actualmente una misma página puede consultarse
+        desde teléfonos móviles, tabletas,
+        ordenadores portátiles y monitores
+        de gran tamaño.
+      </p>
+
+      <p>
+        El <strong>diseño responsive</strong>
+        permite adaptar la distribución
+        del contenido al espacio disponible.
+      </p>
+
+      <p>
+        No consiste simplemente en reducir
+        el tamaño de todos los elementos.
+        En muchas ocasiones necesitamos
+        reorganizar las columnas, los menús,
+        las imágenes y los espacios.
+      </p>
+
+      <h3>Ejemplo: un catálogo de libros</h3>
+
+      <p>
+        En un ordenador amplio podemos
+        mostrar tres tarjetas de libros
+        en una misma fila.
+      </p>
+
+      <p>
+        En un móvil, lo habitual será
+        disponer esas tarjetas
+        en una sola columna para facilitar
+        la lectura y la interacción.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Pantalla estrecha</h3>
+          <p>
+            Las tarjetas pueden ocupar
+            una columna y aprovechar
+            el espacio disponible
+            sin provocar desplazamiento
+            horizontal innecesario.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Pantalla amplia</h3>
+          <p>
+            Las tarjetas pueden distribuirse
+            en varias columnas si existe
+            espacio suficiente para mantener
+            una lectura cómoda.
+          </p>
+        </article>
+      </div>
+
+      <h3>¿Qué significa mobile-first?</h3>
+
+      <p>
+        <strong>Mobile-first</strong>
+        es un enfoque de diseño que comienza
+        por las necesidades y limitaciones
+        de una pantalla estrecha.
+      </p>
+
+      <p>
+        Primero organizamos el contenido esencial
+        para ese espacio y después incorporamos
+        mejoras de distribución cuando
+        aumenta la anchura disponible.
+      </p>
+
+      <p>
+        No significa eliminar funciones
+        importantes en la versión móvil.
+        Las tareas principales deben seguir
+        disponibles independientemente
+        del dispositivo.
+      </p>
+
+      <h3>¿Para qué sirven las media queries?</h3>
+
+      <p>
+        Las <code>@media</code> de CSS
+        permiten aplicar estilos cuando
+        se cumplen determinadas condiciones.
+      </p>
+
+      <p>
+        Por ejemplo, podemos mostrar
+        inicialmente una columna y utilizar
+        dos columnas a partir de una
+        determinada anchura:
+      </p>
+
+      <pre><code>.catalogo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 48rem) {
+  .catalogo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}</code></pre>
+
+      <p>
+        El ejemplo comienza con una columna.
+        Cuando el área de visualización
+        alcanza el ancho indicado,
+        las tarjetas pasan a dos columnas.
+      </p>
+
+      <p>
+        El valor <code>48rem</code>
+        es un punto de ruptura de ejemplo,
+        no una medida obligatoria
+        para todos los proyectos.
+      </p>
+
+      <div class="note">
+        <strong>Importante:</strong>
+        los puntos de ruptura deben elegirse
+        según el comportamiento real
+        del contenido, no exclusivamente
+        según modelos de teléfonos
+        o tabletas.
+      </div>
+
+      <h3>Diseños flexibles y reflow</h3>
+
+      <p>
+        Una página adaptable también debe
+        permitir ampliar el contenido
+        sin perder información
+        ni funcionalidad.
+      </p>
+
+      <p>
+        Se conoce como <strong>reflow</strong>
+        la reorganización del contenido
+        cuando cambia el espacio disponible.
+      </p>
+
+      <p>
+        Debemos evitar que las personas
+        tengan que desplazarse horizontalmente
+        para leer cada línea de un texto
+        corriente.
+      </p>
+
+      <p>
+        Algunos contenidos, como determinadas
+        tablas extensas, pueden necesitar
+        un tratamiento particular.
+      </p>
+    </section>
+
+    <!-- FLEXBOX Y GRID -->
+
+    <section>
+      <h2>6. Flexbox y CSS Grid: organizar los elementos</h2>
+
+      <p>
+        CSS dispone de diferentes sistemas
+        para distribuir los elementos
+        dentro de una página.
+      </p>
+
+      <p>
+        Dos de los más utilizados
+        son <strong>Flexbox</strong>
+        y <strong>CSS Grid</strong>.
+      </p>
+
+      <h3>6.1. Flexbox</h3>
+
+      <p>
+        Flexbox es especialmente útil
+        cuando queremos organizar elementos
+        principalmente en una dirección:
+        una fila o una columna.
+      </p>
+
+      <p>
+        Por ejemplo, podemos utilizarlo
+        para distribuir los enlaces
+        de un menú.
+      </p>
+
+      <h4>HTML</h4>
+
+      <pre><code>&lt;nav class="menu-ejemplo"
+     aria-label="Menú de biblioteca"&gt;
+  &lt;a href="#catalogo"&gt;Catálogo&lt;/a&gt;
+  &lt;a href="#horarios"&gt;Horarios&lt;/a&gt;
+  &lt;a href="#contacto"&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+
+      <p>
+        Las tres anclas son destinos
+        de ejemplo: para que funcionen,
+        el documento debe contener
+        elementos con los identificadores
+        correspondientes.
+      </p>
+
+      <h4>CSS</h4>
+
+      <pre><code>.menu-ejemplo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}</code></pre>
+
+      <p>
+        Vamos a interpretar el código:
+      </p>
+
+      <ul>
+        <li>
+          <code>display: flex</code>
+          activa Flexbox.
+        </li>
+        <li>
+          <code>flex-wrap: wrap</code>
+          permite que los elementos pasen
+          a otra línea cuando no caben.
+        </li>
+        <li>
+          <code>gap: 1rem</code>
+          establece separación
+          entre los elementos.
+        </li>
+      </ul>
+
+      <p>
+        El resultado es un conjunto
+        de enlaces que puede reorganizarse
+        cuando cambia el espacio disponible.
+      </p>
+
+      <h3>6.2. CSS Grid</h3>
+
+      <p>
+        Grid está pensado para organizar
+        elementos mediante filas
+        y columnas.
+      </p>
+
+      <p>
+        Es una buena opción para
+        construir galerías, catálogos
+        o distribuciones más complejas.
+      </p>
+
+      <p>
+        Por ejemplo, podemos organizar
+        varias tarjetas de libros
+        con el siguiente HTML:
+      </p>
+
+      <h4>HTML</h4>
+
+      <pre><code>&lt;section class="catalogo-ejemplo"&gt;
+  &lt;article&gt;
+    &lt;h3&gt;Libro A&lt;/h3&gt;
+    &lt;p&gt;Descripción del libro A.&lt;/p&gt;
+  &lt;/article&gt;
+
+  &lt;article&gt;
+    &lt;h3&gt;Libro B&lt;/h3&gt;
+    &lt;p&gt;Descripción del libro B.&lt;/p&gt;
+  &lt;/article&gt;
+
+  &lt;article&gt;
+    &lt;h3&gt;Libro C&lt;/h3&gt;
+    &lt;p&gt;Descripción del libro C.&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/section&gt;</code></pre>
+
+      <h4>CSS</h4>
+
+      <pre><code>.catalogo-ejemplo {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 1rem;
+}</code></pre>
+
+      <p>
+        Este ejemplo contiene varias
+        propiedades importantes:
+      </p>
+
+      <ul>
+        <li>
+          <code>display: grid</code>
+          activa CSS Grid.
+        </li>
+        <li>
+          <code>grid-template-columns</code>
+          define cómo se distribuyen
+          las columnas.
+        </li>
+        <li>
+          <code>repeat()</code>
+          permite repetir un patrón
+          de columnas.
+        </li>
+        <li>
+          <code>auto-fit</code>
+          ajusta el número de columnas
+          según el espacio disponible.
+        </li>
+        <li>
+          <code>minmax()</code>
+          establece tamaños mínimos
+          y máximos.
+        </li>
+        <li>
+          <code>1fr</code>
+          representa una fracción
+          del espacio disponible
+          dentro de la cuadrícula.
+        </li>
+      </ul>
+
+      <p>
+        La expresión
+        <code>min(100%, 16rem)</code>
+        evita imponer un mínimo
+        de 16rem cuando el contenedor
+        sea más estrecho.
+      </p>
+
+      <p>
+        De esta forma podemos crear
+        columnas adaptables sin definir
+        un punto de ruptura para
+        cada tamaño de pantalla.
+      </p>
+
+      <h3>¿Cuándo utilizar Flexbox y cuándo Grid?</h3>
+
+      <table>
+        <caption>
+          Comparación entre Flexbox y CSS Grid
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Característica</th>
+            <th scope="col">Flexbox</th>
+            <th scope="col">Grid</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">
+              Organización principal
+            </th>
+            <td>Una dimensión cada vez.</td>
+            <td>Filas y columnas.</td>
+          </tr>
+          <tr>
+            <th scope="row">
+              Ejemplo habitual
+            </th>
+            <td>Menú de navegación.</td>
+            <td>Catálogo de tarjetas.</td>
+          </tr>
+          <tr>
+            <th scope="row">
+              Distribución
+            </th>
+            <td>
+              Alineación y reparto
+              de elementos flexibles.
+            </td>
+            <td>
+              Definición de una cuadrícula
+              y colocación de elementos.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">
+              Adaptación
+            </th>
+            <td>
+              Puede ajustar tamaños
+              y envolver elementos.
+            </td>
+            <td>
+              Puede crear columnas
+              adaptables automáticamente.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="check">
+        <strong>Recuerda:</strong>
+        Flexbox y Grid no compiten.
+        Es habitual utilizar Grid
+        para distribuir las grandes zonas
+        de una página y Flexbox
+        dentro de algunos componentes.
+      </div>
+    </section>
+
+    <!-- SISTEMA DE DISEÑO -->
+
+    <section>
+      <h2>7. Coherencia y sistemas de diseño</h2>
+
+      <p>
+        Una web puede contener muchas
+        páginas y componentes.
+        Si cada uno utiliza colores,
+        tamaños y comportamientos
+        diferentes, la experiencia
+        puede resultar confusa.
+      </p>
+
+      <p>
+        Para mantener la coherencia
+        podemos definir un conjunto
+        de decisiones reutilizables
+        conocido como
+        <strong>sistema de diseño</strong>.
+      </p>
+
+      <p>
+        Un sistema de diseño puede incluir:
+      </p>
+
+      <ul>
+        <li>Colores y sus usos.</li>
+        <li>Tipografías y tamaños.</li>
+        <li>Espaciado.</li>
+        <li>Estilos de botones y enlaces.</li>
+        <li>Componentes reutilizables.</li>
+        <li>Estados de error, éxito y carga.</li>
+        <li>Indicaciones de accesibilidad.</li>
+        <li>Documentación de patrones de uso.</li>
+      </ul>
+
+      <h3>Variables CSS para mantener coherencia</h3>
+
+      <p>
+        En CSS podemos utilizar propiedades
+        personalizadas para centralizar
+        algunos valores del diseño.
+      </p>
+
+      <pre><code>:root {
+  --color-principal: #174ea6;
+  --color-texto: #222222;
+  --color-fondo: #ffffff;
+  --espacio-base: 1rem;
+}
+
+body {
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+}
+
+h1 {
+  color: var(--color-principal);
+}
+
+article {
+  padding: var(--espacio-base);
+}</code></pre>
+
+      <p>
+        El selector <code>:root</code>
+        permite declarar propiedades
+        que pueden reutilizarse
+        en todo el documento.
+      </p>
+
+      <p>
+        La función <code>var()</code>
+        recupera su valor.
+      </p>
+
+      <p>
+        Si necesitamos modificar
+        el color principal del proyecto,
+        podemos cambiar una variable
+        en lugar de buscar ese valor
+        en múltiples reglas CSS.
+      </p>
+
+      <p>
+        Estos valores son ilustrativos.
+        Antes de utilizarlos en una interfaz
+        debemos comprobar el contraste
+        en las combinaciones reales.
+      </p>
+
+      <h3>Material Design como referencia</h3>
+
+      <p>
+        Existen sistemas de diseño públicos
+        que pueden utilizarse para aprender
+        cómo se documentan componentes,
+        patrones de interacción y decisiones
+        visuales.
+      </p>
+
+      <p>
+        Un ejemplo conocido es
+        <a
+          href="https://m3.material.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Material Design
+        </a>.
+      </p>
+
+      <p>
+        Su documentación puede servir
+        como referencia, pero no debemos
+        copiar un sistema visual sin
+        valorar las necesidades
+        de nuestro propio proyecto.
+      </p>
+
+      <div class="warning">
+        <strong>Cuidado con las tendencias:</strong>
+        una interfaz llamativa no es
+        necesariamente una interfaz adecuada.
+        Los textos demasiado pequeños,
+        los contrastes insuficientes
+        y los movimientos innecesarios
+        pueden perjudicar la experiencia.
+      </div>
+
+      <h3>El rendimiento también importa</h3>
+
+      <p>
+        Una página que tarda demasiado
+        en mostrar su contenido puede
+        dificultar la realización
+        de tareas, especialmente
+        en conexiones lentas.
+      </p>
+
+      <p>
+        Por eso conviene utilizar
+        imágenes optimizadas, evitar
+        recursos innecesarios y mantener
+        una estructura comprensible
+        mientras la página carga.
+      </p>
+
+      <p>
+        La calidad del diseño también
+        depende del funcionamiento real,
+        no solo de una imagen estática
+        del resultado.
+      </p>
+    </section>
+
+    <!-- ACTIVIDAD -->
+
+    <section class="activity">
+      <h2>8. Actividad práctica: crea un catálogo responsive</h2>
+
+      <p>
+        En esta actividad vamos a construir
+        un pequeño catálogo de libros
+        que se adapte automáticamente
+        al tamaño de la pantalla.
+      </p>
+
+      <h3>Objetivo</h3>
+
+      <p>
+        Comprender cómo CSS Grid permite
+        distribuir tarjetas en una
+        o varias columnas según
+        el espacio disponible.
+      </p>
+
+      <h3>Material necesario</h3>
+
+      <ul>
+        <li>Un editor de código.</li>
+        <li>Un navegador web.</li>
+        <li>Un archivo HTML.</li>
+      </ul>
+
+      <h3>Paso 1. Crea el documento HTML</h3>
+
+      <p>
+        Crea un archivo llamado
+        <code>catalogo.html</code>
+        y copia el siguiente código.
+      </p>
+
+      <p>
+        Este ejemplo es independiente
+        del manual: puedes guardarlo
+        y abrirlo directamente
+        en el navegador.
+      </p>
+
+      <pre><code>&lt;!doctype html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  &gt;
+  &lt;title&gt;Catálogo de libros&lt;/title&gt;
+
+  &lt;style&gt;
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, sans-serif;
+      line-height: 1.5;
+      margin: 0;
+      padding: 1rem;
+      color: #222;
+      background: #fff;
+    }
+
+    main {
+      max-width: 70rem;
+      margin-inline: auto;
+    }
+
+    .catalogo {
+      display: grid;
+      grid-template-columns:
+        repeat(
+          auto-fit,
+          minmax(min(100%, 16rem), 1fr)
+        );
+      gap: 1rem;
+    }
+
+    .libro {
+      border: 1px solid #aaa;
+      border-radius: 0.5rem;
+      padding: 1rem;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;main&gt;
+    &lt;h1&gt;Catálogo de libros&lt;/h1&gt;
+
+    &lt;div class="catalogo"&gt;
+      &lt;article class="libro"&gt;
+        &lt;h2&gt;Libro A&lt;/h2&gt;
+        &lt;p&gt;Una historia de aventuras.&lt;/p&gt;
+      &lt;/article&gt;
+
+      &lt;article class="libro"&gt;
+        &lt;h2&gt;Libro B&lt;/h2&gt;
+        &lt;p&gt;Una introducción a la ciencia.&lt;/p&gt;
+      &lt;/article&gt;
+
+      &lt;article class="libro"&gt;
+        &lt;h2&gt;Libro C&lt;/h2&gt;
+        &lt;p&gt;Un viaje por la naturaleza.&lt;/p&gt;
+      &lt;/article&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+      <h3>Paso 2. Observa el resultado</h3>
+
+      <ol>
+        <li>
+          Abre el archivo en el navegador.
+        </li>
+        <li>
+          Maximiza la ventana.
+        </li>
+        <li>
+          Observa cuántas tarjetas
+          aparecen en cada fila.
+        </li>
+        <li>
+          Reduce poco a poco
+          la anchura de la ventana.
+        </li>
+        <li>
+          Comprueba cómo cambia
+          la distribución.
+        </li>
+      </ol>
+
+      <h3>Paso 3. Experimenta con CSS</h3>
+
+      <p>
+        Busca la siguiente parte:
+      </p>
+
+      <pre><code>minmax(min(100%, 16rem), 1fr)</code></pre>
+
+      <p>
+        Prueba a cambiar
+        <code>16rem</code>
+        por <code>20rem</code>.
+      </p>
+
+      <p>
+        Observa si las tarjetas
+        necesitan más espacio
+        y si cambia el número
+        de columnas que caben
+        en la ventana.
+      </p>
+
+      <p>
+        Después modifica
+        <code>gap: 1rem</code>
+        por <code>gap: 2rem</code>.
+      </p>
+
+      <p>
+        Comprueba cómo aumenta
+        la separación entre las tarjetas.
+      </p>
+
+      <h3>Paso 4. Comprueba la accesibilidad</h3>
+
+      <ol>
+        <li>
+          Amplía la página al 200 %.
+        </li>
+        <li>
+          Comprueba que los textos
+          pueden leerse.
+        </li>
+        <li>
+          Reduce la anchura
+          de la ventana.
+        </li>
+        <li>
+          Observa si las tarjetas
+          se reorganizan.
+        </li>
+        <li>
+          Comprueba que no se pierde
+          información.
+        </li>
+      </ol>
+
+      <h3>Resultado esperado</h3>
+
+      <p>
+        Debes conseguir un catálogo
+        cuyas tarjetas se adapten
+        al espacio disponible
+        sin necesidad de establecer
+        un ancho fijo para cada pantalla.
+      </p>
+
+      <p>
+        También debes poder explicar
+        qué hacen las propiedades
+        <code>display: grid</code>,
+        <code>grid-template-columns</code>,
+        <code>minmax()</code>
+        y <code>gap</code>.
+      </p>
+
+      <div class="note">
+        <strong>Conclusión de la actividad:</strong>
+        el diseño responsive no consiste
+        en crear una página diferente
+        para cada dispositivo.
+        Consiste en construir una
+        distribución flexible
+        que responda al espacio
+        disponible.
+      </div>
+    </section>
+
+    <!-- RESUMEN -->
+
+    <section>
+      <h2>9. Lista de comprobación antes de desarrollar</h2>
+
+      <p>
+        Antes de convertir una maqueta
+        en una página web, revisa
+        las siguientes decisiones.
+      </p>
+
+      <table>
+        <caption>
+          Revisión básica del diseño de una interfaz
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Aspecto</th>
+            <th scope="col">Pregunta de comprobación</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Jerarquía</th>
+            <td>
+              ¿Las personas pueden identificar
+              el título y las acciones principales?
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Tipografía</th>
+            <td>
+              ¿El texto tiene un tamaño
+              y espaciado cómodos?
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Contraste</th>
+            <td>
+              ¿Los colores cumplen
+              los criterios correspondientes?
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Adaptación</th>
+            <td>
+              ¿La distribución funciona
+              en pantallas estrechas
+              y con zoom?
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Coherencia</th>
+            <td>
+              ¿Los componentes similares
+              mantienen patrones comunes?
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Información</th>
+            <td>
+              ¿Los contenidos mantienen
+              un orden comprensible?
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Interacción</th>
+            <td>
+              ¿El diseño contempla
+              foco visible, teclado
+              y mensajes de estado?
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Rendimiento</th>
+            <td>
+              ¿Se han evitado recursos
+              innecesarios que dificulten
+              la carga de la página?
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="check">
+        <strong>Idea final:</strong>
+        un diseño web de calidad
+        combina claridad visual,
+        coherencia, adaptación
+        y accesibilidad.
+        La mejor decisión de diseño
+        es la que facilita el uso
+        y puede comprobarse
+        mediante pruebas.
+      </div>
+    </section>
+
+    <!-- AUTOEVALUACIÓN -->
+
+    <section>
+      <h2>10. Autoevaluación</h2>
+
+      <p>
+        Comprueba si has comprendido
+        algunos de los conceptos
+        esenciales del tema.
+      </p>
+
+      <form class="quiz" data-quiz>
+
+        <fieldset
+          data-answer="b"
+          data-explain="CSS Grid permite distribuir elementos en filas y columnas. En un catálogo de tarjetas puede crear columnas adaptables según el espacio disponible."
+        >
+          <legend>
+            Quieres mostrar varias tarjetas
+            en columnas que se adapten
+            a la anchura disponible.
+            ¿Qué solución es adecuada?
+          </legend>
+
+          <label>
+            <input type="radio" name="q1" value="a">
+            Asignar a cada tarjeta una anchura
+            fija de 500 píxeles.
+          </label>
+
+          <label>
+            <input type="radio" name="q1" value="b">
+            Utilizar CSS Grid con columnas flexibles.
+          </label>
+
+          <p class="feedback"></p>
+        </fieldset>
+
+        <fieldset
+          data-answer="a"
+          data-explain="Mobile-first parte de una distribución adecuada para pantallas estrechas y la amplía progresivamente, manteniendo las funciones esenciales."
+        >
+          <legend>
+            ¿Qué caracteriza al enfoque mobile-first?
+          </legend>
+
+          <label>
+            <input type="radio" name="q2" value="a">
+            Diseñar inicialmente para pantallas
+            estrechas y ampliar después
+            la distribución según el espacio.
+          </label>
+
+          <label>
+            <input type="radio" name="q2" value="b">
+            Crear una versión móvil eliminando
+            las funciones principales
+            de la página.
+          </label>
+
+          <p class="feedback"></p>
+        </fieldset>
+
+        <button type="button">Corregir</button>
+
+        <p
+          class="result"
+          role="status"
+          aria-live="polite"
+          tabindex="-1"
+        ></p>
+
+      </form>
     </section>
 
   </main>
+
   <footer>
-    <p>UF1841 · Diseño Web — Paleta azul/gris. Basado en buenas prácticas de accesibilidad y usabilidad.</p>
+    El diseño visual está al servicio
+    de la comprensión, la accesibilidad
+    y la experiencia de uso.
   </footer>
 </body>
 </html>

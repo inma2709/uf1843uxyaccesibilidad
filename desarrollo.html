@@ -1,514 +1,3957 @@
 
-<!DOCTYPE html>
+
+<!doctype html>
+
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lección: Referencias y Código Accesible/Usable</title>
-    <link rel="stylesheet" href="styles.css"> 
-    <link rel="icon" href="favicon.png">
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+
+    name="description"
+
+    content="Manual de desarrollo y evaluación web: HTML semántico, accesibilidad, validadores, Lighthouse, WAVE, Easy Checks y WCAG-EM."
+
+  >
+
+  <title>Código y evaluación | Manual de UX y accesibilidad</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="manual.js" defer></script>
+
+  <link rel="icon" href="favicon.png" type="image/png">
+
 </head>
+
 <body>
-    <header>
-        <h1>UF1843: Referencias Imprescindibles y Código de Calidad</h1>
-      <nav>
-            <a href="index.html">Accesibilidad Web</a>
-            <a href="usabilidad.html">Usabilidad Web</a>
-            <a href="practico.html">Planificación</a>
-             <a href="diseñoweb.html">Diseño Web</a>
-            <a href="desarrollo.html">Referencias y Código</a>
-           
-        </nav>
-    </header>
 
-    <div class="container">
-        <h2>Lección: Referencias Imprescindibles y Código Accesible/Usable</h2>
-        <p>Como desarrolladores, somos los guardianes de la experiencia digital. Programar de manera accesible y usable significa asegurar que el código no solo funcione, sino que cumpla con un conjunto de estándares de calidad que son, en muchos casos, requisitos legales.</p>
+  <a class="skip-link" href="#contenido">
 
-        <!-- Epígrafe 1: Referencias Fundamentales de Desarrollo -->
-        <details open>
-            <summary>1. Las Referencias que NO Pueden Faltar en su Desarrollo Web</summary>
-            <div class="contenido-leccion">
-                <p>Para garantizar que su web es accesible y usable, su trabajo debe estar fundamentado en guías y marcos legales establecidos. La accesibilidad no es solo "pasar un checker", sino una estrategia integral que abarca gobierno, formación y evaluación continua.</p>
+    Saltar al contenido
 
-                <h4>1.1. Fundamentos Técnicos y Conceptual (W3C y WebAIM)</h4>
-                <ul>
-                    <li>W3C/WAI – Introducción a la Accesibilidad Web: Esta es la fuente primordial para entender la definición y a quién beneficia la accesibilidad. Permite comprender la idea de “percibir, entender, navegar, interactuar y contribuir”.</li>
-                    <li>WebAIM – Introduction to Web Accessibility: Proporciona una explicación didáctica de las Pautas de Accesibilidad al Contenido Web (WCAG) y los principios POUR (Perceptible, Operable, Comprensible, Robusto).</li>
-                    <li>GOV.UK Service Manual – Accesibilidad: Ofrece una guía operativa muy clara sobre cómo integrar la accesibilidad en los servicios digitales: qué hacer, cuándo y cómo.</li>
-                </ul>
+  </a>
 
-                <h4>1.2. Marcos de Usabilidad (Nielsen Norman Group)</h4>
-                <p>Para la usabilidad, su referencia técnica debe ser el trabajo del NN/g (Nielsen Norman Group):</p>
-                <ul>
-                    <li>Usability 101: Define la usabilidad clásica mediante sus cinco componentes: aprendizaje, eficiencia, memorabilidad, errores y satisfacción. Esto establece sus objetivos de evaluación.</li>
-                    <li>10 Heurísticas de Nielsen: Este marco es rápido y esencial para revisar interfaces y justificar hallazgos de usabilidad. Es la base para el diagnóstico de interfaces.</li>
-                </ul>
-                
-                <h4>1.3. Marco Legal (Obligación de Cumplimiento)</h4>
-                <p>Ignorar la normativa expone tanto al cliente como al desarrollador a riesgos legales. Deben conocer especialmente:</p>
-                <ul>
-                    <li>Real Decreto 1112/2018 (España): Establece la base legal para la accesibilidad de sitios y apps del sector público, incluyendo las obligaciones y la presunción de conformidad. Existe un resumen ciudadano ideal para comprenderlo rápidamente.</li>
-                    <li>Norma UNE 139803: Es la adaptación técnica española de las WCAG. Es su referencia técnica para asegurar la conformidad.</li>
-                    <li>Ley 11/2023 / Acta Europea de Accesibilidad (EAA - 2019/882): Esta legislación es fundamental, ya que amplía el impacto al sector privado (incluido el *e-commerce*) y entra en vigor completamente en junio de 2025. Deben entender que la accesibilidad no es solo un derecho, sino un contexto de cumplimiento y una oportunidad empresarial.</li>
-                </ul>
+  <header>
 
-                <!-- Cuadro Resumen -->
-                <div class="cuadro-resumen">
-                    <h4>Cuadro Resumen: Referencias Imprescindibles para el Desarrollador</h4>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Referencia</th>
-                                <th>Tipo</th>
-                                <th>Propósito en el Desarrollo</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>W3C/WAI</td>
-                                <td>Estándar Internacional</td>
-                                <td>Define el qué: principios POUR (Perceptible, Operable, Comprensible, Robusto).</td>
-                            </tr>
-                            <tr>
-                                <td>NN/g Heurísticas</td>
-                                <td>Marco de Usabilidad</td>
-                                <td>Define la calidad de la interacción.</td>
-                            </tr>
-                            <tr>
-                                <td>RD 1112/2018 / UNE 139803</td>
-                                <td>Legal/Técnico (España)</td>
-                                <td>Obligaciones de accesibilidad para el sector público.</td>
-                            </tr>
-                            <tr>
-                                <td>EAA (Ley 11/2023)</td>
-                                <td>Legal (UE/España)</td>
-                                <td>Contexto de cumplimiento para el sector privado/e-commerce (2025).</td>
-                            </tr>
-                            <tr>
-                                <td>GOV.UK Manual</td>
-                                <td>Guía Operativa</td>
-                                <td>Define el cómo: Patrones y checklist de implementación.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </details>
+    <p class="eyebrow">
 
-        <!-- Epígrafe 2: Ejemplos de Código para la Accesibilidad (WCAG) -->
-        <details>
-            <summary>2. Código Accesible: Ejemplos Prácticos de Implementación WCAG</summary>
-            <div class="contenido-leccion">
-                <p>El código accesible se enfoca en asegurar los principios Perceptible (ej. texto alternativo), Operable (ej. navegación por teclado), Comprensible y Robusto (ej. HTML semántico).</p>
+      Manual de UX, usabilidad y accesibilidad
 
-                <h4>2.1. Imágenes y Contenido No Textual (Perceptible y Robusto)</h4>
-                <p>La barrera más común es la falta de textos alternativos en imágenes o vídeos. El desarrollador debe usar el atributo `alt`.</p>
-                <div class="codigo-ejemplo">
-                    <p><strong>CÓDIGO INACCESIBLE (Error común):</strong></p>
-                    <pre><code>&lt;img src="logo.png"&gt;</code></pre>
-                    <p><em>Riesgo: Los lectores de pantalla no saben qué es la imagen.</em></p>
-                    <p><strong>CÓDIGO ACCESIBLE (Patrón recomendado):</strong></p>
-                    <pre><code>&lt;!-- Imagen informativa --&gt;
-&lt;img src="producto.jpg" alt="Zapatillas deportivas azules con suela blanca"&gt;
+    </p>
 
-&lt;!-- Imagen decorativa (oculta para lectores de pantalla) --&gt;
-&lt;img src="icono.svg" alt="" aria-hidden="true"&gt;</code></pre>
-                </div>
+    <h1>Desarrollar, evaluar y mejorar una página web</h1>
 
-                <h4>2.2. Formularios y Etiquetas (Operable y Comprensible)</h4>
-                <p>La falta de etiquetas adecuadas en formularios es un fallo grave de accesibilidad. Siempre deben asociarse los controles (`<input>`) con su etiqueta (`<label>`) para que el usuario pueda interactuar correctamente.</p>
-                <div class="codigo-ejemplo">
-                    <p><strong>CÓDIGO INACCESIBLE (Fallo en Asociación):</strong></p>
-                    <pre><code>&lt;input type="text" id="nombre"&gt;
-&lt;span&gt;Nombre de Usuario&lt;/span&gt; 
-</code></pre>
-                    <p><em>Riesgo: El lector de pantalla no asocia el texto con el campo de entrada.</em></p>
-                    <p><strong>CÓDIGO ACCESIBLE (Patrón recomendado):</strong></p>
-                    <pre><code>&lt;label for="nombreUsuario"&gt;Nombre de Usuario&lt;/label&gt;
-&lt;input type="text" id="nombreUsuario" required&gt;</code></pre>
-                </div>
+  </header>
 
-                <h4>2.3. Contenido Dinámico (ARIA y Robustez)</h4>
-                <p>Para elementos que no son controles HTML nativos (como un acordeón o una pestaña personalizada), necesitamos ARIA (Accessible Rich Internet Applications) para comunicar roles y estados.</p>
-                <div class="codigo-ejemplo">
-                    <p><strong>CÓDIGO ACCESIBLE (Menú desplegable controlado por botón):</strong></p>
-                    <pre><code>&lt;button aria-expanded="false" aria-controls="menu-desplegable"&gt;Menú&lt;/button&gt;
-&lt;div id="menu-desplegable" role="menu" hidden&gt;
-    &lt;a href="#" role="menuitem"&gt;Opción 1&lt;/a&gt;
+  <nav aria-label="Navegación principal">
+
+    <a href="index.html">Accesibilidad</a>
+
+    <a href="usabilidad.html">Usabilidad</a>
+
+    <a href="practico.html">Planificación</a>
+
+    <a href="diseñoweb.html">Diseño web</a>
+
+    <a href="desarrollo.html" aria-current="page">
+
+      Código y evaluación
+
+    </a>
+
+  </nav>
+
+  <main id="contenido">
+
+    <!-- INTRODUCCIÓN -->
+
+    <section>
+
+      <p class="lead">
+
+        Una página web no está terminada cuando conseguimos
+
+        que se vea correctamente en nuestro navegador.
+
+        También debemos comprobar que su código es adecuado,
+
+        que las personas pueden utilizarla y que no presenta
+
+        barreras de accesibilidad evitables.
+
+      </p>
+
+      <p>
+
+        Durante los temas anteriores hemos estudiado
+
+        la accesibilidad, la usabilidad, la planificación
+
+        y el diseño visual. Ahora vamos a unir esos
+
+        conocimientos para aprender a desarrollar
+
+        y evaluar una página web.
+
+      </p>
+
+      <p>
+
+        Imagina que has creado la web de una biblioteca.
+
+        El menú funciona con el ratón, el formulario
+
+        permite enviar una solicitud y las imágenes
+
+        se muestran correctamente.
+
+      </p>
+
+      <p>
+
+        ¿Significa eso que la web es accesible?
+
+        No necesariamente. Todavía necesitamos comprobar
+
+        si puede utilizarse con teclado, si los campos
+
+        tienen etiquetas comprensibles y si el contenido
+
+        mantiene su funcionalidad al ampliarlo.
+
+      </p>
+
+      <div class="note">
+
+        <strong>Idea fundamental:</strong>
+
+        desarrollar una web de calidad implica
+
+        implementar, comprobar, detectar problemas,
+
+        corregirlos y volver a evaluar.
+
+        La accesibilidad es un proceso continuo.
+
+      </div>
+
+      <h2>Qué aprenderás en este tema</h2>
+
+      <p>
+
+        Aprenderás a reconocer errores frecuentes
+
+        de implementación, utilizar herramientas
+
+        de validación y realizar comprobaciones
+
+        manuales de accesibilidad.
+
+      </p>
+
+      <p>
+
+        También conocerás Easy Checks,
+
+        la metodología WCAG-EM y una forma sencilla
+
+        de documentar problemas y mejoras.
+
+      </p>
+
+    </section>
+
+    <!-- IMPLEMENTACIÓN -->
+
+    <section>
+
+      <h2>1. Aplicar la accesibilidad al escribir código</h2>
+
+      <p>
+
+        La accesibilidad comienza con decisiones
+
+        aparentemente sencillas: elegir la etiqueta
+
+        HTML adecuada, asociar las etiquetas
+
+        de los formularios, conservar el foco visible
+
+        y permitir que los contenidos se adapten
+
+        a diferentes pantallas.
+
+      </p>
+
+      <p>
+
+        Vamos a revisar algunos errores habituales
+
+        y sus soluciones.
+
+      </p>
+
+      <h3>1.1. Utilizar HTML semántico</h3>
+
+      <p>
+
+        HTML ofrece etiquetas que comunican
+
+        el significado de los elementos.
+
+        Por ejemplo, <code>header</code>,
+
+        <code>nav</code>, <code>main</code>
+
+        y <code>footer</code> ayudan a organizar
+
+        la estructura de un documento.
+
+      </p>
+
+      <p>
+
+        Cuando utilizamos estas etiquetas
+
+        correctamente, facilitamos la interpretación
+
+        del contenido por parte del navegador
+
+        y las tecnologías de apoyo.
+
+      </p>
+
+      <h4>Ejemplo de estructura semántica</h4>
+
+      <pre><code>&lt;header&gt;
+
+  &lt;h1&gt;Biblioteca municipal&lt;/h1&gt;
+
+&lt;/header&gt;
+
+&lt;nav aria-label="Navegación principal"&gt;
+
+  &lt;a href="index.html"&gt;Inicio&lt;/a&gt;
+
+  &lt;a href="catalogo.html"&gt;Catálogo&lt;/a&gt;
+
+&lt;/nav&gt;
+
+&lt;main&gt;
+
+  &lt;h2&gt;Consulta nuestro catálogo&lt;/h2&gt;
+
+  &lt;p&gt;
+
+    Encuentra libros y otros recursos.
+
+  &lt;/p&gt;
+
+&lt;/main&gt;
+
+&lt;footer&gt;
+
+  &lt;p&gt;Biblioteca municipal&lt;/p&gt;
+
+&lt;/footer&gt;</code></pre>
+
+      <p>
+
+        Este fragmento representa el contenido
+
+        del <code>body</code> de una página.
+
+        No es necesario utilizar
+
+        <code>div</code> para todo:
+
+        cuando existe una etiqueta semántica
+
+        adecuada, normalmente es preferible.
+
+      </p>
+
+      <h3>1.2. Crear botones que funcionen con teclado</h3>
+
+      <p>
+
+        Un error frecuente consiste en utilizar
+
+        elementos sin semántica interactiva
+
+        para representar botones.
+
+      </p>
+
+      <h4>Ejemplo problemático</h4>
+
+      <pre><code>&lt;div onclick="guardar()"&gt;
+
+  Guardar cambios
+
 &lt;/div&gt;</code></pre>
-                    <p><em>Explicación: `aria-expanded` indica al lector de pantalla si el menú está abierto o cerrado.</em></p>
-                </div>
-            </div>
-        </details>
 
-        <!-- Epígrafe 3: Ejemplos de Código para la Usabilidad (NN/g) -->
-        <details>
-            <summary>3. Código Usable: Implementación de la Eficiencia y Satisfacción</summary>
-            <div class="contenido-leccion">
-                <p>El código usable se centra en reducir la carga cognitiva del usuario, mejorar la eficiencia y garantizar la satisfacción. Se logra mediante una interacción clara y predecible.</p>
+      <p>
 
-                <h4>3.1. Navegación e Interacción por Teclado (Operable y Eficiente)</h4>
-                <p>Asegurar la navegación completa con la tecla Tab es un requisito tanto de usabilidad inclusiva como de accesibilidad. El foco debe ser siempre visible (Usabilidad) y lógico (Accesibilidad).</p>
-                <div class="codigo-ejemplo">
-                    <p><strong>CÓDIGO USABLE (Foco visible con CSS):</strong></p>
-                    <pre><code>/* Patrón GOV.UK y WCAG: Asegurar foco claro, no depender del navegador */
-button:focus,
-a:focus,
-input:focus {
-    outline: 3px solid #ffbf47; /* Color de contraste alto */
-    outline-offset: 2px; /* Espacio para no chocar con el borde */
+        Este elemento responde al clic
+
+        del ratón, pero no incorpora
+
+        por defecto el comportamiento
+
+        de teclado de un botón.
+
+      </p>
+
+      <h4>Alternativa recomendada</h4>
+
+      <pre><code>&lt;button type="button"
+
+        onclick="guardar()"&gt;
+
+  Guardar cambios
+
+&lt;/button&gt;</code></pre>
+
+      <p>
+
+        El elemento <code>button</code>
+
+        dispone de semántica propia
+
+        y puede activarse mediante teclado.
+
+        En ambos ejemplos se supone
+
+        que existe una función JavaScript
+
+        llamada <code>guardar()</code>.
+
+      </p>
+
+      <div class="check">
+
+        <strong>Comprueba:</strong>
+
+        ¿puedes llegar al botón pulsando Tab
+
+        y activarlo mediante Enter o Espacio?
+
+      </div>
+
+      <h3>1.3. Mantener el foco visible</h3>
+
+      <p>
+
+        El foco permite identificar
+
+        qué elemento está preparado
+
+        para recibir la interacción
+
+        mediante teclado.
+
+      </p>
+
+      <p>
+
+        Eliminar su indicador visual
+
+        sin ofrecer una alternativa
+
+        puede impedir que una persona
+
+        sepa dónde se encuentra.
+
+      </p>
+
+      <h4>CSS problemático</h4>
+
+      <pre><code>button:focus {
+
+  outline: none;
+
+}</code></pre>
+
+      <p>
+
+        Esta regla elimina el contorno
+
+        de foco del botón. Si no existe
+
+        otro indicador visible, se genera
+
+        una barrera de navegación.
+
+      </p>
+
+      <h4>CSS recomendado</h4>
+
+      <pre><code>button:focus-visible,
+
+a:focus-visible {
+
+  outline: 3px solid #174ea6;
+
+  outline-offset: 3px;
+
+}</code></pre>
+
+      <p>
+
+        <code>:focus-visible</code>
+
+        permite aplicar estilos
+
+        cuando corresponde mostrar
+
+        un indicador de foco visible.
+
+      </p>
+
+      <p>
+
+        El color elegido debe contrastar
+
+        suficientemente con los fondos
+
+        sobre los que aparece.
+
+      </p>
+
+      <h3>1.4. Proporcionar alternativas para imágenes</h3>
+
+      <p>
+
+        Una imagen informativa necesita
+
+        una alternativa textual que comunique
+
+        su información o propósito.
+
+      </p>
+
+      <h4>Ejemplo</h4>
+
+      <pre><code>&lt;img
+
+  src="horario.png"
+
+  alt="Biblioteca: lunes a viernes,
+
+       de 9:00 a 20:00 horas"
+
+&gt;</code></pre>
+
+      <p>
+
+        Si una imagen es exclusivamente
+
+        decorativa, podemos utilizar
+
+        <code>alt=""</code>.
+
+      </p>
+
+      <p>
+
+        La alternativa correcta depende
+
+        de la función de la imagen
+
+        dentro de la página.
+
+      </p>
+
+      <h3>1.5. Crear enlaces descriptivos</h3>
+
+      <p>
+
+        Los enlaces deben permitir comprender
+
+        su destino o función.
+
+      </p>
+
+      <h4>Ejemplo poco claro</h4>
+
+      <pre><code>&lt;a href="guia.pdf"&gt;
+
+  Haz clic aquí
+
+&lt;/a&gt;</code></pre>
+
+      <h4>Alternativa recomendada</h4>
+
+      <pre><code>&lt;a href="guia.pdf"&gt;
+
+  Descargar la guía de matrícula (PDF)
+
+&lt;/a&gt;</code></pre>
+
+      <p>
+
+        El segundo enlace permite saber
+
+        qué documento se abrirá o descargará,
+
+        incluso cuando se lee fuera
+
+        del contexto del párrafo.
+
+      </p>
+
+      <h3>1.6. Asociar etiquetas a los formularios</h3>
+
+      <p>
+
+        Un campo de formulario necesita
+
+        un nombre comprensible.
+
+        El atributo <code>placeholder</code>
+
+        puede aportar un ejemplo,
+
+        pero no sustituye una etiqueta.
+
+      </p>
+
+      <pre><code>&lt;label for="correo"&gt;
+
+  Correo electrónico
+
+&lt;/label&gt;
+
+&lt;input
+
+  type="email"
+
+  id="correo"
+
+  name="correo"
+
+  autocomplete="email"
+
+  required
+
+&gt;</code></pre>
+
+      <p>
+
+        El atributo <code>for</code>
+
+        del <code>label</code>
+
+        coincide con el <code>id</code>
+
+        del campo.
+
+      </p>
+
+      <p>
+
+        También debemos indicar los
+
+        campos obligatorios de manera
+
+        comprensible y explicar
+
+        los errores de validación.
+
+      </p>
+
+      <h3>1.7. Diseñar contenido flexible</h3>
+
+      <p>
+
+        El contenido debe adaptarse
+
+        al espacio disponible y permitir
+
+        ampliar el texto sin perder
+
+        información o funcionalidad.
+
+      </p>
+
+      <p>
+
+        Podemos comenzar con reglas
+
+        sencillas de CSS:
+
+      </p>
+
+      <pre><code>body {
+
+  font-size: 1rem;
+
+  line-height: 1.5;
+
 }
 
-/* Evitar mala práctica */
-*:focus {
-    outline: none; /* ¡NUNCA USAR ESTO! */
+img {
+
+  max-width: 100%;
+
+  height: auto;
+
 }</code></pre>
-                </div>
 
-                <h4>3.2. Retroalimentación Inmediata (Eficiencia y Errores)</h4>
-                <p>La usabilidad exige que el sistema informe al usuario sobre el estado de cada acción (principio de Retroalimentación). Esto reduce los errores y la frustración.</p>
-                <div class="codigo-ejemplo">
-                    <p><strong>CÓDIGO USABLE (Validación y retroalimentación con JS/HTML):</strong></p>
-                    <pre><code>&lt;input type="email" id="email" required onblur="validarEmail(this)"&gt;
-&lt;p id="emailError" class="feedback incorrecto" aria-live="polite"&gt;
-    El formato de correo no es válido.
+      <p>
+
+        <code>rem</code> es una unidad
+
+        relativa de tamaño.
+
+        En las imágenes,
+
+        <code>max-width: 100%</code>
+
+        evita que superen la anchura
+
+        de su contenedor cuando
+
+        son más grandes que él.
+
+      </p>
+
+      <p>
+
+        Estas reglas ayudan a crear
+
+        diseños adaptables, pero
+
+        no garantizan por sí solas
+
+        que todo el contenido
+
+        cumpla los criterios de reflow.
+
+      </p>
+
+      <h3>1.8. Respetar las preferencias de movimiento</h3>
+
+      <p>
+
+        Las animaciones y transiciones
+
+        pueden resultar molestas
+
+        o provocar dificultades
+
+        a determinadas personas.
+
+      </p>
+
+      <p>
+
+        CSS permite consultar
+
+        si el sistema ha indicado
+
+        una preferencia por reducir
+
+        el movimiento.
+
+      </p>
+
+      <pre><code>@media (prefers-reduced-motion: reduce) {
+
+  .elemento-animado {
+
+    animation: none;
+
+    transition: none;
+
+  }
+
+}</code></pre>
+
+      <p>
+
+        En este ejemplo,
+
+        <code>.elemento-animado</code>
+
+        representa un componente
+
+        que normalmente contiene
+
+        animaciones o transiciones.
+
+      </p>
+
+      <p>
+
+        La solución debe adaptarse
+
+        a cada componente para no eliminar
+
+        información o funcionalidad esencial.
+
+      </p>
+
+      <div class="note">
+
+        <strong>Recuerda:</strong>
+
+        evita iniciar automáticamente
+
+        contenido multimedia con sonido
+
+        y proporciona controles adecuados
+
+        para pausar o detener contenido
+
+        cuando corresponda.
+
+      </div>
+
+      <h3>1.9. Utilizar ARIA con criterio</h3>
+
+      <p>
+
+        ARIA permite comunicar información
+
+        adicional sobre determinados componentes
+
+        a las tecnologías de apoyo.
+
+      </p>
+
+      <p>
+
+        Sin embargo, ARIA no convierte
+
+        automáticamente un elemento
+
+        en accesible.
+
+      </p>
+
+      <p>
+
+        Por ejemplo, añadir
+
+        <code>role="button"</code>
+
+        a un <code>div</code>
+
+        no incorpora por sí solo
+
+        el comportamiento de teclado
+
+        de un botón nativo.
+
+      </p>
+
+      <div class="check">
+
+        <strong>Regla práctica:</strong>
+
+        utiliza primero HTML semántico.
+
+        Recurre a ARIA cuando sea necesario,
+
+        comprueba su efecto y no lo utilices
+
+        para sustituir comportamientos
+
+        nativos que ya ofrece HTML.
+
+      </div>
+
+
+      <h3>1.10. Cómo crear una página que pueda utilizarse sin ratón</h3>
+
+      <p>
+        Hasta ahora hemos visto que los controles deben funcionar con
+        teclado. Pero ¿qué tenemos que programar para conseguirlo?
+        La respuesta es sencilla: <strong>empezar por los elementos
+        HTML nativos</strong>. Los enlaces, botones y campos de formulario
+        ya incorporan comportamientos de teclado proporcionados por
+        el navegador.
+      </p>
+
+      <h4>Qué teclas se utilizan</h4>
+      <table>
+        <caption>Interacciones habituales mediante teclado</caption>
+        <thead>
+          <tr><th scope="col">Tecla</th><th scope="col">Qué hace normalmente</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Tab</th><td>Avanza entre los controles que pueden recibir el foco.</td></tr>
+          <tr><th scope="row">Shift + Tab</th><td>Retrocede al control anterior.</td></tr>
+          <tr><th scope="row">Enter</th><td>Activa enlaces y botones; también puede enviar un formulario según el contexto.</td></tr>
+          <tr><th scope="row">Espacio</th><td>Activa botones y cambia el estado de las casillas de verificación cuando tienen el foco.</td></tr>
+          <tr><th scope="row">Flechas</th><td>Permiten elegir opciones en controles como los grupos de botones de radio.</td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        No todas las teclas funcionan igual en todos los elementos.
+        Por ejemplo, un enlace se activa normalmente con Enter,
+        mientras que un botón admite Enter y Espacio.
+        Este comportamiento es una de las ventajas de utilizar
+        las etiquetas correctas.
+      </p>
+
+      <h4>La regla principal: no reinventar los controles</h4>
+      <p>Este elemento <strong>no es un botón accesible por defecto</strong>:</p>
+      <pre><code>&lt;div onclick="guardar()"&gt;Guardar&lt;/div&gt;</code></pre>
+      <p>En cambio, este sí incorpora semántica y activación mediante teclado:</p>
+      <pre><code>&lt;button type="button" onclick="guardar()"&gt;
+  Guardar
+&lt;/button&gt;</code></pre>
+      <p>
+        En ambos fragmentos se presupone una función llamada
+        <code>guardar()</code>. La diferencia importante es que el botón
+        nativo ya es enfocable y responde al teclado sin tener que
+        programar eventos adicionales.
+      </p>
+
+      <h4>Ejemplo completo: una página que funciona con teclado</h4>
+      <p>
+        Crea un archivo llamado <code>teclado.html</code>, copia el
+        siguiente ejemplo y ábrelo en un navegador. Incluye un enlace,
+        un campo, una casilla y un botón con una respuesta visible.
+        El evento <code>click</code> del botón se ejecuta también
+        cuando este se activa mediante Enter o Espacio.
+      </p>
+      <pre><code>&lt;!doctype html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;title&gt;Práctica de teclado&lt;/title&gt;
+  &lt;style&gt;
+    body {
+      font: 1rem/1.5 system-ui, sans-serif;
+      max-width: 38rem;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    label { display: block; margin: 1rem 0; }
+    button { padding: .6rem 1rem; }
+    a:focus-visible,
+    input:focus-visible,
+    button:focus-visible {
+      outline: 3px solid #174ea6;
+      outline-offset: 3px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;main id="contenido"&gt;
+    &lt;h1&gt;Prueba de navegación con teclado&lt;/h1&gt;
+    &lt;a href="#formulario"&gt;Ir al formulario&lt;/a&gt;
+
+    &lt;form id="formulario"&gt;
+      &lt;label for="nombre"&gt;Tu nombre&lt;/label&gt;
+      &lt;input id="nombre" name="nombre" required&gt;
+
+      &lt;label&gt;
+        &lt;input type="checkbox" id="acepto"&gt;
+        He leído las instrucciones
+      &lt;/label&gt;
+
+      &lt;button type="submit"&gt;Mostrar saludo&lt;/button&gt;
+    &lt;/form&gt;
+
+    &lt;p id="mensaje" role="status"&gt;&lt;/p&gt;
+  &lt;/main&gt;
+
+  &lt;script&gt;
+    const formulario = document.querySelector('#formulario');
+    const mensaje = document.querySelector('#mensaje');
+
+    formulario.addEventListener('submit', (evento) =&gt; {
+      evento.preventDefault();
+      const nombre = document.querySelector('#nombre').value.trim();
+      mensaje.textContent = `Hola, ${nombre}. Formulario enviado.`;
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+      <p>
+        Observa que no necesitamos escuchar <code>keydown</code>
+        para activar el botón: el navegador convierte la activación
+        mediante teclado en el comportamiento habitual del control.
+        La validación nativa impide enviar el formulario si el nombre
+        está vacío. La casilla es solo un elemento de práctica y
+        no condiciona el envío.
+      </p>
+
+      <div class="activity">
+        <h4>Actividad: comprueba y mejora la navegación</h4>
+        <p><strong>Objetivo:</strong> comprobar que una interfaz sencilla
+          puede utilizarse sin ratón y reconocer cómo actúa el foco.</p>
+        <ol>
+          <li>Abre <code>teclado.html</code> y deja de usar el ratón.</li>
+          <li>Pulsa Tab hasta el enlace y actívalo con Enter.</li>
+          <li>Accede al campo de nombre, escribe un texto y continúa con Tab.</li>
+          <li>Marca y desmarca la casilla mediante Espacio.</li>
+          <li>Activa «Mostrar saludo» con Enter o Espacio y comprueba el mensaje.</li>
+          <li>Retrocede con Shift + Tab y comprueba que siempre ves dónde está el foco.</li>
+          <li>Elimina temporalmente los estilos de <code>:focus-visible</code>
+            y observa el indicador que proporciona el navegador. Después recupéralos.</li>
+        </ol>
+        <p><strong>Resultado esperado:</strong> puedes completar la interacción
+          sin ratón, entiendes qué elemento tiene el foco y sabes distinguir
+          entre el comportamiento nativo de HTML y la lógica JavaScript.</p>
+      </div>
+
+      <h4>¿Cuándo hacen falta eventos de teclado en JavaScript?</h4>
+      <p>
+        Normalmente no hacen falta para enlaces, botones o campos
+        HTML nativos. Sí pueden ser necesarios en componentes
+        personalizados complejos, como determinados menús o cuadros
+        de diálogo, pero deben seguir los patrones de interacción
+        apropiados y probarse con tecnologías de apoyo.
+      </p>
+      <p>
+        El atributo <code>tabindex="0"</code> puede incorporar
+        un elemento al orden de tabulación, pero <strong>no lo
+        convierte en un botón</strong> ni añade por sí solo las
+        teclas de activación. Evita valores positivos como
+        <code>tabindex="1"</code>, que pueden generar un orden de
+        navegación inesperado. <code>tabindex="-1"</code> permite
+        enfocar mediante JavaScript ciertos elementos sin añadirlos
+        al recorrido normal de Tab.
+      </p>
+      <div class="check">
+        <strong>Regla para recordar:</strong> usa enlaces para navegar,
+        botones para ejecutar acciones y controles nativos para
+        introducir datos. Mantén un orden de HTML lógico y un
+        foco visible. Después comprueba toda la tarea sin ratón.
+      </div>
+
+    </section>
+
+    <!-- HERRAMIENTAS -->
+
+    <section>
+
+      <h2>2. Herramientas para comprobar una página web</h2>
+
+      <p>
+
+        Existen herramientas que nos ayudan
+
+        a detectar errores de marcado,
+
+        contrastes insuficientes
+
+        y determinados problemas
+
+        de accesibilidad.
+
+      </p>
+
+      <p>
+
+        Es importante elegir la herramienta
+
+        adecuada para cada comprobación.
+
+        No todas analizan lo mismo
+
+        ni ofrecen el mismo tipo
+
+        de resultados.
+
+      </p>
+
+      <div class="note">
+
+        <strong>Importante:</strong>
+
+        ninguna herramienta automática
+
+        puede determinar por sí sola
+
+        que una página cumple todos
+
+        los requisitos de accesibilidad.
+
+        Sus resultados deben interpretarse
+
+        y complementarse con otras pruebas.
+
+      </div>
+
+      <h3>2.1. Nu HTML Checker: validar el código HTML</h3>
+
+      <p>
+
+        El <strong>Nu HTML Checker</strong>
+
+        permite detectar problemas
+
+        en la estructura y sintaxis
+
+        del HTML.
+
+      </p>
+
+      <p>
+
+        Por ejemplo, puede informar
+
+        de etiquetas mal utilizadas,
+
+        atributos no permitidos
+
+        o elementos obsoletos.
+
+      </p>
+
+      <p>
+
+        <a
+
+          href="https://validator.w3.org/nu/"
+
+          target="_blank"
+
+          rel="noopener noreferrer"
+
+        >
+
+          Abrir Nu HTML Checker
+
+        </a>
+
+      </p>
+
+      <h4>Cómo utilizarlo</h4>
+
+      <ol>
+
+        <li>
+
+          Abre la herramienta.
+
+        </li>
+
+        <li>
+
+          Introduce la URL
+
+          de una página pública,
+
+          carga un archivo
+
+          o pega el código HTML,
+
+          según la opción disponible.
+
+        </li>
+
+        <li>
+
+          Ejecuta la comprobación.
+
+        </li>
+
+        <li>
+
+          Lee los errores
+
+          y advertencias.
+
+        </li>
+
+        <li>
+
+          Corrige los problemas
+
+          identificados.
+
+        </li>
+
+        <li>
+
+          Repite la validación.
+
+        </li>
+
+      </ol>
+
+      <h4>Ejemplo: atributo obsoleto</h4>
+
+      <p>
+
+        En materiales antiguos
+
+        puedes encontrar código como:
+
+      </p>
+
+      <pre><code>&lt;p align="center"&gt;
+
+  Bienvenido
+
 &lt;/p&gt;</code></pre>
-                    <p><em>Explicación: `aria-live="polite"` asegura que si el mensaje de error aparece dinámicamente, el lector de pantalla lo anuncia automáticamente, combinando usabilidad (informar error) y accesibilidad (anunciar error).</em></p>
-                </div>
-                
-                <h4>3.3. Estructura y Claridad (Comprensible y Memorabilidad)</h4>
-                <p>El uso de encabezados semánticos de forma correcta ayuda a la memorabilidad del sitio y permite la navegación por estructura.</p>
-                <div class="codigo-ejemplo">
-                    <p><strong>CÓDIGO USABLE (Estructura semántica):</strong></p>
-                    <pre><code>&lt;main&gt;
-    &lt;h1&gt;Título principal de la página&lt;/h1&gt;
-    &lt;p&gt;Contenido introductorio.&lt;/p&gt;
 
-    &lt;section&gt;
-        &lt;h2&gt;Subsección: Noticias del Sector&lt;/h2&gt;
-        &lt;article&gt;
-            &lt;h3&gt;Noticia A: Lanzamiento de producto&lt;/h3&gt;
-        &lt;/article&gt;
-    &lt;/section&gt;
-&lt;/main&gt;</code></pre>
-                    <p><em>Nota: Nunca se debe saltar niveles de encabezado (ej. de `h1` a `h4`).</em></p>
-                </div>
-            </div>
-        </details>
-        
-        <!-- Test de Repaso: Referencias y Código (30 preguntas) -->
-        <div class="test-repaso">
-            <h3>Test de Repaso: Referencias y Código Accesible/Usable (30 Preguntas)</h3>
-            <p>Seleccione la opción correcta para cada pregunta. (La funcionalidad de autocorrección requiere JavaScript en un entorno real).</p>
-            <form id="test-referencias-codigo">
-                
-                <!-- P1 (Referencia Usabilidad) -->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>1. ¿Cuál es el marco fundamental utilizado para revisar interfaces y justificar hallazgos de usabilidad en el laboratorio, según las referencias del curso?</p>
-                    <label class="opcion"><input type="radio" name="p1" value="a"> Real Decreto 1112/2018.</label><br>
-                    <label class="opcion"><input type="radio" name="p1" value="b"> 10 Heurísticas de Nielsen (NN/g).</label><br>
-                    <label class="opcion"><input type="radio" name="p1" value="c"> Norma ISO 9241-11.</label>
-                    <div class="feedback"></div>
-                </div>
+      <p>
 
-                <!-- P2 (WCAG Principio) -->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>2. El principio WCAG que exige el uso correcto de HTML semántico y ARIA para la compatibilidad con tecnologías asistivas es:</p>
-                    <label class="opcion"><input type="radio" name="p2" value="a"> Perceptible.</label><br>
-                    <label class="opcion"><input type="radio" name="p2" value="b"> Comprensible.</label><br>
-                    <label class="opcion"><input type="radio" name="p2" value="c"> Robusto.</label>
-                    <div class="feedback"></div>
-                </div>
-                
-                <!-- P3 (Código ARIA) -->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>3. ¿Qué atributo ARIA se utiliza en un menú desplegable para indicar a un lector de pantalla si está abierto o cerrado?</p>
-                    <label class="opcion"><input type="radio" name="p3" value="a"> `aria-expanded`.</label><br>
-                    <label class="opcion"><input type="radio" name="p3" value="b"> `alt`.</label><br>
-                    <label class="opcion"><input type="radio" name="p3" value="c"> `role="link"`.</label>
-                    <div class="feedback"></div>
-                </div>
+        El atributo <code>align</code>
 
-                <!-- P4 (Legal España) -->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>4. ¿Cuál es la base legal principal en España para la accesibilidad de sitios web del sector público, citada en las referencias?</p>
-                    <label class="opcion"><input type="radio" name="p4" value="a"> Real Decreto 1112/2018.</label><br>
-                    <label class="opcion"><input type="radio" name="p4" value="b"> Ley de Protección de Datos.</label><br>
-                    <label class="opcion"><input type="radio" name="p4" value="c"> Directiva GDPR.</label>
-                    <div class="feedback"></div>
-                </div>
+        utilizado así es obsoleto
 
-                <!-- P5 (Código alt) -->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>5. Si una imagen es meramente decorativa, el código accesible más adecuado para ella es:</p>
-                    <label class="opcion"><input type="radio" name="p5" value="a"> `alt="decoración sin importancia"`.</label><br>
-                    <label class="opcion"><input type="radio" name="p5" value="b"> `alt=""` y/o `aria-hidden="true"`.</label><br>
-                    <label class="opcion"><input type="radio" name="p5" value="c"> Omitir el atributo `alt` completamente.</label>
-                    <div class="feedback"></div>
-                </div>
+        en HTML moderno.
 
-                <!-- P6 (GOV.UK) -->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>6. ¿Qué recurso se recomienda como guía operativa muy clara para integrar la accesibilidad en servicios digitales con patrones y checklists accionables?</p>
-                    <label class="opcion"><input type="radio" name="p6" value="a"> GOV.UK Service Manual.</label><br>
-                    <label class="opcion"><input type="radio" name="p6" value="b"> Adobe Acrobat Manual.</label><br>
-                    <label class="opcion"><input type="radio" name="p6" value="c"> Google Search Console.</label>
-                    <div class="feedback"></div>
-                </div>
+        La presentación debe
 
-                <!-- P7 (Usability 101) -->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>7. Según NN/g Usability 101, ¿cuál de estos no es uno de los cinco componentes de la usabilidad?</p>
-                    <label class="opcion"><input type="radio" name="p7" value="a"> Satisfacción.</label><br>
-                    <label class="opcion"><input type="radio" name="p7" value="b"> Eficiencia.</label><br>
-                    <label class="opcion"><input type="radio" name="p7" value="c"> Estética.</label>
-                    <div class="feedback"></div>
-                </div>
+        realizarse mediante CSS.
 
-                <!-- P8 (Foco CSS) -->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>8. Para asegurar la Operabilidad con teclado, un desarrollador debe incluir en CSS la regla:</p>
-                    <label class="opcion"><input type="radio" name="p8" value="a"> `*:focus { outline: none; }`.</label><br>
-                    <label class="opcion"><input type="radio" name="p8" value="b"> Indicadores visuales claros del foco activo usando `:focus`.</label><br>
-                    <label class="opcion"><input type="radio" name="p8" value="c"> Un color de fondo muy claro.</label>
-                    <div class="feedback"></div>
-                </div>
+      </p>
 
-                <!-- P9 (Legal Privado) -->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>9. ¿Qué marco legal amplía las obligaciones de accesibilidad al sector privado y al e-commerce, con plena vigencia a partir de 2025?</p>
-                    <label class="opcion"><input type="radio" name="p9" value="a"> El Acta Europea de Accesibilidad (EAA / Ley 11/2023).</label><br>
-                    <label class="opcion"><input type="radio" name="p9" value="b"> El Código Civil.</label><br>
-                    <label class="opcion"><input type="radio" name="p9" value="c"> La Ley de Propiedad Intelectual.</label>
-                    <div class="feedback"></div>
-                </div>
+      <h4>HTML recomendado</h4>
 
-                <!-- P10 (HTML Semántico) -->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>10. ¿Cuál es el error en la jerarquía semántica del código:</p>
-                    <pre><code>&lt;h1&gt;Título&lt;/h1&gt; &lt;h4&gt;Subtítulo&lt;/h4&gt;</code></pre>
-                    <label class="opcion"><input type="radio" name="p10" value="a"> No usar la etiqueta `&lt;p&gt;`.</label><br>
-                    <label class="opcion"><input type="radio" name="p10" value="b"> El uso del `&lt;h1&gt;` es correcto.</label><br>
-                    <label class="opcion"><input type="radio" name="p10" value="c"> Se saltó un nivel de encabezado (`h2`, `h3`), rompiendo la jerarquía Comprensible.</label>
-                    <div class="feedback"></div>
-                </div>
+      <pre><code>&lt;p class="texto-centrado"&gt;
 
-                <!-- P11 (WebAIM) -->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>11. Además de explicar WCAG y POUR, WebAIM también proporciona guías sobre accesibilidad como estrategia, abarcando:</p>
-                    <label class="opcion"><input type="radio" name="p11" value="a"> Gobierno, formación y evaluación continua.</label><br>
-                    <label class="opcion"><input type="radio" name="p11" value="b"> Reglas de SEO avanzado.</label><br>
-                    <label class="opcion"><input type="radio" name="p11" value="c"> Exclusivamente diseño gráfico.</label>
-                    <div class="feedback"></div>
-                </div>
+  Bienvenido
 
-                <!-- P12 (Formularios Accesibles) -->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>12. Para asociar una etiqueta con un campo de entrada (`<input>`) en HTML de forma correcta, se usa:</p>
-                    <label class="opcion"><input type="radio" name="p12" value="a"> El atributo `name` en el `<input>`.</label><br>
-                    <label class="opcion"><input type="radio" name="p12" value="b"> El atributo `for` en el `<label>` y `id` en el `<input>`.</label><br>
-                    <label class="opcion"><input type="radio" name="p12" value="c"> Exclusivamente CSS.</label>
-                    <div class="feedback"></div>
-                </div>
+&lt;/p&gt;</code></pre>
 
-                <!-- P13 (W3C/WAI Definición) -->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>13. La W3C/WAI define la accesibilidad web como la capacidad de:</p>
-                    <label class="opcion"><input type="radio" name="p13" value="a"> Solo percibir e interactuar.</label><br>
-                    <label class="opcion"><input type="radio" name="p13" value="b"> Solo navegar y contribuir.</label><br>
-                    <label class="opcion"><input type="radio" name="p13" value="c"> Percibir, entender, navegar, interactuar y contribuir.</label>
-                    <div class="feedback"></div>
-                </div>
+      <h4>CSS</h4>
 
-                <!-- P14 (Mala Práctica CSS) -->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>14. ¿Qué fragmento CSS es una mala práctica que elimina la Operabilidad con teclado?</p>
-                    <pre><code>*:focus { outline: none; }</code></pre>
-                    <label class="opcion"><input type="radio" name="p14" value="a"> Correcto, elimina el indicador de foco.</label><br>
-                    <label class="opcion"><input type="radio" name="p14" value="b"> Incorrecto, es la forma correcta de asegurar el foco.</label><br>
-                    <label class="opcion"><input type="radio" name="p14" value="c"> Irrelevante para la accesibilidad.</label>
-                    <div class="feedback"></div>
-                </div>
+      <pre><code>.texto-centrado {
 
-                <!-- P15 (Usabilidad: Retroalimentación) -->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>15. El principio de Usabilidad de "Retroalimentación" se traduce en código mediante:</p>
-                    <label class="opcion"><input type="radio" name="p15" value="a"> Dejar al usuario adivinar si la acción funcionó.</label><br>
-                    <label class="opcion"><input type="radio" name="p15" value="b"> Mensajes claros que indican el estado de la acción (ej. "Formulario enviado con éxito").</label><br>
-                    <label class="opcion"><input type="radio" name="p15" value="c"> El uso de JavaScript avanzado, sin mensajes visibles.</label>
-                    <div class="feedback"></div>
-                </div>
+  text-align: center;
 
-                <!-- P16 (Referencia Legal/Técnica Española) -->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>16. ¿Cuál es la adaptación técnica española de las WCAG?</p>
-                    <label class="opcion"><input type="radio" name="p16" value="a"> ADA.</label><br>
-                    <label class="opcion"><input type="radio" name="p16" value="b"> Ley 11/2023.</label><br>
-                    <label class="opcion"><input type="radio" name="p16" value="c"> Norma UNE 139803.</label>
-                    <div class="feedback"></div>
-                </div>
-                
-                <!-- P17 (Principio Perceptible) -->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>17. Los colores y contrastes inapropiados en un diseño web son una barrera directa al principio WCAG de:</p>
-                    <label class="opcion"><input type="radio" name="p17" value="a"> Perceptible.</label><br>
-                    <label class="opcion"><input type="radio" name="p17" value="b"> Operable.</label><br>
-                    <label class="opcion"><input type="radio" name="p17" value="c"> Memorabilidad.</label>
-                    <div class="feedback"></div>
-                </div>
+}</code></pre>
 
-                <!-- P18 (Usabilidad: Errores) -->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>18. Para reducir los errores (componente de usabilidad) en formularios, el desarrollador debe asegurar:</p>
-                    <label class="opcion"><input type="radio" name="p18" value="a"> Que los mensajes de error sean técnicos y complejos.</label><br>
-                    <label class="opcion"><input type="radio" name="p18" value="b"> Que haya validación inmediata y opciones para corregir fácilmente.</label><br>
-                    <label class="opcion"><input type="radio" name="p18" value="c"> Que el usuario solo pueda usar el teclado.</label>
-                    <div class="feedback"></div>
-                </div>
+      <p>
 
-                <!-- P19 (ARIA Live) -->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>19. Si un mensaje de error aparece de forma dinámica, ¿qué comando ARIA asegura que el lector de pantalla lo anuncie automáticamente?</p>
-                    <label class="opcion"><input type="radio" name="p19" value="a"> `aria-hidden="true"`.</label><br>
-                    <label class="opcion"><input type="radio" name="p19" value="b"> `role="alert"` sin más atributos.</label><br>
-                    <label class="opcion"><input type="radio" name="p19" value="c"> `aria-live="polite"` o `role="alert"` (implica `aria-live="assertive"`).</label>
-                    <div class="feedback"></div>
-                </div>
+        Validar HTML ayuda
 
-                <!-- P20 (Referencia Motivacional) -->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>20. ¿Qué recurso se recomienda para iniciar debates con los alumnos sobre las razones éticas, legales y de negocio de la accesibilidad?</p>
-                    <label class="opcion"><input type="radio" name="p20" value="a"> Usability Testing 101.</label><br>
-                    <label class="opcion"><input type="radio" name="p20" value="b"> WebAIM – Motivar a equipos (Why Accessibility?).</label><br>
-                    <label class="opcion"><input type="radio" name="p20" value="c"> La guía de SEO de Google.</label>
-                    <div class="feedback"></div>
-                </div>
+        a detectar problemas técnicos,
 
-                <!-- P21 (Componente de usabilidad) -->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>21. ¿Cuál de los siguientes es uno de los 5 componentes de la usabilidad según NN/g?</p>
-                    <label class="opcion"><input type="radio" name="p21" value="a"> Memorabilidad.</label><br>
-                    <label class="opcion"><input type="radio" name="p21" value="b"> Robustez.</label><br>
-                    <label class="opcion"><input type="radio" name="p21" value="c"> Flexibilidad.</label>
-                    <div class="feedback"></div>
-                </div>
+        pero no demuestra que
 
-                <!-- P22 (Jump Links) -->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>22. Los enlaces que permiten al usuario de teclado saltar directamente al contenido principal se conocen como:</p>
-                    <label class="opcion"><input type="radio" name="p22" value="a"> `alt` links.</label><br>
-                    <label class="opcion"><input type="radio" name="p22" value="b"> ARIA links.</label><br>
-                    <label class="opcion"><input type="radio" name="p22" value="c"> Enlaces de Salto (`skip links`).</label>
-                    <div class="feedback"></div>
-                </div>
+        la página cumpla las WCAG.
 
-                <!-- P23 (Usabilidad vs Accesibilidad) -->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>23. ¿Qué implicación tiene la EAA (Acta Europea de Accesibilidad) para el sector privado a partir de 2025?</p>
-                    <label class="opcion"><input type="radio" name="p23" value="a"> Genera un contexto de cumplimiento legal y una oportunidad empresarial.</label><br>
-                    <label class="opcion"><input type="radio" name="p23" value="b"> Elimina toda obligación de accesibilidad.</label><br>
-                    <label class="opcion"><input type="radio" name="p23" value="c"> Solo afecta a los documentos PDF.</label>
-                    <div class="feedback"></div>
-                </div>
+      </p>
 
-                <!-- P24 (Estructura semántica) -->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>24. ¿Por qué es fundamental que un desarrollador use correctamente las etiquetas de encabezado (`h1`, `h2`, etc.) en orden?</p>
-                    <label class="opcion"><input type="radio" name="p24" value="a"> Para reducir el tiempo de carga del servidor.</label><br>
-                    <label class="opcion"><input type="radio" name="p24" value="b"> Para crear una jerarquía clara y mejorar la navegabilidad por estructura (Comprensible y Robusto).</label><br>
-                    <label class="opcion"><input type="radio" name="p24" value="c"> Porque Google lo obliga para el SEO, exclusivamente.</label>
-                    <div class="feedback"></div>
-                </div>
+      <h3>2.2. WebAIM Contrast Checker</h3>
 
-                <!-- P25 (Formularios Inaccesibles) -->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>25. ¿Cuál es el riesgo de no asociar el `<input>` con un `<label>` en un formulario?</p>
-                    <label class="opcion"><input type="radio" name="p25" value="a"> El código se vuelve muy lento.</label><br>
-                    <label class="opcion"><input type="radio" name="p25" value="b"> Se rompe el CSS.</label><br>
-                    <label class="opcion"><input type="radio" name="p25" value="c"> El lector de pantalla no identifica el propósito del campo de entrada (Fallo Operable).</label>
-                    <div class="feedback"></div>
-                </div>
+      <p>
 
-                <!-- P26 (Guía W3C) -->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>26. El recurso W3C/WAI se recomienda para obtener, entre otras cosas, ejemplos de:</p>
-                    <label class="opcion"><input type="radio" name="p26" value="a"> "Buen vs. mal" patrón.</label><br>
-                    <label class="opcion"><input type="radio" name="p26" value="b"> Las últimas cotizaciones de bolsa.</label><br>
-                    <label class="opcion"><input type="radio" name="p26" value="c"> Exclusivamente código de backend.</label>
-                    <div class="feedback"></div>
-                </div>
+        Esta herramienta comprueba
 
-                <!-- P27 (CSS Contraste) -->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>27. Para cumplir con el principio Perceptible, ¿qué se recomienda en CSS respecto al foco?</p>
-                    <label class="opcion"><input type="radio" name="p27" value="a"> Eliminar el contorno por defecto del navegador.</label><br>
-                    <label class="opcion"><input type="radio" name="p27" value="b"> Usar colores de contraste alto para el contorno del foco (outline) para que sea visible al navegar con teclado.</label><br>
-                    <label class="opcion"><input type="radio" name="p27" value="c"> Usar la etiqueta `<blink>`.</label>
-                    <div class="feedback"></div>
-                </div>
+        la relación de contraste
 
-                <!-- P28 (Propósito ARIA) -->
-                <div class="pregunta" data-correct-answer="c">
-                    <p>28. Los atributos ARIA se utilizan principalmente para:</p>
-                    <label class="opcion"><input type="radio" name="p28" value="a"> Reemplazar HTML por completo.</label><br>
-                    <label class="opcion"><input type="radio" name="p28" value="b"> Mejorar la velocidad de las animaciones.</label><br>
-                    <label class="opcion"><input type="radio" name="p28" value="c"> Suplementar los elementos HTML nativos para comunicar roles, estados y propiedades a tecnologías asistivas.</label>
-                    <div class="feedback"></div>
-                </div>
+        entre dos colores.
 
-                <!-- P29 (Usabilidad en la práctica) -->
-                <div class="pregunta" data-correct-answer="a">
-                    <p>29. ¿Qué define el NN/g como un marco de "solidez de la evidencia" de investigación, útil para informes de clase?</p>
-                    <label class="opcion"><input type="radio" name="p29" value="a"> Strength of User Research Evidence.</label><br>
-                    <label class="opcion"><input type="radio" name="p29" value="b"> WCAG A.</label><br>
-                    <label class="opcion"><input type="radio" name="p29" value="c"> GOV.UK EAA.</label>
-                    <div class="feedback"></div>
-                </div>
+      </p>
 
-                <!-- P30 (Programación defensiva) -->
-                <div class="pregunta" data-correct-answer="b">
-                    <p>30. La Ley 11/2023 se refiere principalmente a:</p>
-                    <label class="opcion"><input type="radio" name="p30" value="a"> El sector público y el RD 1112/2018.</label><br>
-                    <label class="opcion"><input type="radio" name="p30" value="b"> El Acta Europea de Accesibilidad y su impacto en productos/servicios digitales.</label><br>
-                    <label class="opcion"><input type="radio" name="p30" value="c"> La usabilidad puramente estética.</label>
-                    <div class="feedback"></div>
-                </div>
-                
-                <button type="button" class="btn-corregir" onclick="corregirTest('test-referencias-codigo', 30)">Corregir Test de Referencias y Código</button>
-            </form>
-        </div>
-    </div>
-    
-    <!-- Script necesario para la autocorrección y retroalimentación -->
-    <script>
-        function corregirTest(testId, totalQuestions) {
-            const form = document.getElementById(testId);
-            const questions = form.querySelectorAll('.pregunta');
-            let correctCount = 0;
+      <p>
 
-            questions.forEach((q, index) => {
-                const feedback = q.querySelector('.feedback');
-                const selected = q.querySelector('input:checked');
-                const correctAnswer = q.getAttribute('data-correct-answer');
-                const questionNumber = index + 1;
+        Es especialmente útil cuando
 
-                feedback.style.display = 'block';
-                feedback.classList.remove('correcto', 'incorrecto');
-                
-                if (selected && selected.value === correctAnswer) {
-                    feedback.classList.add('correcto');
-                    feedback.innerHTML = `¡Correcto! Pregunta ${questionNumber}.`;
-                    correctCount++;
-                } else {
-                    feedback.classList.add('incorrecto');
-                    feedback.innerHTML = `Incorrecto. Pregunta ${questionNumber}. La respuesta correcta es: ${correctAnswer}.`;
-                }
-            });
+        estamos definiendo
 
-            alert(`Test completado. Puntuación: ${correctCount} de ${totalQuestions}.`);
-        }
-    </script>
+        los colores de textos
+
+        y fondos.
+
+      </p>
+
+      <p>
+
+        <a
+
+          href="https://webaim.org/resources/contrastchecker/"
+
+          target="_blank"
+
+          rel="noopener noreferrer"
+
+        >
+
+          Abrir WebAIM Contrast Checker
+
+        </a>
+
+      </p>
+
+      <h4>Cómo utilizarla</h4>
+
+      <ol>
+
+        <li>Introduce el color del texto.</li>
+
+        <li>Introduce el color del fondo.</li>
+
+        <li>Observa la relación de contraste.</li>
+
+        <li>
+
+          Comprueba el resultado
+
+          correspondiente al tamaño
+
+          del texto y nivel WCAG.
+
+        </li>
+
+        <li>
+
+          Ajusta los colores
+
+          si el contraste es insuficiente.
+
+        </li>
+
+      </ol>
+
+      <p>
+
+        En el tema de accesibilidad
+
+        hemos realizado una actividad
+
+        guiada con esta herramienta.
+
+      </p>
+
+      <h3>2.3. WAVE: detectar posibles barreras</h3>
+
+      <p>
+
+        <strong>WAVE</strong>
+
+        es una herramienta de evaluación
+
+        que presenta indicadores
+
+        de accesibilidad sobre
+
+        la propia página analizada.
+
+      </p>
+
+      <p>
+
+        Permite localizar
+
+        determinados errores,
+
+        advertencias y elementos
+
+        estructurales que conviene revisar.
+
+      </p>
+
+      <p>
+
+        <a
+
+          href="https://wave.webaim.org/"
+
+          target="_blank"
+
+          rel="noopener noreferrer"
+
+        >
+
+          Abrir WAVE
+
+        </a>
+
+      </p>
+
+      <h4>Cómo utilizarla</h4>
+
+      <ol>
+
+        <li>Abre WAVE.</li>
+
+        <li>
+
+          Introduce la URL
+
+          de una página pública.
+
+        </li>
+
+        <li>Ejecuta el análisis.</li>
+
+        <li>
+
+          Revisa los indicadores
+
+          que aparecen.
+
+        </li>
+
+        <li>
+
+          Selecciona una incidencia.
+
+        </li>
+
+        <li>
+
+          Localiza el elemento afectado
+
+          y estudia su contexto.
+
+        </li>
+
+        <li>
+
+          Propón una corrección
+
+          cuando corresponda.
+
+        </li>
+
+      </ol>
+
+      <p>
+
+        WAVE dispone también
+
+        de extensiones de navegador
+
+        que pueden resultar útiles
+
+        para analizar páginas
+
+        no accesibles mediante
+
+        una URL pública.
+
+      </p>
+
+      <p>
+
+        <a
+
+          href="https://wave.webaim.org/extension/"
+
+          target="_blank"
+
+          rel="noopener noreferrer"
+
+        >
+
+          Consultar extensión WAVE
+
+        </a>
+
+      </p>
+
+      <p>
+
+        No todas las alertas representan
+
+        automáticamente un incumplimiento.
+
+        Es necesario interpretar
+
+        el resultado.
+
+      </p>
+
+      <h3>2.4. Lighthouse: auditoría integrada en Chrome</h3>
+
+      <p>
+
+        <strong>Lighthouse</strong>
+
+        es una herramienta de auditoría
+
+        incluida en las herramientas
+
+        de desarrollo de Google Chrome.
+
+      </p>
+
+      <p>
+
+        Permite analizar accesibilidad
+
+        y otros aspectos técnicos,
+
+        como rendimiento,
+
+        buenas prácticas y SEO.
+
+      </p>
+
+      <p>
+
+        <a
+
+          href="https://developer.chrome.com/docs/devtools/lighthouse/"
+
+          target="_blank"
+
+          rel="noopener noreferrer"
+
+        >
+
+          Documentación oficial de Lighthouse
+
+        </a>
+
+      </p>
+
+      <h4>Cómo utilizar Lighthouse</h4>
+
+      <ol>
+
+        <li>
+
+          Abre en Chrome la página
+
+          que deseas analizar.
+
+        </li>
+
+        <li>
+
+          Pulsa F12 o abre
+
+          las herramientas de desarrollo.
+
+        </li>
+
+        <li>
+
+          Busca la pestaña Lighthouse.
+
+          Si no aparece, consulta
+
+          las herramientas adicionales.
+
+        </li>
+
+        <li>
+
+          Selecciona la categoría
+
+          Accessibility.
+
+        </li>
+
+        <li>
+
+          Ejecuta la auditoría
+
+          mediante el botón disponible.
+
+        </li>
+
+        <li>
+
+          Examina la puntuación
+
+          y las incidencias detectadas.
+
+        </li>
+
+        <li>
+
+          Corrige un problema
+
+          y vuelve a ejecutar el análisis.
+
+        </li>
+
+      </ol>
+
+      <p>
+
+        Los nombres de algunos botones
+
+        pueden cambiar entre versiones
+
+        de Chrome.
+
+      </p>
+
+      <div class="warning">
+
+        <strong>Atención:</strong>
+
+        una puntuación alta
+
+        de Lighthouse no significa
+
+        que la web cumpla automáticamente
+
+        las WCAG.
+
+      </div>
+
+      <h3>2.5. axe DevTools</h3>
+
+      <p>
+
+        <strong>axe DevTools</strong>
+
+        es una herramienta de evaluación
+
+        de accesibilidad que puede
+
+        utilizarse como extensión
+
+        del navegador.
+
+      </p>
+
+      <p>
+
+        Permite identificar
+
+        determinados problemas
+
+        y consultar información
+
+        que ayuda a investigarlos
+
+        y corregirlos.
+
+      </p>
+
+      <p>
+
+        <a
+
+          href="https://www.deque.com/axe/devtools/extension/"
+
+          target="_blank"
+
+          rel="noopener noreferrer"
+
+        >
+
+          Consultar axe DevTools
+
+        </a>
+
+      </p>
+
+      <h4>Uso inicial</h4>
+
+      <ol>
+
+        <li>
+
+          Instala la extensión
+
+          desde una fuente oficial.
+
+        </li>
+
+        <li>
+
+          Abre la página que analizarás.
+
+        </li>
+
+        <li>
+
+          Accede a las herramientas
+
+          de desarrollo.
+
+        </li>
+
+        <li>
+
+          Abre axe DevTools.
+
+        </li>
+
+        <li>
+
+          Ejecuta el análisis disponible.
+
+        </li>
+
+        <li>
+
+          Revisa los problemas
+
+          y los elementos afectados.
+
+        </li>
+
+      </ol>
+
+      <p>
+
+        Algunas funciones pueden depender
+
+        de la edición y licencia utilizadas.
+
+      </p>
+
+      <h3>2.6. Accessibility Insights</h3>
+
+      <p>
+
+        <strong>Accessibility Insights</strong>
+
+        ofrece herramientas de ayuda
+
+        para evaluar accesibilidad,
+
+        incluyendo comprobaciones
+
+        automáticas y recorridos
+
+        de revisión guiada.
+
+      </p>
+
+      <p>
+
+        Puede ser útil para aprender
+
+        a combinar la detección
+
+        automática con
+
+        comprobaciones manuales.
+
+      </p>
+
+      <p>
+
+        <a
+
+          href="https://accessibilityinsights.io/"
+
+          target="_blank"
+
+          rel="noopener noreferrer"
+
+        >
+
+          Consultar Accessibility Insights
+
+        </a>
+
+      </p>
+
+      <h3>Resumen: ¿qué herramienta elegir?</h3>
+
+      <table>
+
+        <caption>
+
+          Herramientas habituales de revisión web
+
+        </caption>
+
+        <thead>
+
+          <tr>
+
+            <th scope="col">Herramienta</th>
+
+            <th scope="col">Uso principal</th>
+
+            <th scope="col">Cuándo utilizarla</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+
+            <th scope="row">Nu HTML Checker</th>
+
+            <td>
+
+              Validar estructura
+
+              y sintaxis HTML.
+
+            </td>
+
+            <td>
+
+              Durante el desarrollo
+
+              y antes de publicar.
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <th scope="row">Contrast Checker</th>
+
+            <td>
+
+              Comprobar contraste
+
+              entre colores.
+
+            </td>
+
+            <td>
+
+              Al definir y revisar
+
+              la paleta de la interfaz.
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <th scope="row">WAVE</th>
+
+            <td>
+
+              Detectar indicadores
+
+              y posibles barreras.
+
+            </td>
+
+            <td>
+
+              En una primera revisión
+
+              de accesibilidad.
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <th scope="row">Lighthouse</th>
+
+            <td>
+
+              Realizar auditorías
+
+              automáticas.
+
+            </td>
+
+            <td>
+
+              Durante el desarrollo
+
+              en Chrome.
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <th scope="row">axe DevTools</th>
+
+            <td>
+
+              Investigar problemas
+
+              detectables automáticamente.
+
+            </td>
+
+            <td>
+
+              Como análisis complementario.
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <th scope="row">Accessibility Insights</th>
+
+            <td>
+
+              Combinar comprobaciones
+
+              automáticas y guiadas.
+
+            </td>
+
+            <td>
+
+              Para ampliar la revisión
+
+              de accesibilidad.
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+      <div class="check">
+
+        <strong>Recomendación para comenzar:</strong>
+
+        utiliza Nu HTML Checker
+
+        para validar HTML,
+
+        Lighthouse o WAVE
+
+        para una revisión inicial
+
+        y completa el análisis
+
+        mediante pruebas manuales.
+
+      </div>
+
+      <p>
+
+        Puedes consultar otras opciones
+
+        en la
+
+        <a
+
+          href="https://www.w3.org/WAI/test-evaluate/tools/list/"
+
+          target="_blank"
+
+          rel="noopener noreferrer"
+
+        >
+
+          lista de herramientas de evaluación
+
+          publicada por W3C/WAI
+
+        </a>.
+
+      </p>
+
+    </section>
+
+    <!-- OBSOLESCENCIA -->
+
+    <section>
+
+      <h2>3. Herramientas antiguas y alternativas actuales</h2>
+
+      <p>
+
+        El desarrollo web evoluciona
+
+        continuamente.
+
+        Por eso es normal encontrar
+
+        manuales, artículos y tutoriales
+
+        que mencionan aplicaciones
+
+        utilizadas hace años.
+
+      </p>
+
+      <p>
+
+        Algunas herramientas dejan
+
+        de actualizarse, presentan
+
+        problemas de compatibilidad
+
+        o se basan en versiones anteriores
+
+        de los estándares.
+
+      </p>
+
+      <p>
+
+        Esto no significa que debamos
+
+        descartar automáticamente
+
+        toda la información antigua.
+
+        Primero necesitamos distinguir
+
+        entre los conocimientos
+
+        que siguen siendo válidos
+
+        y las herramientas concretas
+
+        que han cambiado.
+
+      </p>
+
+      <h3>HERA: un ejemplo histórico</h3>
+
+      <p>
+
+        <strong>HERA</strong>
+
+        es una herramienta desarrollada
+
+        por la Fundación Sidar
+
+        que facilitaba la revisión
+
+        de accesibilidad de páginas web.
+
+      </p>
+
+      <p>
+
+        Está vinculada históricamente
+
+        a las pautas WCAG 1.0
+
+        y a procedimientos de revisión
+
+        que requieren interpretación humana.
+
+      </p>
+
+      <p>
+
+        Por ese motivo puede aparecer
+
+        en documentación de accesibilidad
+
+        publicada hace tiempo.
+
+      </p>
+
+      <p>
+
+        Sin embargo, al tratarse
+
+        de una herramienta antigua,
+
+        su disponibilidad,
+
+        compatibilidad y pertinencia
+
+        para evaluar estándares actuales
+
+        deben comprobarse.
+
+      </p>
+
+      <p>
+
+        Para una revisión actual
+
+        podemos utilizar herramientas
+
+        como WAVE, Lighthouse,
+
+        axe DevTools o Accessibility Insights,
+
+        junto con pruebas manuales.
+
+      </p>
+
+      <p>
+
+        Estas alternativas no generan
+
+        necesariamente los mismos informes
+
+        ni realizan exactamente
+
+        las mismas comprobaciones
+
+        que HERA.
+
+      </p>
+
+      <p>
+
+        Para conocer su contexto histórico
+
+        puedes consultar la
+
+        <a
+
+          href="https://www.sidar.org/ex_hera/info.php?lng=es"
+
+          target="_blank"
+
+          rel="noopener noreferrer"
+
+        >
+
+          información sobre HERA
+
+          publicada por Fundación Sidar
+
+        </a>.
+
+      </p>
+
+      <h3>Cómo reconocer una herramienta que necesita revisión</h3>
+
+      <p>
+
+        Antes de utilizar una aplicación
+
+        encontrada en un artículo
+
+        o manual, conviene preguntarse:
+
+      </p>
+
+      <ol>
+
+        <li>
+
+          ¿Cuál es su página oficial?
+
+        </li>
+
+        <li>
+
+          ¿Sigue estando disponible
+
+          y funciona correctamente?
+
+        </li>
+
+        <li>
+
+          ¿Qué estándares utiliza
+
+          como referencia?
+
+        </li>
+
+        <li>
+
+          ¿Se mantiene y es compatible
+
+          con los navegadores actuales?
+
+        </li>
+
+        <li>
+
+          ¿Qué tipo de comprobaciones realiza?
+
+        </li>
+
+        <li>
+
+          ¿Qué limitaciones presenta?
+
+        </li>
+
+        <li>
+
+          ¿Existe una alternativa
+
+          más adecuada para mi objetivo?
+
+        </li>
+
+      </ol>
+
+      <div class="note">
+
+        <strong>Idea profesional:</strong>
+
+        lo importante no es aprender
+
+        a depender de una aplicación
+
+        concreta, sino comprender
+
+        qué necesitamos comprobar
+
+        y saber elegir herramientas
+
+        adecuadas para hacerlo.
+
+      </div>
+
+      <div class="activity">
+
+        <h3>Actividad: compara dos herramientas</h3>
+
+        <p>
+
+          <strong>Objetivo:</strong>
+
+          aprender a seleccionar
+
+          herramientas de accesibilidad
+
+          de forma razonada.
+
+        </p>
+
+        <ol>
+
+          <li>
+
+            Elige dos herramientas
+
+            explicadas en este manual.
+
+          </li>
+
+          <li>
+
+            Consulta sus páginas oficiales.
+
+          </li>
+
+          <li>
+
+            Identifica qué comprueba
+
+            cada una.
+
+          </li>
+
+          <li>
+
+            Indica si necesita instalación.
+
+          </li>
+
+          <li>
+
+            Examina qué limitaciones presenta.
+
+          </li>
+
+          <li>
+
+            Explica cuál utilizarías
+
+            para revisar una web sencilla
+
+            y por qué.
+
+          </li>
+
+        </ol>
+
+        <p>
+
+          <strong>Resultado esperado:</strong>
+
+          una comparación breve
+
+          que justifique tu elección,
+
+          sin limitarse a enumerar nombres.
+
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- PRUEBAS MANUALES -->
+
+    <section>
+
+      <h2>4. Pruebas manuales: comprobar lo que una herramienta no ve</h2>
+
+      <p>
+
+        Las herramientas automáticas
+
+        son útiles, pero existen
+
+        aspectos que necesitan
+
+        una revisión humana.
+
+      </p>
+
+      <p>
+
+        Por ejemplo, una herramienta
+
+        puede detectar que una imagen
+
+        tiene atributo <code>alt</code>,
+
+        pero no siempre puede determinar
+
+        si la descripción transmite
+
+        correctamente su significado.
+
+      </p>
+
+      <p>
+
+        Por eso debemos realizar
+
+        pruebas manuales.
+
+      </p>
+
+      <h3>4.1. Navegación con teclado</h3>
+
+      <ol>
+
+        <li>Abre la página.</li>
+
+        <li>Deja de utilizar el ratón.</li>
+
+        <li>
+
+          Pulsa Tab para avanzar.
+
+        </li>
+
+        <li>
+
+          Utiliza Shift + Tab
+
+          para retroceder.
+
+        </li>
+
+        <li>
+
+          Comprueba que el foco
+
+          es visible.
+
+        </li>
+
+        <li>
+
+          Intenta utilizar menús,
+
+          enlaces y formularios.
+
+        </li>
+
+      </ol>
+
+      <p>
+
+        Debes poder identificar
+
+        dónde está el foco
+
+        y completar las tareas
+
+        esenciales mediante teclado.
+
+      </p>
+
+      <h3>4.2. Zoom y adaptación</h3>
+
+      <p>
+
+        Amplía la página al 200 %
+
+        y comprueba que el contenido
+
+        sigue siendo legible
+
+        y utilizable.
+
+      </p>
+
+      <p>
+
+        Reduce también la anchura
+
+        de la ventana.
+
+        La página debe reorganizarse
+
+        sin perder funciones.
+
+      </p>
+
+      <p>
+
+        Ten en cuenta que los criterios
+
+        de zoom y reflow tienen
+
+        condiciones específicas:
+
+        no basta con realizar
+
+        una única comprobación
+
+        para declarar conformidad.
+
+      </p>
+
+      <h3>4.3. Formularios y mensajes</h3>
+
+      <p>
+
+        Revisa si cada campo
+
+        tiene una etiqueta comprensible,
+
+        si se identifican los campos
+
+        obligatorios y si los mensajes
+
+        ayudan a corregir errores.
+
+      </p>
+
+      <h3>4.4. Contenido multimedia</h3>
+
+      <p>
+
+        Comprueba si los vídeos
+
+        disponen de subtítulos
+
+        cuando son necesarios,
+
+        si los audios ofrecen
+
+        las alternativas adecuadas
+
+        y si los controles pueden
+
+        utilizarse mediante teclado.
+
+      </p>
+
+      <h3>4.5. Lectores de pantalla</h3>
+
+      <p>
+
+        Los lectores de pantalla
+
+        permiten comprobar cómo
+
+        se anuncia la estructura,
+
+        los enlaces y los controles.
+
+      </p>
+
+      <p>
+
+        Dos ejemplos son:
+
+      </p>
+
+      <ul>
+
+        <li>
+
+          <a
+
+            href="https://www.nvaccess.org/"
+
+            target="_blank"
+
+            rel="noopener noreferrer"
+
+          >
+
+            NVDA
+
+          </a>,
+
+          disponible para Windows.
+
+        </li>
+
+        <li>
+
+          VoiceOver, integrado
+
+          en dispositivos de Apple.
+
+        </li>
+
+      </ul>
+
+      <p>
+
+        Aprender a utilizar
+
+        un lector de pantalla
+
+        requiere práctica.
+
+        Una revisión inicial
+
+        puede revelar problemas,
+
+        pero no sustituye
+
+        una evaluación con experiencia
+
+        ni las pruebas con personas
+
+        que utilizan estas tecnologías.
+
+      </p>
+
+    </section>
+
+    <!-- EASY CHECKS -->
+
+    <section>
+
+      <h2>5. Easy Checks: tu primera revisión de accesibilidad</h2>
+
+      <p>
+
+        <strong>Easy Checks</strong>
+
+        es un recurso del W3C/WAI
+
+        que propone comprobaciones
+
+        introductorias para comenzar
+
+        a evaluar la accesibilidad
+
+        de una página web.
+
+      </p>
+
+      <p>
+
+        No es una aplicación
+
+        que instalamos ni un sistema
+
+        que certifica automáticamente
+
+        el cumplimiento de las WCAG.
+
+      </p>
+
+      <p>
+
+        Es una guía que ayuda
+
+        a observar determinados
+
+        elementos y a reconocer
+
+        posibles barreras.
+
+      </p>
+
+      <p>
+
+        <a
+
+          href="https://www.w3.org/WAI/test-evaluate/easy-checks/"
+
+          target="_blank"
+
+          rel="noopener noreferrer"
+
+        >
+
+          Consultar Easy Checks de W3C/WAI
+
+        </a>
+
+      </p>
+
+      <h3>5.1. Título y estructura</h3>
+
+      <p>
+
+        Comprueba que cada página
+
+        tiene un título descriptivo
+
+        y que sus encabezados
+
+        organizan correctamente
+
+        los contenidos.
+
+      </p>
+
+      <p>
+
+        El elemento <code>title</code>
+
+        identifica el documento
+
+        en la pestaña del navegador.
+
+      </p>
+
+      <p>
+
+        Los encabezados
+
+        <code>h1</code>,
+
+        <code>h2</code>
+
+        y siguientes ayudan
+
+        a comprender la estructura
+
+        del contenido.
+
+      </p>
+
+      <h3>5.2. Alternativas de imágenes</h3>
+
+      <p>
+
+        Revisa las imágenes
+
+        informativas y comprueba
+
+        que disponen de alternativas
+
+        textuales adecuadas.
+
+      </p>
+
+      <p>
+
+        Las imágenes exclusivamente
+
+        decorativas pueden utilizar
+
+        <code>alt=""</code>.
+
+      </p>
+
+      <h3>5.3. Contraste</h3>
+
+      <p>
+
+        Comprueba que los textos
+
+        mantienen contraste suficiente
+
+        respecto a sus fondos.
+
+      </p>
+
+      <p>
+
+        Para una medición inicial
+
+        puedes utilizar
+
+        WebAIM Contrast Checker,
+
+        explicado anteriormente.
+
+      </p>
+
+      <h3>5.4. Teclado y foco</h3>
+
+      <p>
+
+        Recorre la página mediante
+
+        Tab y Shift + Tab.
+
+        Comprueba que los elementos
+
+        interactivos son alcanzables,
+
+        que el foco resulta visible
+
+        y que no quedas atrapado
+
+        en ningún componente.
+
+      </p>
+
+      <h3>5.5. Idioma de la página</h3>
+
+      <p>
+
+        Comprueba que el idioma
+
+        principal está identificado
+
+        mediante el atributo
+
+        <code>lang</code>.
+
+      </p>
+
+      <pre><code>&lt;html lang="es"&gt;</code></pre>
+
+      <p>
+
+        Esta declaración ayuda
+
+        a los navegadores
+
+        y tecnologías de apoyo
+
+        a interpretar el idioma.
+
+      </p>
+
+      <h3>5.6. Ampliación del contenido</h3>
+
+      <p>
+
+        Aumenta el zoom y comprueba
+
+        si el texto, los enlaces
+
+        y los controles siguen
+
+        siendo utilizables.
+
+      </p>
+
+      <h3>5.7. Formularios</h3>
+
+      <p>
+
+        Revisa las etiquetas,
+
+        las instrucciones
+
+        y los mensajes de error.
+
+      </p>
+
+      <p>
+
+        Un <code>placeholder</code>
+
+        no sustituye una etiqueta
+
+        correctamente asociada.
+
+      </p>
+
+      <h3>5.8. Contenido audiovisual</h3>
+
+      <p>
+
+        Comprueba si los vídeos
+
+        y audios disponen
+
+        de alternativas adecuadas
+
+        para la información
+
+        que transmiten.
+
+      </p>
+
+      <div class="activity">
+
+        <h3>Actividad: revisión inicial con Easy Checks</h3>
+
+        <p>
+
+          <strong>Objetivo:</strong>
+
+          realizar una primera
+
+          comprobación manual
+
+          de una página web.
+
+        </p>
+
+        <ol>
+
+          <li>
+
+            Selecciona una página
+
+            propia o de ejemplo.
+
+          </li>
+
+          <li>
+
+            Comprueba el título
+
+            y los encabezados.
+
+          </li>
+
+          <li>
+
+            Revisa las imágenes
+
+            informativas.
+
+          </li>
+
+          <li>
+
+            Navega con teclado
+
+            y observa el foco.
+
+          </li>
+
+          <li>
+
+            Amplía el contenido
+
+            al 200 %.
+
+          </li>
+
+          <li>
+
+            Comprueba el contraste
+
+            de una combinación
+
+            de texto y fondo.
+
+          </li>
+
+          <li>
+
+            Revisa los formularios
+
+            y mensajes si existen.
+
+          </li>
+
+          <li>
+
+            Registra los problemas
+
+            que encuentres.
+
+          </li>
+
+        </ol>
+
+        <table>
+
+          <caption>
+
+            Modelo de registro de comprobaciones
+
+          </caption>
+
+          <thead>
+
+            <tr>
+
+              <th scope="col">Comprobación</th>
+
+              <th scope="col">Resultado</th>
+
+              <th scope="col">Observación</th>
+
+              <th scope="col">Mejora</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+
+              <th scope="row">Foco de teclado</th>
+
+              <td>Necesita revisión</td>
+
+              <td>
+
+                Un botón no muestra
+
+                un indicador visible.
+
+              </td>
+
+              <td>
+
+                Revisar los estilos
+
+                de foco y comprobar
+
+                su contraste.
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+        <p>
+
+          <strong>Resultado esperado:</strong>
+
+          una tabla breve que recoja
+
+          las comprobaciones realizadas,
+
+          los problemas observados
+
+          y las mejoras propuestas.
+
+        </p>
+
+        <p>
+
+          Si una comprobación
+
+          no se aplica a la página
+
+          o no encuentras problemas,
+
+          indícalo sin inventar errores.
+
+        </p>
+
+      </div>
+
+      <div class="note">
+
+        <strong>Recuerda:</strong>
+
+        Easy Checks permite realizar
+
+        una revisión introductoria.
+
+        Superar estas comprobaciones
+
+        no demuestra por sí solo
+
+        conformidad WCAG.
+
+      </div>
+
+    </section>
+
+    <!-- WCAG EM -->
+
+    <section>
+
+      <h2>6. WCAG-EM: una metodología de evaluación</h2>
+
+      <p>
+
+        Hasta ahora hemos aprendido
+
+        a comprobar problemas concretos
+
+        mediante herramientas
+
+        y pruebas manuales.
+
+      </p>
+
+      <p>
+
+        Pero evaluar una web completa
+
+        requiere organizar el trabajo:
+
+        decidir qué vamos a revisar,
+
+        seleccionar páginas representativas,
+
+        aplicar comprobaciones
+
+        y documentar los resultados.
+
+      </p>
+
+      <p>
+
+        Para ello podemos consultar
+
+        la metodología
+
+        <strong>WCAG-EM</strong>,
+
+        desarrollada en el ámbito
+
+        del W3C/WAI.
+
+      </p>
+
+      <p>
+
+        La versión 2.0, publicada
+
+        como W3C Group Note en 2026,
+
+        amplía el enfoque
+
+        a productos digitales,
+
+        además de sitios web.
+
+      </p>
+
+      <p>
+
+        <a
+
+          href="https://www.w3.org/WAI/test-evaluate/conformance/wcag-em/"
+
+          target="_blank"
+
+          rel="noopener noreferrer"
+
+        >
+
+          Introducción oficial a WCAG-EM
+
+        </a>
+
+      </p>
+
+      <p>
+
+        <a
+
+          href="https://www.w3.org/TR/wcag-em-2/"
+
+          target="_blank"
+
+          rel="noopener noreferrer"
+
+        >
+
+          Consultar documento técnico WCAG-EM 2.0
+
+        </a>
+
+      </p>
+
+      <h3>6.1. ¿Qué diferencia hay entre WCAG y WCAG-EM?</h3>
+
+      <table>
+
+        <caption>
+
+          Diferencias entre criterios, herramientas y metodología
+
+        </caption>
+
+        <thead>
+
+          <tr>
+
+            <th scope="col">Elemento</th>
+
+            <th scope="col">Función</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+
+            <th scope="row">WCAG</th>
+
+            <td>
+
+              Define criterios
+
+              de accesibilidad.
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <th scope="row">
+
+              WAVE, Lighthouse y otras herramientas
+
+            </th>
+
+            <td>
+
+              Ayudan a detectar
+
+              determinados problemas
+
+              durante las comprobaciones.
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <th scope="row">Easy Checks</th>
+
+            <td>
+
+              Ofrece una introducción
+
+              práctica a la revisión manual.
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <th scope="row">WCAG-EM</th>
+
+            <td>
+
+              Propone un procedimiento
+
+              sistemático para organizar
+
+              y documentar la evaluación.
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+      <h3>6.2. Los cinco pasos de WCAG-EM</h3>
+
+      <p>
+
+        Podemos comprender la metodología
+
+        mediante el ejemplo de nuestra
+
+        biblioteca digital.
+
+      </p>
+
+      <table>
+
+        <caption>
+
+          Fases de evaluación aplicadas a una biblioteca
+
+        </caption>
+
+        <thead>
+
+          <tr>
+
+            <th scope="col">Paso</th>
+
+            <th scope="col">Qué hacemos</th>
+
+            <th scope="col">Ejemplo</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+
+            <th scope="row">1. Definir el alcance</th>
+
+            <td>
+
+              Establecer qué producto
+
+              se evalúa, el nivel WCAG
+
+              de referencia y las condiciones.
+
+            </td>
+
+            <td>
+
+              Evaluar la web pública
+
+              de la biblioteca
+
+              con un objetivo de nivel AA.
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <th scope="row">2. Explorar el producto</th>
+
+            <td>
+
+              Identificar sus vistas,
+
+              funciones, tecnologías
+
+              y procesos importantes.
+
+            </td>
+
+            <td>
+
+              Examinar inicio,
+
+              catálogo, búsqueda
+
+              y renovación de préstamos.
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <th scope="row">
+
+              3. Seleccionar una muestra representativa
+
+            </th>
+
+            <td>
+
+              Elegir páginas, vistas
+
+              y procesos que permitan
+
+              revisar el producto
+
+              de forma significativa.
+
+            </td>
+
+            <td>
+
+              Incluir la búsqueda
+
+              y un proceso completo
+
+              de renovación,
+
+              no solo la portada.
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <th scope="row">4. Evaluar la muestra</th>
+
+            <td>
+
+              Aplicar los criterios
+
+              correspondientes combinando
+
+              comprobaciones y juicio experto.
+
+            </td>
+
+            <td>
+
+              Revisar teclado,
+
+              formularios, alternativas
+
+              y otros requisitos.
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <th scope="row">
+
+              5. Documentar los resultados
+
+            </th>
+
+            <td>
+
+              Registrar el alcance,
+
+              las pruebas, los resultados
+
+              y las limitaciones.
+
+            </td>
+
+            <td>
+
+              Elaborar un informe
+
+              con incidencias
+
+              y evidencias.
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+      <p>
+
+        En una aplicación completa
+
+        de WCAG-EM es necesario seguir
+
+        los requisitos detallados
+
+        de la metodología,
+
+        incluidos los relativos
+
+        a selección de muestras
+
+        y procesos completos.
+
+      </p>
+
+      <p>
+
+        Por tanto, esta explicación
+
+        es una introducción educativa,
+
+        no una sustitución
+
+        del procedimiento oficial.
+
+      </p>
+
+      <h3>6.3. Documentar una evaluación</h3>
+
+      <p>
+
+        Un informe de accesibilidad
+
+        debe permitir comprender
+
+        qué se ha evaluado,
+
+        cómo se ha realizado
+
+        y qué problemas
+
+        se han identificado.
+
+      </p>
+
+      <p>
+
+        Para cada incidencia
+
+        conviene registrar:
+
+      </p>
+
+      <ul>
+
+        <li>La página o vista afectada.</li>
+
+        <li>La tarea o elemento revisado.</li>
+
+        <li>El problema detectado.</li>
+
+        <li>Cómo se ha comprobado.</li>
+
+        <li>Su posible impacto.</li>
+
+        <li>La solución propuesta.</li>
+
+        <li>El resultado de la nueva comprobación.</li>
+
+      </ul>
+
+      <h3>6.4. Herramienta para elaborar informes</h3>
+
+      <p>
+
+        El W3C ofrece una herramienta
+
+        que ayuda a organizar
+
+        los resultados de una evaluación.
+
+      </p>
+
+      <p>
+
+        <a
+
+          href="https://www.w3.org/WAI/eval/report-tool/"
+
+          target="_blank"
+
+          rel="noopener noreferrer"
+
+        >
+
+          Consultar WCAG-EM Report Tool
+
+        </a>
+
+      </p>
+
+      <p>
+
+        Es una referencia útil
+
+        para conocer cómo se estructura
+
+        un informe, aunque para comenzar
+
+        podemos utilizar una tabla sencilla.
+
+      </p>
+
+      <div class="note">
+
+        <strong>Importante:</strong>
+
+        una práctica introductoria
+
+        inspirada en WCAG-EM
+
+        no equivale a una auditoría
+
+        profesional completa.
+
+      </div>
+
+    </section>
+
+    <!-- ACTIVIDAD FINAL -->
+
+    <section class="activity">
+
+      <h2>7. Práctica final: evalúa y mejora una página web</h2>
+
+      <p>
+
+        Esta actividad integra
+
+        los conocimientos
+
+        de accesibilidad,
+
+        usabilidad y desarrollo
+
+        trabajados en el manual.
+
+      </p>
+
+      <h3>Objetivo</h3>
+
+      <p>
+
+        Analizar una página web,
+
+        identificar posibles barreras,
+
+        proponer mejoras
+
+        y comprobar sus resultados.
+
+      </p>
+
+      <h3>Material necesario</h3>
+
+      <ul>
+
+        <li>Una página web propia o de ejemplo.</li>
+
+        <li>Un navegador.</li>
+
+        <li>Nu HTML Checker.</li>
+
+        <li>WAVE o Lighthouse.</li>
+
+        <li>WebAIM Contrast Checker.</li>
+
+        <li>Una tabla para registrar resultados.</li>
+
+      </ul>
+
+      <h3>Paso 1. Selecciona la página</h3>
+
+      <p>
+
+        Puedes utilizar una página
+
+        de biblioteca, una web
+
+        informativa o tu propio proyecto.
+
+      </p>
+
+      <p>
+
+        Si vas a realizar correcciones
+
+        en el código, elige
+
+        preferentemente una página
+
+        que puedas modificar.
+
+      </p>
+
+      <h3>Paso 2. Define una tarea</h3>
+
+      <p>
+
+        Establece qué debería poder hacer
+
+        una persona al utilizar la página.
+
+      </p>
+
+      <p>
+
+        Por ejemplo:
+
+        "Encontrar el horario de la biblioteca
+
+        y acceder al formulario de contacto".
+
+      </p>
+
+      <h3>Paso 3. Comprueba el teclado</h3>
+
+      <p>
+
+        Recorre la página utilizando
+
+        Tab y Shift + Tab.
+
+      </p>
+
+      <p>
+
+        Observa si todos los elementos
+
+        importantes son alcanzables
+
+        y si el foco es visible.
+
+      </p>
+
+      <h3>Paso 4. Revisa el HTML</h3>
+
+      <p>
+
+        Utiliza Nu HTML Checker
+
+        para revisar el marcado
+
+        de la página.
+
+      </p>
+
+      <p>
+
+        Anota los errores relevantes
+
+        y diferencia los problemas
+
+        de sintaxis de los posibles
+
+        problemas de accesibilidad.
+
+      </p>
+
+      <h3>Paso 5. Ejecuta una auditoría inicial</h3>
+
+      <p>
+
+        Utiliza WAVE o Lighthouse
+
+        para detectar posibles barreras.
+
+      </p>
+
+      <p>
+
+        Selecciona los resultados
+
+        más relevantes y estudia
+
+        los elementos afectados.
+
+      </p>
+
+      <h3>Paso 6. Revisa el contraste</h3>
+
+      <p>
+
+        Selecciona una combinación
+
+        de texto y fondo
+
+        y comprueba su contraste
+
+        mediante WebAIM Contrast Checker.
+
+      </p>
+
+      <h3>Paso 7. Comprueba la adaptación</h3>
+
+      <p>
+
+        Amplía la página al 200 %
+
+        y reduce la anchura
+
+        del navegador.
+
+      </p>
+
+      <p>
+
+        Observa si el contenido
+
+        mantiene su funcionalidad
+
+        y resulta comprensible.
+
+      </p>
+
+      <h3>Paso 8. Registra los resultados</h3>
+
+      <p>
+
+        Documenta los problemas
+
+        que encuentres y explica
+
+        por qué pueden afectar
+
+        a las personas usuarias.
+
+      </p>
+
+      <p>
+
+        No inventes incidencias
+
+        para completar una cantidad.
+
+        Si no encuentras un problema
+
+        en una comprobación,
+
+        registra ese resultado.
+
+      </p>
+
+      <h3>Paso 9. Propón o realiza mejoras</h3>
+
+      <p>
+
+        Si puedes modificar la página,
+
+        corrige uno o varios
+
+        de los problemas detectados.
+
+      </p>
+
+      <p>
+
+        Si estás analizando una web
+
+        ajena, redacta una propuesta
+
+        de mejora justificada.
+
+      </p>
+
+      <h3>Paso 10. Vuelve a comprobar</h3>
+
+      <p>
+
+        Repite las comprobaciones
+
+        afectadas por las correcciones
+
+        y registra qué ha cambiado.
+
+      </p>
+
+      <h3>Modelo de informe</h3>
+
+      <table>
+
+        <caption>
+
+          Registro de problemas y mejoras
+
+        </caption>
+
+        <thead>
+
+          <tr>
+
+            <th scope="col">Elemento</th>
+
+            <th scope="col">Problema</th>
+
+            <th scope="col">Comprobación</th>
+
+            <th scope="col">Mejora</th>
+
+            <th scope="col">Resultado posterior</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+
+            <th scope="row">
+
+              Botón de envío
+
+            </th>
+
+            <td>
+
+              No muestra foco visible.
+
+            </td>
+
+            <td>
+
+              Navegación con teclado.
+
+            </td>
+
+            <td>
+
+              Incorporar un indicador
+
+              de foco adecuado.
+
+            </td>
+
+            <td>
+
+              Pendiente de comprobar
+
+              después del cambio.
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+      <h3>Resultado esperado</h3>
+
+      <p>
+
+        Al finalizar, deberías disponer
+
+        de un informe breve
+
+        que identifique las comprobaciones
+
+        realizadas, sus resultados
+
+        y las mejoras propuestas
+
+        o aplicadas.
+
+      </p>
+
+      <p>
+
+        El objetivo principal
+
+        es aprender a razonar
+
+        sobre los problemas
+
+        y comprobar las soluciones,
+
+        no conseguir una puntuación
+
+        automática determinada.
+
+      </p>
+
+    </section>
+
+    <!-- CONCLUSIÓN -->
+
+    <section>
+
+      <h2>8. Del desarrollo a la mejora continua</h2>
+
+      <p>
+
+        La accesibilidad y la usabilidad
+
+        no se consiguen únicamente
+
+        utilizando buenas herramientas.
+
+      </p>
+
+      <p>
+
+        Es necesario tomar decisiones
+
+        adecuadas desde la planificación,
+
+        implementar correctamente,
+
+        comprobar el resultado
+
+        y mejorar a partir
+
+        de los problemas encontrados.
+
+      </p>
+
+      <div class="note">
+
+        <strong>Proceso de trabajo:</strong>
+
+        planificar → diseñar →
+
+        desarrollar → evaluar →
+
+        corregir → volver a evaluar.
+
+      </div>
+
+      <p>
+
+        Una web puede cambiar
+
+        después de su publicación:
+
+        se añaden páginas,
+
+        formularios, imágenes
+
+        y funcionalidades.
+
+      </p>
+
+      <p>
+
+        Por ese motivo, las revisiones
+
+        deben formar parte
+
+        del mantenimiento del proyecto.
+
+      </p>
+
+      <p>
+
+        La finalidad no es obtener
+
+        una puntuación perfecta,
+
+        sino ofrecer una experiencia
+
+        que las personas puedan
+
+        comprender y utilizar.
+
+      </p>
+
+    </section>
+
+    <!-- AUTOEVALUACIÓN -->
+
+    <section>
+
+      <h2>9. Autoevaluación</h2>
+
+      <p>
+
+        Comprueba si has comprendido
+
+        los conceptos fundamentales
+
+        de esta última lección.
+
+      </p>
+
+      <form class="quiz" data-quiz>
+
+        <fieldset
+
+          data-answer="b"
+
+          data-explain="HTML válido reduce problemas de marcado, pero no demuestra que una página cumpla los criterios de accesibilidad. Es necesario realizar una evaluación más amplia."
+
+        >
+
+          <legend>
+
+            El validador HTML no muestra errores.
+
+            ¿Qué conclusión es correcta?
+
+          </legend>
+
+          <label>
+
+            <input type="radio" name="q1" value="a">
+
+            La página ya cumple
+
+            todas las WCAG.
+
+          </label>
+
+          <label>
+
+            <input type="radio" name="q1" value="b">
+
+            Debo continuar evaluando
+
+            su accesibilidad y funcionamiento.
+
+          </label>
+
+          <p class="feedback"></p>
+
+        </fieldset>
+
+        <fieldset
+
+          data-answer="a"
+
+          data-explain="Una etiqueta label asociada mediante for e id identifica el propósito del campo. El placeholder por sí solo no sustituye esa relación."
+
+        >
+
+          <legend>
+
+            ¿Qué estructura es preferible
+
+            para solicitar un correo electrónico?
+
+          </legend>
+
+          <label>
+
+            <input type="radio" name="q2" value="a">
+
+            Un label asociado
+
+            a un input de tipo email.
+
+          </label>
+
+          <label>
+
+            <input type="radio" name="q2" value="b">
+
+            Un input que únicamente
+
+            utiliza placeholder.
+
+          </label>
+
+          <p class="feedback"></p>
+
+        </fieldset>
+
+        <button type="button">Corregir</button>
+
+        <p
+
+          class="result"
+
+          role="status"
+
+          aria-live="polite"
+
+          tabindex="-1"
+
+        ></p>
+
+      </form>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    Publicar no es el final:
+
+    evaluar y mejorar forma parte
+
+    del desarrollo web.
+
+  </footer>
+
 </body>
+
 </html>
-```
