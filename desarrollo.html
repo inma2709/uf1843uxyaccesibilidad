@@ -14,7 +14,7 @@
 
     name="description"
 
-    content="Manual de desarrollo y evaluación web: HTML semántico, accesibilidad, validadores, Lighthouse, WAVE, Easy Checks y WCAG-EM."
+    content="Manual de desarrollo y evaluación web: HTML semántico, accesibilidad, validadores, TAW, Lighthouse, WAVE, Easy Checks y WCAG-EM."
 
   >
 
@@ -66,7 +66,7 @@
 
   </nav>
 
-  <main id="contenido">
+  <main id="contenido"><nav class="topic-index" aria-label="Índice de este tema"><span>En este tema</span><a href="#tema-1">Qué aprenderás en este tema</a><a href="#tema-2">1. Aplicar la accesibilidad al escribir código</a><a href="#tema-3">2. Herramientas para comprobar una página web</a><a href="#tema-4">3. Herramientas antiguas y alternativas actuales</a><a href="#tema-5">4. Pruebas manuales: comprobar lo que una herramienta no ve</a><a href="#tema-6">5. Easy Checks: tu primera revisión de accesibilidad</a></nav>
 
     <!-- INTRODUCCIÓN -->
 
@@ -140,7 +140,7 @@
 
       </div>
 
-      <h2>Qué aprenderás en este tema</h2>
+      <h2 id="tema-1">Qué aprenderás en este tema</h2>
 
       <p>
 
@@ -170,7 +170,7 @@
 
     <section>
 
-      <h2>1. Aplicar la accesibilidad al escribir código</h2>
+      <h2 id="tema-2">1. Aplicar la accesibilidad al escribir código</h2>
 
       <p>
 
@@ -228,7 +228,7 @@
 
       <h4>Ejemplo de estructura semántica</h4>
 
-      <pre><code>&lt;header&gt;
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>&lt;header&gt;
 
   &lt;h1&gt;Biblioteca municipal&lt;/h1&gt;
 
@@ -258,7 +258,7 @@
 
   &lt;p&gt;Biblioteca municipal&lt;/p&gt;
 
-&lt;/footer&gt;</code></pre>
+&lt;/footer&gt;</code></pre></div></details>
 
       <p>
 
@@ -290,11 +290,11 @@
 
       <h4>Ejemplo problemático</h4>
 
-      <pre><code>&lt;div onclick="guardar()"&gt;
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>&lt;div onclick="guardar()"&gt;
 
   Guardar cambios
 
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;</code></pre></div></details>
 
       <p>
 
@@ -310,13 +310,13 @@
 
       <h4>Alternativa recomendada</h4>
 
-      <pre><code>&lt;button type="button"
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>&lt;button type="button"
 
         onclick="guardar()"&gt;
 
   Guardar cambios
 
-&lt;/button&gt;</code></pre>
+&lt;/button&gt;</code></pre></div></details>
 
       <p>
 
@@ -372,11 +372,11 @@
 
       <h4>CSS problemático</h4>
 
-      <pre><code>button:focus {
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>button:focus {
 
   outline: none;
 
-}</code></pre>
+}</code></pre></div></details>
 
       <p>
 
@@ -392,7 +392,7 @@
 
       <h4>CSS recomendado</h4>
 
-      <pre><code>button:focus-visible,
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>button:focus-visible,
 
 a:focus-visible {
 
@@ -400,7 +400,7 @@ a:focus-visible {
 
   outline-offset: 3px;
 
-}</code></pre>
+}</code></pre></div></details>
 
       <p>
 
@@ -438,7 +438,7 @@ a:focus-visible {
 
       <h4>Ejemplo</h4>
 
-      <pre><code>&lt;img
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>&lt;img
 
   src="horario.png"
 
@@ -446,7 +446,7 @@ a:focus-visible {
 
        de 9:00 a 20:00 horas"
 
-&gt;</code></pre>
+&gt;</code></pre></div></details>
 
       <p>
 
@@ -480,19 +480,19 @@ a:focus-visible {
 
       <h4>Ejemplo poco claro</h4>
 
-      <pre><code>&lt;a href="guia.pdf"&gt;
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>&lt;a href="guia.pdf"&gt;
 
   Haz clic aquí
 
-&lt;/a&gt;</code></pre>
+&lt;/a&gt;</code></pre></div></details>
 
       <h4>Alternativa recomendada</h4>
 
-      <pre><code>&lt;a href="guia.pdf"&gt;
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>&lt;a href="guia.pdf"&gt;
 
   Descargar la guía de matrícula (PDF)
 
-&lt;/a&gt;</code></pre>
+&lt;/a&gt;</code></pre></div></details>
 
       <p>
 
@@ -522,7 +522,7 @@ a:focus-visible {
 
       </p>
 
-      <pre><code>&lt;label for="correo"&gt;
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>&lt;label for="correo"&gt;
 
   Correo electrónico
 
@@ -540,7 +540,7 @@ a:focus-visible {
 
   required
 
-&gt;</code></pre>
+&gt;</code></pre></div></details>
 
       <p>
 
@@ -588,7 +588,7 @@ a:focus-visible {
 
       </p>
 
-      <pre><code>body {
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>body {
 
   font-size: 1rem;
 
@@ -602,7 +602,7 @@ img {
 
   height: auto;
 
-}</code></pre>
+}</code></pre></div></details>
 
       <p>
 
@@ -662,7 +662,7 @@ img {
 
       </p>
 
-      <pre><code>@media (prefers-reduced-motion: reduce) {
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>@media (prefers-reduced-motion: reduce) {
 
   .elemento-animado {
 
@@ -672,7 +672,7 @@ img {
 
   }
 
-}</code></pre>
+}</code></pre></div></details>
 
       <p>
 
@@ -805,11 +805,11 @@ img {
 
       <h4>La regla principal: no reinventar los controles</h4>
       <p>Este elemento <strong>no es un botón accesible por defecto</strong>:</p>
-      <pre><code>&lt;div onclick="guardar()"&gt;Guardar&lt;/div&gt;</code></pre>
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>&lt;div onclick="guardar()"&gt;Guardar&lt;/div&gt;</code></pre></div></details>
       <p>En cambio, este sí incorpora semántica y activación mediante teclado:</p>
-      <pre><code>&lt;button type="button" onclick="guardar()"&gt;
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>&lt;button type="button" onclick="guardar()"&gt;
   Guardar
-&lt;/button&gt;</code></pre>
+&lt;/button&gt;</code></pre></div></details>
       <p>
         En ambos fragmentos se presupone una función llamada
         <code>guardar()</code>. La diferencia importante es que el botón
@@ -825,7 +825,7 @@ img {
         El evento <code>click</code> del botón se ejecuta también
         cuando este se activa mediante Enter o Espacio.
       </p>
-      <pre><code>&lt;!doctype html&gt;
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>&lt;!doctype html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
   &lt;meta charset="utf-8"&gt;
@@ -879,7 +879,7 @@ img {
     });
   &lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+&lt;/html&gt;</code></pre></div></details>
 
       <p>
         Observa que no necesitamos escuchar <code>keydown</code>
@@ -940,7 +940,7 @@ img {
 
     <section>
 
-      <h2>2. Herramientas para comprobar una página web</h2>
+      <h2 id="tema-3">2. Herramientas para comprobar una página web</h2>
 
       <p>
 
@@ -1096,11 +1096,11 @@ img {
 
       </p>
 
-      <pre><code>&lt;p align="center"&gt;
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>&lt;p align="center"&gt;
 
   Bienvenido
 
-&lt;/p&gt;</code></pre>
+&lt;/p&gt;</code></pre></div></details>
 
       <p>
 
@@ -1118,19 +1118,19 @@ img {
 
       <h4>HTML recomendado</h4>
 
-      <pre><code>&lt;p class="texto-centrado"&gt;
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>&lt;p class="texto-centrado"&gt;
 
   Bienvenido
 
-&lt;/p&gt;</code></pre>
+&lt;/p&gt;</code></pre></div></details>
 
       <h4>CSS</h4>
 
-      <pre><code>.texto-centrado {
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>.texto-centrado {
 
   text-align: center;
 
-}</code></pre>
+}</code></pre></div></details>
 
       <p>
 
@@ -1366,7 +1366,125 @@ img {
 
       </p>
 
-      <h3>2.4. Lighthouse: auditoría integrada en Chrome</h3>
+      <h3>2.4. TAW: análisis automático de accesibilidad web</h3>
+
+      <p>
+
+        <strong>TAW (Test de Accesibilidad Web)</strong>
+        permite analizar una página web y detectar posibles
+        problemas de accesibilidad tomando como referencia
+        las pautas WCAG.
+
+      </p>
+
+      <p>
+
+        <a
+
+          href="https://www.tawdis.net/"
+
+          target="_blank"
+
+          rel="noopener noreferrer"
+
+        >
+
+          Abrir TAW — Test de Accesibilidad Web
+
+        </a>
+
+      </p>
+
+      <h4>Cómo realizar un análisis</h4>
+
+      <ol>
+
+        <li>Abre TAW e introduce la dirección de la página.</li>
+
+        <li>
+
+          Utiliza una URL pública accesible desde Internet.
+          Una ruta local de tu ordenador, como
+          <code>C:\proyecto\index.html</code>, no se puede
+          analizar desde el servicio online.
+
+        </li>
+
+        <li>
+
+          Si la interfaz ofrece opciones de configuración,
+          selecciona el nivel que deseas revisar, por ejemplo AA.
+
+        </li>
+
+        <li>Inicia el análisis y espera a que se genere el informe.</li>
+
+        <li>
+
+          Revisa los problemas detectados y las comprobaciones
+          que requieren una revisión manual.
+
+        </li>
+
+        <li>
+
+          Comprueba cada aviso en su contexto, corrige los
+          problemas confirmados y vuelve a analizar la página.
+
+        </li>
+
+      </ol>
+
+      <div class="warning">
+
+        <strong>Importante:</strong>
+        un informe sin errores automáticos no certifica que
+        una página sea accesible. TAW no puede determinar por sí
+        sola si todos los requisitos se cumplen; completa el
+        análisis con pruebas manuales, como la navegación con
+        teclado y la revisión del contenido.
+
+      </div>
+
+      <div class="activity">
+
+        <h4>Actividad práctica: analiza una página con TAW</h4>
+
+        <ol>
+
+          <li>
+
+            Elige una página pública que puedas revisar.
+
+          </li>
+
+          <li>
+
+            Analízala con TAW y anota los errores y avisos
+            que aparecen.
+
+          </li>
+
+          <li>
+
+            Selecciona un resultado y comprueba en la página
+            si representa un problema real.
+
+          </li>
+
+          <li>
+
+            Anota qué comprobaciones necesitan intervención
+            manual y propón una corrección para un problema
+            confirmado.
+
+          </li>
+
+        </ol>
+
+      </div>
+
+      <h3>2.5. Lighthouse: auditoría integrada en Chrome</h3>
 
       <p>
 
@@ -1498,7 +1616,7 @@ img {
 
       </div>
 
-      <h3>2.5. axe DevTools</h3>
+      <h3>2.6. axe DevTools</h3>
 
       <p>
 
@@ -1602,7 +1720,7 @@ img {
 
       </p>
 
-      <h3>2.6. Accessibility Insights</h3>
+      <h3>2.7. Accessibility Insights</h3>
 
       <p>
 
@@ -1744,6 +1862,26 @@ img {
 
           <tr>
 
+            <th scope="row">TAW</th>
+
+            <td>
+
+              Analizar una página y localizar
+              posibles problemas WCAG.
+
+            </td>
+
+            <td>
+
+              Para una revisión automática
+              complementaria.
+
+            </td>
+
+          </tr>
+
+          <tr>
+
             <th scope="row">Lighthouse</th>
 
             <td>
@@ -1815,11 +1953,8 @@ img {
         <strong>Recomendación para comenzar:</strong>
 
         utiliza Nu HTML Checker
-
         para validar HTML,
-
-        Lighthouse o WAVE
-
+        TAW, Lighthouse o WAVE
         para una revisión inicial
 
         y completa el análisis
@@ -1858,7 +1993,7 @@ img {
 
     <section>
 
-      <h2>3. Herramientas antiguas y alternativas actuales</h2>
+      <h2 id="tema-4">3. Herramientas antiguas y alternativas actuales</h2>
 
       <p>
 
@@ -2184,7 +2319,7 @@ img {
 
     <section>
 
-      <h2>4. Pruebas manuales: comprobar lo que una herramienta no ve</h2>
+      <h2 id="tema-5">4. Pruebas manuales: comprobar lo que una herramienta no ve</h2>
 
       <p>
 
@@ -2432,7 +2567,7 @@ img {
 
     <section>
 
-      <h2>5. Easy Checks: tu primera revisión de accesibilidad</h2>
+      <h2 id="tema-6">5. Easy Checks: tu primera revisión de accesibilidad</h2>
 
       <p>
 
@@ -2616,7 +2751,7 @@ img {
 
       </p>
 
-      <pre><code>&lt;html lang="es"&gt;</code></pre>
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>&lt;html lang="es"&gt;</code></pre></div></details>
 
       <p>
 
@@ -2874,7 +3009,7 @@ img {
 
     <section>
 
-      <h2>6. WCAG-EM: una metodología de evaluación</h2>
+      <h2 id="tema-7">6. WCAG-EM: una metodología de evaluación</h2>
 
       <p>
 
@@ -3378,7 +3513,7 @@ img {
 
     <section class="activity">
 
-      <h2>7. Práctica final: evalúa y mejora una página web</h2>
+      <h2 id="tema-8">7. Práctica final: evalúa y mejora una página web</h2>
 
       <p>
 
@@ -3744,7 +3879,7 @@ img {
 
     <section>
 
-      <h2>8. Del desarrollo a la mejora continua</h2>
+      <h2 id="tema-9">8. Del desarrollo a la mejora continua</h2>
 
       <p>
 
@@ -3828,7 +3963,7 @@ img {
 
     <section>
 
-      <h2>9. Autoevaluación</h2>
+      <h2 id="tema-10">9. Autoevaluación</h2>
 
       <p>
 

@@ -34,7 +34,7 @@
     <a href="desarrollo.html">Código y evaluación</a>
   </nav>
 
-  <main id="contenido">
+  <main id="contenido"><nav class="topic-index" aria-label="Índice de este tema"><span>En este tema</span><a href="#tema-1">Qué aprenderás en este tema</a><a href="#tema-2">1. Los principios fundamentales del diseño web</a><a href="#tema-3">2. Jerarquía visual: mostrar qué es importante</a><a href="#tema-4">3. Tipografía y legibilidad</a><a href="#tema-5">4. Color y contraste: diseñar para comprender</a><a href="#tema-6">5. Diseño responsive: una web para diferentes pantallas</a></nav>
 
     <!-- INTRODUCCIÓN -->
 
@@ -81,7 +81,7 @@
         ni la accesibilidad.
       </div>
 
-      <h2>Qué aprenderás en este tema</h2>
+      <h2 id="tema-1">Qué aprenderás en este tema</h2>
 
       <p>
         Aprenderás a utilizar la jerarquía visual,
@@ -106,7 +106,7 @@
     <!-- PRINCIPIOS -->
 
     <section>
-      <h2>1. Los principios fundamentales del diseño web</h2>
+      <h2 id="tema-2">1. Los principios fundamentales del diseño web</h2>
 
       <p>
         Un buen diseño no depende de una tendencia
@@ -167,7 +167,7 @@
     <!-- JERARQUÍA VISUAL -->
 
     <section>
-      <h2>2. Jerarquía visual: mostrar qué es importante</h2>
+      <h2 id="tema-3">2. Jerarquía visual: mostrar qué es importante</h2>
 
       <p>
         La <strong>jerarquía visual</strong>
@@ -241,7 +241,7 @@
         su contenido de forma lógica:
       </p>
 
-      <pre><code>&lt;main&gt;
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>&lt;main&gt;
   &lt;h1&gt;Catálogo de la biblioteca&lt;/h1&gt;
 
   &lt;p&gt;
@@ -263,7 +263,7 @@
       Buscar
     &lt;/button&gt;
   &lt;/form&gt;
-&lt;/main&gt;</code></pre>
+&lt;/main&gt;</code></pre></div></details>
 
       <p>
         En este ejemplo, <code>h1</code>
@@ -285,7 +285,7 @@
         para mejorar la presentación:
       </p>
 
-      <pre><code>h1 {
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>h1 {
   font-size: 2rem;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -297,7 +297,7 @@ form {
 
 button {
   padding: 0.75rem 1rem;
-}</code></pre>
+}</code></pre></div></details>
 
       <p>
         El tamaño y el espacio contribuyen
@@ -318,7 +318,7 @@ button {
     <!-- TIPOGRAFÍA -->
 
     <section>
-      <h2>3. Tipografía y legibilidad</h2>
+      <h2 id="tema-4">3. Tipografía y legibilidad</h2>
 
       <p>
         La tipografía influye directamente
@@ -347,7 +347,7 @@ button {
         Por ejemplo:
       </p>
 
-      <pre><code>body {
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>body {
   font-size: 1rem;
 }
 
@@ -357,7 +357,7 @@ h1 {
 
 h2 {
   font-size: 1.5rem;
-}</code></pre>
+}</code></pre></div></details>
 
       <p>
         La unidad <code>rem</code>
@@ -381,9 +381,9 @@ h2 {
         cuando contiene párrafos largos.
       </p>
 
-      <pre><code>p {
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>p {
   line-height: 1.6;
-}</code></pre>
+}</code></pre></div></details>
 
       <p>
         La propiedad <code>line-height</code>
@@ -406,9 +406,9 @@ h2 {
         utilizando la unidad <code>ch</code>.
       </p>
 
-      <pre><code>article p {
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>article p {
   max-width: 70ch;
-}</code></pre>
+}</code></pre></div></details>
 
       <p>
         La unidad <code>ch</code>
@@ -458,7 +458,7 @@ h2 {
     <!-- COLOR -->
 
     <section>
-      <h2>4. Color y contraste: diseñar para comprender</h2>
+      <h2 id="tema-5">4. Color y contraste: diseñar para comprender</h2>
 
       <p>
         El color puede ayudarnos a diferenciar
@@ -576,7 +576,7 @@ h2 {
     <!-- RESPONSIVE -->
 
     <section>
-      <h2>5. Diseño responsive: una web para diferentes pantallas</h2>
+      <h2 id="tema-6">5. Diseño responsive: una web para diferentes pantallas</h2>
 
       <p>
         Actualmente una misma página puede consultarse
@@ -676,7 +676,7 @@ h2 {
         determinada anchura:
       </p>
 
-      <pre><code>.catalogo {
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>.catalogo {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
@@ -686,7 +686,7 @@ h2 {
   .catalogo {
     grid-template-columns: repeat(2, 1fr);
   }
-}</code></pre>
+}</code></pre></div></details>
 
       <p>
         El ejemplo comienza con una columna.
@@ -743,7 +743,7 @@ h2 {
     <!-- FLEXBOX Y GRID -->
 
     <section>
-      <h2>6. Flexbox y CSS Grid: organizar los elementos</h2>
+      <h2 id="tema-7">6. Flexbox y CSS Grid: organizar los elementos</h2>
 
       <p>
         CSS dispone de diferentes sistemas
@@ -774,12 +774,12 @@ h2 {
 
       <h4>HTML</h4>
 
-      <pre><code>&lt;nav class="menu-ejemplo"
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>&lt;nav class="menu-ejemplo"
      aria-label="Menú de biblioteca"&gt;
   &lt;a href="#catalogo"&gt;Catálogo&lt;/a&gt;
   &lt;a href="#horarios"&gt;Horarios&lt;/a&gt;
   &lt;a href="#contacto"&gt;Contacto&lt;/a&gt;
-&lt;/nav&gt;</code></pre>
+&lt;/nav&gt;</code></pre></div></details>
 
       <p>
         Las tres anclas son destinos
@@ -791,11 +791,11 @@ h2 {
 
       <h4>CSS</h4>
 
-      <pre><code>.menu-ejemplo {
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>.menu-ejemplo {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-}</code></pre>
+}</code></pre></div></details>
 
       <p>
         Vamos a interpretar el código:
@@ -846,7 +846,7 @@ h2 {
 
       <h4>HTML</h4>
 
-      <pre><code>&lt;section class="catalogo-ejemplo"&gt;
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>&lt;section class="catalogo-ejemplo"&gt;
   &lt;article&gt;
     &lt;h3&gt;Libro A&lt;/h3&gt;
     &lt;p&gt;Descripción del libro A.&lt;/p&gt;
@@ -861,16 +861,16 @@ h2 {
     &lt;h3&gt;Libro C&lt;/h3&gt;
     &lt;p&gt;Descripción del libro C.&lt;/p&gt;
   &lt;/article&gt;
-&lt;/section&gt;</code></pre>
+&lt;/section&gt;</code></pre></div></details>
 
       <h4>CSS</h4>
 
-      <pre><code>.catalogo-ejemplo {
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>.catalogo-ejemplo {
   display: grid;
   grid-template-columns:
     repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
   gap: 1rem;
-}</code></pre>
+}</code></pre></div></details>
 
       <p>
         Este ejemplo contiene varias
@@ -995,7 +995,7 @@ h2 {
     <!-- SISTEMA DE DISEÑO -->
 
     <section>
-      <h2>7. Coherencia y sistemas de diseño</h2>
+      <h2 id="tema-8">7. Coherencia y sistemas de diseño</h2>
 
       <p>
         Una web puede contener muchas
@@ -1037,7 +1037,7 @@ h2 {
         algunos valores del diseño.
       </p>
 
-      <pre><code>:root {
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>:root {
   --color-principal: #174ea6;
   --color-texto: #222222;
   --color-fondo: #ffffff;
@@ -1055,7 +1055,7 @@ h1 {
 
 article {
   padding: var(--espacio-base);
-}</code></pre>
+}</code></pre></div></details>
 
       <p>
         El selector <code>:root</code>
@@ -1152,7 +1152,7 @@ article {
     <!-- ACTIVIDAD -->
 
     <section class="activity">
-      <h2>8. Actividad práctica: crea un catálogo responsive</h2>
+      <h2 id="tema-9">8. Actividad práctica: crea un catálogo responsive</h2>
 
       <p>
         En esta actividad vamos a construir
@@ -1193,7 +1193,7 @@ article {
         en el navegador.
       </p>
 
-      <pre><code>&lt;!doctype html&gt;
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>&lt;!doctype html&gt;
 &lt;html lang="es"&gt;
 &lt;head&gt;
   &lt;meta charset="utf-8"&gt;
@@ -1262,7 +1262,7 @@ article {
     &lt;/div&gt;
   &lt;/main&gt;
 &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+&lt;/html&gt;</code></pre></div></details>
 
       <h3>Paso 2. Observa el resultado</h3>
 
@@ -1293,7 +1293,7 @@ article {
         Busca la siguiente parte:
       </p>
 
-      <pre><code>minmax(min(100%, 16rem), 1fr)</code></pre>
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>minmax(min(100%, 16rem), 1fr)</code></pre></div></details>
 
       <p>
         Prueba a cambiar
@@ -1378,7 +1378,7 @@ article {
     <!-- RESUMEN -->
 
     <section>
-      <h2>9. Lista de comprobación antes de desarrollar</h2>
+      <h2 id="tema-10">9. Lista de comprobación antes de desarrollar</h2>
 
       <p>
         Antes de convertir una maqueta
@@ -1475,7 +1475,7 @@ article {
     <!-- AUTOEVALUACIÓN -->
 
     <section>
-      <h2>10. Autoevaluación</h2>
+      <h2 id="tema-11">10. Autoevaluación</h2>
 
       <p>
         Comprueba si has comprendido

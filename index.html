@@ -32,7 +32,7 @@
     <a href="desarrollo.html">Código y evaluación</a>
   </nav>
 
-  <main id="contenido">
+  <main id="contenido"><nav class="topic-index" aria-label="Índice de este tema"><span>En este tema</span><a href="#tema-1">Qué aprenderás en este tema</a><a href="#tema-2">1. ¿Qué es la accesibilidad web?</a><a href="#tema-3">2. Principales barreras de accesibilidad</a><a href="#tema-4">3. W3C, WAI y WCAG: comprender las normas</a><a href="#tema-5">4. Los cuatro principios de accesibilidad WCAG</a><a href="#tema-6">5. Contraste de colores: comprobar la legibilidad</a></nav>
 
     <!-- INTRODUCCIÓN -->
 
@@ -68,7 +68,7 @@
         planificación, diseño, desarrollo y evaluación.
       </div>
 
-      <h2>Qué aprenderás en este tema</h2>
+      <h2 id="tema-1">Qué aprenderás en este tema</h2>
 
       <p>
         Al finalizar esta lección podrás explicar qué es
@@ -87,7 +87,7 @@
     <!-- CONCEPTO -->
 
     <section>
-      <h2>1. ¿Qué es la accesibilidad web?</h2>
+      <h2 id="tema-2">1. ¿Qué es la accesibilidad web?</h2>
 
       <p>
         La <strong>accesibilidad web</strong> consiste en
@@ -175,7 +175,7 @@
     <!-- BARRERAS -->
 
     <section>
-      <h2>2. Principales barreras de accesibilidad</h2>
+      <h2 id="tema-3">2. Principales barreras de accesibilidad</h2>
 
       <p>
         Una barrera de accesibilidad aparece cuando alguna
@@ -326,7 +326,7 @@
     <!-- ESTÁNDARES -->
 
     <section>
-      <h2>3. W3C, WAI y WCAG: comprender las normas</h2>
+      <h2 id="tema-4">3. W3C, WAI y WCAG: comprender las normas</h2>
 
       <p>
         Cuando estudiamos accesibilidad web aparecen
@@ -471,7 +471,7 @@
     <!-- PRINCIPIOS WCAG -->
 
     <section>
-      <h2>4. Los cuatro principios de accesibilidad WCAG</h2>
+      <h2 id="tema-5">4. Los cuatro principios de accesibilidad WCAG</h2>
 
       <p>
         Las WCAG organizan sus pautas alrededor de cuatro
@@ -516,11 +516,11 @@
 
       <p><strong>Ejemplo:</strong></p>
 
-      <pre><code>&lt;img
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>&lt;img
   src="horario.png"
   alt="Biblioteca: lunes a viernes,
        de 9:00 a 20:00 horas"
-&gt;</code></pre>
+&gt;</code></pre></div></details>
 
       <p>
         El texto alternativo comunica la información
@@ -653,11 +653,11 @@
         mediante CSS:
       </p>
 
-      <pre><code>button:focus-visible,
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>button:focus-visible,
 a:focus-visible {
   outline: 3px solid #174ea6;
   outline-offset: 3px;
-}</code></pre>
+}</code></pre></div></details>
 
       <p>
         <code>outline</code> dibuja un contorno
@@ -740,7 +740,7 @@ a:focus-visible {
         asociada al campo:
       </p>
 
-      <pre><code>&lt;label for="correo"&gt;
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>&lt;label for="correo"&gt;
   Correo electrónico
 &lt;/label&gt;
 
@@ -750,7 +750,7 @@ a:focus-visible {
   name="correo"
   autocomplete="email"
   required
-&gt;</code></pre>
+&gt;</code></pre></div></details>
 
       <p>
         El atributo <code>for</code> de
@@ -839,9 +839,9 @@ a:focus-visible {
 
       <p><strong>Ejemplo problemático:</strong></p>
 
-      <pre><code>&lt;div onclick="guardar()"&gt;
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>&lt;div onclick="guardar()"&gt;
   Guardar
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;</code></pre></div></details>
 
       <p>
         Este elemento no incorpora por defecto
@@ -851,10 +851,10 @@ a:focus-visible {
 
       <p><strong>Alternativa adecuada:</strong></p>
 
-      <pre><code>&lt;button type="button"
+      <details class="expandable code-example"><summary>Ver ejemplo de código</summary><div><pre><code>&lt;button type="button"
         onclick="guardar()"&gt;
   Guardar
-&lt;/button&gt;</code></pre>
+&lt;/button&gt;</code></pre></div></details>
 
       <p>
         El elemento <code>button</code> ya tiene
@@ -891,7 +891,7 @@ a:focus-visible {
     <!-- CONTRASTE -->
 
     <section>
-      <h2>5. Contraste de colores: comprobar la legibilidad</h2>
+      <h2 id="tema-6">5. Contraste de colores: comprobar la legibilidad</h2>
 
       <p>
         El contraste expresa la diferencia de luminosidad
@@ -1032,7 +1032,7 @@ a:focus-visible {
     <!-- ACCESIBILIDAD Y USABILIDAD -->
 
     <section>
-      <h2>6. Accesibilidad y usabilidad: conceptos relacionados</h2>
+      <h2 id="tema-7">6. Accesibilidad y usabilidad: conceptos relacionados</h2>
 
       <p>
         La accesibilidad y la usabilidad están
@@ -1093,7 +1093,7 @@ a:focus-visible {
     <!-- VÍDEO -->
 
     <section>
-      <h2>7. Recurso audiovisual: accesibilidad web</h2>
+      <h2 id="tema-8">7. Recurso audiovisual: accesibilidad web</h2>
 
       <p>
         El siguiente vídeo del W3C/WAI introduce
@@ -1134,7 +1134,7 @@ a:focus-visible {
     <!-- RESUMEN Y CHECKLIST -->
 
     <section>
-      <h2>8. Las diez prácticas esenciales de accesibilidad</h2>
+      <h2 id="tema-9">8. Las diez prácticas esenciales de accesibilidad</h2>
 
       <p>
         Antes de publicar una página web,
@@ -1329,7 +1329,7 @@ a:focus-visible {
     <!-- AUTOEVALUACIÓN -->
 
     <section>
-      <h2>9. Autoevaluación</h2>
+      <h2 id="tema-10">9. Autoevaluación</h2>
 
       <p>
         Comprueba si has comprendido los conceptos
