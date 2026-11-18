@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description"
-        content="Manual didáctico de accesibilidad web: barreras, WCAG, buenas prácticas, ejemplos HTML y CSS y actividades.">
+        content="Manual didáctico de accesibilidad web: barreras, WCAG, buenas prácticas, herramientas de evaluación como TAW, ejemplos HTML y CSS y actividades.">
   <title>Accesibilidad web | Manual de UX y usabilidad</title>
   <link rel="stylesheet" href="styles.css">
   <script src="manual.js" defer></script>
@@ -32,7 +32,16 @@
     <a href="desarrollo.html">Código y evaluación</a>
   </nav>
 
-  <main id="contenido"><nav class="topic-index" aria-label="Índice de este tema"><span>En este tema</span><a href="#tema-1">Qué aprenderás en este tema</a><a href="#tema-2">1. ¿Qué es la accesibilidad web?</a><a href="#tema-3">2. Principales barreras de accesibilidad</a><a href="#tema-4">3. W3C, WAI y WCAG: comprender las normas</a><a href="#tema-5">4. Los cuatro principios de accesibilidad WCAG</a><a href="#tema-6">5. Contraste de colores: comprobar la legibilidad</a></nav>
+  <main id="contenido">
+    <figure style="max-width: 48rem; margin: 0 auto 1.5rem;">
+      <img
+        src="accesibilidad.png"
+        alt="Infografía sobre accesibilidad web: definición, personas beneficiadas, W3C, WAI, WCAG, sus cuatro principios, barreras frecuentes y buenas prácticas."
+        style="display: block; width: 100%; height: auto; border-radius: 0.75rem;"
+      >
+    </figure>
+
+    <nav class="topic-index" aria-label="Índice de este tema"><span>En este tema</span><a href="#tema-1">Qué aprenderás en este tema</a><a href="#tema-2">1. ¿Qué es la accesibilidad web?</a><a href="#tema-3">2. Principales barreras de accesibilidad</a><a href="#tema-4">3. W3C, WAI y WCAG: comprender las normas</a><a href="#tema-5">4. Los cuatro principios de accesibilidad WCAG</a><a href="#tema-6">5. Contraste de colores: comprobar la legibilidad</a><a href="#herramienta-taw">Herramienta TAW</a></nav>
 
     <!-- INTRODUCCIÓN -->
 
@@ -1026,6 +1035,69 @@ a:focus-visible {
         para comunicar un estado. Si un campo
         contiene un error, utiliza además
         un mensaje de texto comprensible.
+      </div>
+    </section>
+
+    <!-- HERRAMIENTA TAW -->
+
+    <section id="herramienta-taw">
+      <h2>Herramienta de análisis: TAW (Test de Accesibilidad Web)</h2>
+
+      <p>
+        <strong>TAW</strong> es una herramienta online de evaluación
+        automática que ayuda a detectar posibles problemas de
+        accesibilidad de una página, tomando como referencia las
+        pautas WCAG. Sus resultados orientan la revisión, pero cada
+        aviso debe comprobarse en el contexto de la página.
+      </p>
+
+      <p>
+        <a href="https://www.tawdis.net/"
+           target="_blank" rel="noopener noreferrer">
+          Abrir TAW — Test de Accesibilidad Web
+        </a>
+      </p>
+
+      <h3>Cómo realizar el análisis</h3>
+
+      <ol>
+        <li>
+          Abre TAW e introduce la URL pública de la página que quieras
+          revisar. El servicio online no puede acceder a rutas locales
+          de tu ordenador, como <code>C:\proyecto\index.html</code>.
+        </li>
+        <li>
+          Si la interfaz ofrece opciones, selecciona el nivel WCAG
+          que deseas evaluar, por ejemplo AA.
+        </li>
+        <li>
+          Inicia el análisis y revisa los resultados: errores
+          detectados automáticamente y comprobaciones que requieren
+          valoración manual.
+        </li>
+        <li>
+          Comprueba cada aviso en su contexto, corrige los problemas
+          confirmados y repite el análisis.
+        </li>
+      </ol>
+
+      <div class="warning">
+        <strong>Importante:</strong>
+        un informe sin errores automáticos no certifica que la página
+        sea accesible. Las herramientas automáticas no comprueban por
+        sí solas todos los requisitos WCAG. Completa la evaluación con
+        revisiones manuales, como recorrer la página con teclado y
+        comprobar que el contenido y los controles se entienden.
+      </div>
+
+      <div class="activity">
+        <h3>Actividad práctica</h3>
+        <p>
+          Analiza una página pública con TAW. Anota un error o aviso,
+          comprueba si realmente supone una barrera y propón una
+          corrección. Añade también una comprobación manual que TAW no
+          pueda resolver por sí sola.
+        </p>
       </div>
     </section>
 
